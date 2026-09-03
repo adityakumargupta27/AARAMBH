@@ -74,6 +74,56 @@ const availableCases = [
   },
 ];
 
+function FormattedMessage({ content }: { content: string }) {
+  const lines = content.split('\n');
+  return (
+    <div className="space-y-2 text-[13px] text-slate-200 leading-relaxed">
+      {lines.map((line, idx) => {
+        const trimmed = line.trim();
+        if (!trimmed) return <div key={idx} className="h-1" />;
+
+        // Header parsing: ### or ####
+        if (trimmed.startsWith('### ') || trimmed.startsWith('#### ')) {
+          const headerText = trimmed.replace(/^#{3,4}\s+/, '').replace(/\*\*/g, '');
+          return (
+            <div key={idx} className="font-bold text-sky-300 text-[14px] pt-2 pb-1 border-b border-slate-700/40">
+              {headerText}
+            </div>
+          );
+        }
+
+        // Parse bold (**text**) and italic (*text*) inside the line
+        const parts = line.split(/(\*\*.*?\*\*|\*[^*]+?\*)/g);
+
+        const renderedLine = parts.map((part, pIdx) => {
+          if (part.startsWith('**') && part.endsWith('**') && part.length >= 4) {
+            return (
+              <strong key={pIdx} className="font-bold text-white">
+                {part.slice(2, -2)}
+              </strong>
+            );
+          }
+          if (part.startsWith('*') && part.endsWith('*') && part.length >= 3 && !part.startsWith('**')) {
+            return (
+              <span key={pIdx} className="text-slate-300 font-medium italic">
+                {part.slice(1, -1)}
+              </span>
+            );
+          }
+          return part;
+        });
+
+        const isList = /^[•\-*]\s+|^\d+\.\s+/.test(trimmed);
+        return (
+          <p key={idx} className={cn(isList ? 'pl-2 text-slate-300' : '')}>
+            {renderedLine}
+          </p>
+        );
+      })}
+    </div>
+  );
+}
+
 export default function AIInvestigatorPage() {
   const navigate = useNavigate();
   const [selectedCaseId, setSelectedCaseId] = useState('AR-2026-001024');
@@ -338,10 +388,8 @@ export default function AIInvestigatorPage() {
                               </div>
                             )}
 
-                            {/* Main Message Content */}
-                            <div className="text-[13px] text-slate-200 leading-relaxed whitespace-pre-line font-normal">
-                              {msg.content}
-                            </div>
+                            {/* Main Message Content (Formatted with clean bold and no raw stars) */}
+                            <FormattedMessage content={msg.content} />
 
                             {/* Statutory Rules Identified */}
                             {msg.structured?.statutoryRules && msg.structured.statutoryRules.length > 0 && (
