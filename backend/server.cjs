@@ -262,6 +262,40 @@ const server = http.createServer(async (req, res) => {
     return sendJson(res, 200, { total: 0, data: [] });
   }
 
+  // 4e. Contracts list (Live from MongoDB Atlas)
+  if (req.method === 'GET' && pathname === '/api/v1/contracts') {
+    if (db) {
+      try {
+        const dbContracts = await db.collection('contracts').find({}).toArray();
+        return sendJson(res, 200, {
+          total: dbContracts.length,
+          source: 'MongoDB Atlas',
+          data: dbContracts,
+        });
+      } catch (e) {
+        console.warn('MongoDB contracts error:', e.message);
+      }
+    }
+    return sendJson(res, 200, { total: 0, data: [] });
+  }
+
+  // 4f. Data Sources list (Live from MongoDB Atlas)
+  if (req.method === 'GET' && pathname === '/api/v1/datasources') {
+    if (db) {
+      try {
+        const dbSources = await db.collection('datasources').find({}).toArray();
+        return sendJson(res, 200, {
+          total: dbSources.length,
+          source: 'MongoDB Atlas',
+          data: dbSources,
+        });
+      } catch (e) {
+        console.warn('MongoDB datasources error:', e.message);
+      }
+    }
+    return sendJson(res, 200, { total: 0, data: [] });
+  }
+
   // 5. ML Anomaly Detection Engine Execution
   if (req.method === 'POST' && pathname === '/api/v1/anomalies/detect') {
     let body = '';

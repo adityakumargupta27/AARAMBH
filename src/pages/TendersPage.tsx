@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useNavigate, Link, useParams } from 'react-router-dom';
 import { Search, Filter, X, Download, ArrowLeft, FileText, Users, PenTool, AlertTriangle, Info } from 'lucide-react';
 import { PageHeader } from '@/components/ui/PageHeader';
@@ -9,25 +9,38 @@ import { EmptyState } from '@/components/ui/State';
 
 import { useToast } from '@/components/ui/Toast';
 import { mockTenders, demoTender } from '@/data/mockData';
+import { api } from '@/services/api';
+import type { Tender } from '@/types';
 import { formatCurrency, formatCurrencyShort, formatDate } from '@/utils/format';
 import { cn } from '@/utils/cn';
 
 export default function TendersPage() {
   const navigate = useNavigate();
   const { toast } = useToast();
+  const [tenders, setTenders] = useState<Tender[]>(mockTenders);
+  const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState('');
   const [statusFilter, setStatusFilter] = useState('');
   const [riskFilter, setRiskFilter] = useState('');
   const [showFilters, setShowFilters] = useState(true);
 
+  useEffect(() => {
+    setLoading(true);
+    api.getTenders()
+      .then((data) => {
+        if (data && data.length > 0) setTenders(data);
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
   const filtered = useMemo(() => {
-    return mockTenders.filter((t) => {
+    return tenders.filter((t) => {
       if (search && !t.id.toLowerCase().includes(search.toLowerCase()) && !t.projectName.toLowerCase().includes(search.toLowerCase())) return false;
       if (statusFilter && t.tenderStatus !== statusFilter) return false;
       if (riskFilter && t.riskLevel !== riskFilter) return false;
       return true;
     });
-  }, [search, statusFilter, riskFilter]);
+  }, [tenders, search, statusFilter, riskFilter]);
 
   return (
     <div className="animate-fade-in space-y-4">

@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search, ArrowUpRight, UserPlus, Eye, AlertTriangle, CheckCircle2, Clock, FileText } from 'lucide-react';
 import { PageHeader } from '@/components/ui/PageHeader';
@@ -8,6 +8,7 @@ import { Drawer } from '@/components/ui/Drawer';
 import { Modal } from '@/components/ui/Modal';
 import { useToast } from '@/components/ui/Toast';
 import { mockInvestigationCases } from '@/data/mockData';
+import { api } from '@/services/api';
 import { formatCurrencyShort, formatDate, signalLabel, caseStatusLabel } from '@/utils/format';
 import type { InvestigationCase, CaseStatus } from '@/types';
 import { cn } from '@/utils/cn';
@@ -27,6 +28,13 @@ export default function InvestigationCenterPage() {
   const [cases, setCases] = useState(mockInvestigationCases);
   const [previewCase, setPreviewCase] = useState<InvestigationCase | null>(null);
   const [statusModal, setStatusModal] = useState<InvestigationCase | null>(null);
+
+  useEffect(() => {
+    api.getInvestigations()
+      .then((data) => {
+        if (data && data.length > 0) setCases(data);
+      });
+  }, []);
 
   const summary = {
     open: cases.filter((c) => c.status === 'open').length,

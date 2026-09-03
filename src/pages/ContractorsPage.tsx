@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useNavigate, Link, useParams } from 'react-router-dom';
 import {
   Search, Filter, X, ArrowLeft, Users, TrendingUp, Clock, XCircle,
@@ -11,21 +11,34 @@ import { AwardValueTrendChart, DelayTrendChart } from '@/components/charts/Chart
 import { EmptyState } from '@/components/ui/State';
 
 import { mockContractors, demoContractor, mockContracts } from '@/data/mockData';
+import { api } from '@/services/api';
+import type { Contractor } from '@/types';
 import { formatCurrency, formatCurrencyShort, formatDate } from '@/utils/format';
 import { cn } from '@/utils/cn';
 
 export default function ContractorsPage() {
   const navigate = useNavigate();
+  const [contractors, setContractors] = useState<Contractor[]>(mockContractors);
+  const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState('');
   const [riskFilter, setRiskFilter] = useState('');
 
+  useEffect(() => {
+    setLoading(true);
+    api.getContractors()
+      .then((data) => {
+        if (data && data.length > 0) setContractors(data);
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
   const filtered = useMemo(() => {
-    return mockContractors.filter((c) => {
+    return contractors.filter((c) => {
       if (search && !c.name.toLowerCase().includes(search.toLowerCase()) && !c.id.toLowerCase().includes(search.toLowerCase())) return false;
       if (riskFilter && c.riskLevel !== riskFilter) return false;
       return true;
     });
-  }, [search, riskFilter]);
+  }, [contractors, search, riskFilter]);
 
   return (
     <div className="animate-fade-in space-y-4">

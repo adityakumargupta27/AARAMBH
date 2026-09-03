@@ -1,12 +1,14 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, Filter, X, Download, ArrowUpDown, ChevronLeft, ChevronRight, FolderKanban } from 'lucide-react';
+import { Search, Filter, X, Download, ArrowUpDown, ChevronLeft, ChevronRight, FolderKanban, Database } from 'lucide-react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Card, CardBody } from '@/components/ui/Card';
 import { RiskBadge, RiskBar } from '@/components/ui/RiskBadge';
 import { EmptyState } from '@/components/ui/State';
 import { useToast } from '@/components/ui/Toast';
 import { mockProjects } from '@/data/mockData';
+import { api } from '@/services/api';
+import type { Project } from '@/types';
 import { formatCurrency, formatCurrencyShort, formatDate, riskLevelConfig } from '@/utils/format';
 import { cn } from '@/utils/cn';
 
@@ -16,6 +18,8 @@ type SortDir = 'asc' | 'desc';
 export default function ProjectsPage() {
   const navigate = useNavigate();
   const { toast } = useToast();
+  const [projects, setProjects] = useState<Project[]>(mockProjects);
+  const [dataSource, setDataSource] = useState('Local Fallback');
   const [search, setSearch] = useState('');
   const [stateFilter, setStateFilter] = useState('');
   const [statusFilter, setStatusFilter] = useState('');
@@ -25,16 +29,28 @@ export default function ProjectsPage() {
   const [sortField, setSortField] = useState<SortField>('riskScore');
   const [sortDir, setSortDir] = useState<SortDir>('desc');
   const [page, setPage] = useState(1);
-  const [loading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const pageSize = 10;
 
-  const states = [...new Set(mockProjects.map((p) => p.state))].sort();
-  const types = [...new Set(mockProjects.map((p) => p.projectType))].sort();
+  useEffect(() => {
+    setLoading(true);
+    api.getProjects()
+      .then((data) => {
+        if (data && data.length > 0) {
+          setProjects(data);
+          setDataSource('MongoDB Atlas (Live)');
+        }
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
+  const states = [...new Set(projects.map((p) => p.state))].sort();
+  const types = [...new Set(projects.map((p) => p.projectType || 'Infrastructure'))].sort();
 
   const activeFilters = [stateFilter, statusFilter, riskFilter, typeFilter].filter(Boolean).length;
 
   const filtered = useMemo(() => {
-    let result = mockProjects.filter((p) => {
+    let result = projects.filter((p) => {
       if (search && !p.name.toLowerCase().includes(search.toLowerCase()) && !p.id.toLowerCase().includes(search.toLowerCase())) return false;
       if (stateFilter && p.state !== stateFilter) return false;
       if (statusFilter && p.status !== statusFilter) return false;

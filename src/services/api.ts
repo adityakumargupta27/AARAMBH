@@ -5,7 +5,15 @@
 // ============================================================
 
 import { officialMPAllocations } from '@/data/officialMpladsData';
-import type { MPAllocation } from '@/types';
+import {
+  mockProjects,
+  mockContractors,
+  mockTenders,
+  mockContracts,
+  mockInvestigationCases,
+  dataSourceList,
+} from '@/data/mockData';
+import type { MPAllocation, Project, Contractor, Tender, Contract, InvestigationCase } from '@/types';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/v1';
 
@@ -76,6 +84,90 @@ export const api = {
         if (surplusOnly && c.isBaseline) return false;
         return true;
       });
+    }
+  },
+
+  /**
+   * Fetch Projects (Live from MongoDB Atlas)
+   */
+  async getProjects(): Promise<Project[]> {
+    try {
+      const res = await fetch(`${API_BASE_URL}/projects`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const json = await res.json();
+      return json.data;
+    } catch {
+      return mockProjects;
+    }
+  },
+
+  /**
+   * Fetch Contractors (Live from MongoDB Atlas)
+   */
+  async getContractors(): Promise<Contractor[]> {
+    try {
+      const res = await fetch(`${API_BASE_URL}/contractors`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const json = await res.json();
+      return json.data;
+    } catch {
+      return mockContractors;
+    }
+  },
+
+  /**
+   * Fetch Tenders (Live from MongoDB Atlas)
+   */
+  async getTenders(): Promise<Tender[]> {
+    try {
+      const res = await fetch(`${API_BASE_URL}/tenders`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const json = await res.json();
+      return json.data;
+    } catch {
+      return mockTenders;
+    }
+  },
+
+  /**
+   * Fetch Contracts (Live from MongoDB Atlas)
+   */
+  async getContracts(): Promise<Contract[]> {
+    try {
+      const res = await fetch(`${API_BASE_URL}/contracts`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const json = await res.json();
+      return json.data;
+    } catch {
+      return mockContracts;
+    }
+  },
+
+  /**
+   * Fetch Investigation Cases (Live from MongoDB Atlas)
+   */
+  async getInvestigations(): Promise<InvestigationCase[]> {
+    try {
+      const res = await fetch(`${API_BASE_URL}/investigations`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const json = await res.json();
+      return json.data;
+    } catch {
+      return mockInvestigationCases;
+    }
+  },
+
+  /**
+   * Fetch Data Sources (Live from MongoDB Atlas)
+   */
+  async getDataSources(): Promise<any[]> {
+    try {
+      const res = await fetch(`${API_BASE_URL}/datasources`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const json = await res.json();
+      return json.data;
+    } catch {
+      return dataSourceList;
     }
   },
 
