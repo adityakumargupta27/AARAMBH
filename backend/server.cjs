@@ -1,6 +1,11 @@
+require('dotenv').config();
+const dns = require('dns');
+dns.setServers(['8.8.8.8', '8.8.4.4']);
+
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const { MongoClient } = require('mongodb');
 const {
   evaluatePriceAnomaly,
   evaluateBidPattern,
@@ -12,8 +17,21 @@ const {
   queryForensicAgent,
 } = require('./anomalyDetector.cjs');
 
-
 const PORT = process.env.PORT || 5000;
+
+// MongoDB Atlas Live Connection
+let db = null;
+if (process.env.MONGODB_URI) {
+  const mongoClient = new MongoClient(process.env.MONGODB_URI);
+  mongoClient.connect()
+    .then(() => {
+      db = mongoClient.db('aarambha');
+      console.log('✅ Connected to MongoDB Atlas live database (db: aarambha)!');
+    })
+    .catch((err) => {
+      console.warn('⚠️ MongoDB Atlas connection error, using local memory fallback:', err.message);
+    });
+}
 
 // Load official 543 constituencies dataset
 let constituencies = [];
@@ -66,7 +84,7 @@ function sendJson(res, statusCode, data) {
   res.end(JSON.stringify(data));
 }
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(async (req, res) => {
   // CORS Preflight
   if (req.method === 'OPTIONS') {
     res.writeHead(204, {
@@ -141,19 +159,107 @@ const server = http.createServer((req, res) => {
       results = results.filter((c) => !c.isBaseline);
     }
 
+    if (db) {
+      try {
+        const filter = {};
+        if (search) {
+          filter.$or = [
+            { constituency: { $regex: search, $options: 'i' } },
+            { mpName: { $regex: search, $options: 'i' } },
+            { state: { $regex: search, $options: 'i' } },
+          ];
+        }
+        if (state) filter.state = { $regex: `^${state}$`, $options: 'i' };
+        if (surplusOnly) filter.isBaseline = false;
+
+        const dbResults = await db.collection('constituencies').find(filter).toArray();
+        return sendJson(res, 200, {
+          total: dbResults.length,
+          source: 'MongoDB Atlas (MoSPI MPLADS Dataset)',
+          data: dbResults,
+        });
+      } catch (dbErr) {
+        console.warn('MongoDB query fallback:', dbErr.message);
+      }
+    }
+
     return sendJson(res, 200, {
       total: results.length,
-      source: 'MoSPI MPLADS DigiGov',
+      source: 'MoSPI MPLADS Dataset (Local Fallback)',
       data: results,
     });
   }
 
-  // 4. Projects list
+  // 4. Projects list (Live from MongoDB Atlas)
   if (req.method === 'GET' && pathname === '/api/v1/projects') {
+    if (db) {
+      try {
+        const dbProjects = await db.collection('projects').find({}).toArray();
+        return sendJson(res, 200, {
+          total: dbProjects.length,
+          source: 'MongoDB Atlas',
+          data: dbProjects,
+        });
+      } catch (e) {
+        console.warn('MongoDB projects error:', e.message);
+      }
+    }
     return sendJson(res, 200, {
       total: mockProjects.length,
+      source: 'Local Fallback',
       data: mockProjects,
     });
+  }
+
+  // 4b. Contractors list (Live from MongoDB Atlas)
+  if (req.method === 'GET' && pathname === '/api/v1/contractors') {
+    if (db) {
+      try {
+        const dbContractors = await db.collection('contractors').find({}).toArray();
+        return sendJson(res, 200, {
+          total: dbContractors.length,
+          source: 'MongoDB Atlas',
+          data: dbContractors,
+        });
+      } catch (e) {
+        console.warn('MongoDB contractors error:', e.message);
+      }
+    }
+    return sendJson(res, 200, { total: 0, data: [] });
+  }
+
+  // 4c. Tenders list (Live from MongoDB Atlas)
+  if (req.method === 'GET' && pathname === '/api/v1/tenders') {
+    if (db) {
+      try {
+        const dbTenders = await db.collection('tenders').find({}).toArray();
+        return sendJson(res, 200, {
+          total: dbTenders.length,
+          source: 'MongoDB Atlas',
+          data: dbTenders,
+        });
+      } catch (e) {
+        console.warn('MongoDB tenders error:', e.message);
+      }
+    }
+    return sendJson(res, 200, { total: 0, data: [] });
+  }
+
+  // 4d. Investigation Cases list (Live from MongoDB Atlas)
+  if (req.method === 'GET' && pathname === '/api/v1/investigations') {
+    if (db) {
+      try {
+        const dbCases = await db.collection('investigations').find({}).toArray();
+        return sendJson(res, 200, {
+          total: dbCases.length,
+          source: 'MongoDB Atlas',
+          data: dbCases,
+        });
+      } catch (e) {
+        console.warn('MongoDB investigations error:', e.message);
+      }
+    }
+    return sendJson(res, 200, { total: 0, data: [] });
   }
 
   // 5. ML Anomaly Detection Engine Execution
