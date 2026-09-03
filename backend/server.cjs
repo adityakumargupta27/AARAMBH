@@ -33,13 +33,30 @@ if (process.env.MONGODB_URI) {
     });
 }
 
-// Load official 543 constituencies dataset
+// Load official Parliament datasets (Lok Sabha + Rajya Sabha)
 let constituencies = [];
+let rajyaSabha = [];
+let allMPs = [];
+
 try {
-  const raw = fs.readFileSync(path.join(__dirname, 'data/constituencies.json'), 'utf8');
-  constituencies = JSON.parse(raw);
+  const rawLS = fs.readFileSync(path.join(__dirname, 'data/constituencies.json'), 'utf8');
+  constituencies = JSON.parse(rawLS);
 } catch (err) {
-  console.warn('Could not load constituencies.json, fallback array used', err.message);
+  console.warn('Could not load constituencies.json', err.message);
+}
+
+try {
+  const rawRS = fs.readFileSync(path.join(__dirname, 'data/rajya_sabha.json'), 'utf8');
+  rajyaSabha = JSON.parse(rawRS);
+} catch (err) {
+  console.warn('Could not load rajya_sabha.json', err.message);
+}
+
+try {
+  const rawAll = fs.readFileSync(path.join(__dirname, 'data/all_mps.json'), 'utf8');
+  allMPs = JSON.parse(rawAll);
+} catch (err) {
+  console.warn('Could not load all_mps.json', err.message);
 }
 
 // Sample mock cases and projects for API
@@ -190,7 +207,108 @@ const server = http.createServer(async (req, res) => {
     });
   }
 
-  // 4. Projects list (Live from MongoDB Atlas)
+  // 3b. Rajya Sabha (231 MPs)
+  if (req.method === 'GET' && pathname === '/api/v1/rajya-sabha') {
+    const search = (parsedUrl.searchParams.get('q') || '').toLowerCase();
+    const state = parsedUrl.searchParams.get('state') || '';
+
+    let results = rajyaSabha;
+    if (search) {
+      results = results.filter(
+        (m) =>
+          m.mpName.toLowerCase().includes(search) ||
+          m.state.toLowerCase().includes(search) ||
+          (m.mpType && m.mpType.toLowerCase().includes(search))
+      );
+    }
+    if (state) {
+      results = results.filter((m) => m.state.toLowerCase() === state.toLowerCase());
+    }
+
+    if (db) {
+      try {
+        const filter = {};
+        if (search) {
+          filter.$or = [
+            { mpName: { $regex: search, $options: 'i' } },
+            { state: { $regex: search, $options: 'i' } },
+          ];
+        }
+        if (state) filter.state = { $regex: `^${state}$`, $options: 'i' };
+
+        const dbResults = await db.collection('rajya_sabha').find(filter).toArray();
+        return sendJson(res, 200, {
+          total: dbResults.length,
+          source: 'MongoDB Atlas (MoSPI Rajya Sabha Dataset)',
+          data: dbResults,
+        });
+      } catch (dbErr) {
+        console.warn('MongoDB query fallback:', dbErr.message);
+      }
+    }
+
+    return sendJson(res, 200, {
+      total: results.length,
+      source: 'MoSPI Rajya Sabha Dataset (Local Fallback)',
+      data: results,
+    });
+  }
+
+  // 3c. Combined Parliamentary MPs (774 MPs: 543 Lok Sabha + 231 Rajya Sabha)
+  if (req.method === 'GET' && pathname === '/api/v1/all-mps') {
+    const search = (parsedUrl.searchParams.get('q') || '').toLowerCase();
+    const state = parsedUrl.searchParams.get('state') || '';
+    const house = (parsedUrl.searchParams.get('house') || '').toLowerCase();
+
+    let results = allMPs;
+    if (house === 'lok-sabha') results = results.filter((m) => m.house === 'Lok Sabha');
+    if (house === 'rajya-sabha') results = results.filter((m) => m.house === 'Rajya Sabha');
+
+    if (search) {
+      results = results.filter(
+        (m) =>
+          m.mpName.toLowerCase().includes(search) ||
+          m.constituency.toLowerCase().includes(search) ||
+          m.state.toLowerCase().includes(search)
+      );
+    }
+    if (state) {
+      results = results.filter((m) => m.state.toLowerCase() === state.toLowerCase());
+    }
+
+    if (db) {
+      try {
+        const filter = {};
+        if (house === 'lok-sabha') filter.house = 'Lok Sabha';
+        if (house === 'rajya-sabha') filter.house = 'Rajya Sabha';
+        if (search) {
+          filter.$or = [
+            { mpName: { $regex: search, $options: 'i' } },
+            { constituency: { $regex: search, $options: 'i' } },
+            { state: { $regex: search, $options: 'i' } },
+          ];
+        }
+        if (state) filter.state = { $regex: `^${state}$`, $options: 'i' };
+
+        const dbResults = await db.collection('all_mps').find(filter).toArray();
+        return sendJson(res, 200, {
+          total: dbResults.length,
+          source: 'MongoDB Atlas (774 Parliamentary MPs)',
+          data: dbResults,
+        });
+      } catch (dbErr) {
+        console.warn('MongoDB all_mps fallback:', dbErr.message);
+      }
+    }
+
+    return sendJson(res, 200, {
+      total: results.length,
+      source: 'Local Parliamentary Fallback',
+      data: results,
+    });
+  }
+
+  // 4. Projects list (Live from MongoDB Atlas - 774 Projects)
   if (req.method === 'GET' && pathname === '/api/v1/projects') {
     if (db) {
       try {

@@ -31,7 +31,7 @@ import { JurySandboxModal } from '@/components/ui/JurySandboxModal';
 import { SmartLockWidget } from '@/components/ui/SmartLockWidget';
 import { VigilanceReportModal } from '@/components/ui/VigilanceReportModal';
 import { api } from '@/services/api';
-import { officialMPAllocations } from '@/data/officialMpladsData';
+import { officialMPAllocations, allParliamentAllocations } from '@/data/officialMpladsData';
 import { aiQuickQuestions, demoRiskAssessment } from '@/data/mockData';
 import type { AIMessage } from '@/types';
 import { cn } from '@/utils/cn';
@@ -133,6 +133,8 @@ interface TargetItem {
   projectName: string;
   contractorName: string;
   mpName?: string;
+  house?: 'Lok Sabha' | 'Rajya Sabha';
+  mpType?: string;
   riskScore: number;
   riskLevel: 'high' | 'review' | 'watch' | 'normal';
   evidenceCount: number;
@@ -145,33 +147,37 @@ interface TargetItem {
   isAugmented?: boolean;
 }
 
-const all543OfficialTargets: TargetItem[] = [
+const all774ParliamentTargets: TargetItem[] = [
   ...availableCases.map((c) => ({
     ...c,
     awardValue: c.contractValue || c.sanctionedAmount,
     mpName: 'Assigned MP',
+    house: 'Lok Sabha' as const,
+    mpType: 'Elected MP',
   })),
-  ...officialMPAllocations.map((c, i) => {
-    const isAugmented = !c.isBaseline;
-    const excessRatio = (c.allocatedAmount - 147000000) / 147000000;
+  ...allParliamentAllocations.map((m, i) => {
+    const isAugmented = !m.isBaseline;
+    const excessRatio = (m.allocatedAmount - 147000000) / 147000000;
     const riskScore = isAugmented ? Math.min(96, Math.round(65 + excessRatio * 35)) : 38;
     const riskLevel: 'high' | 'review' | 'watch' | 'normal' =
       riskScore >= 75 ? 'high' : riskScore >= 50 ? 'review' : 'normal';
 
     return {
-      id: `MPLADS-${String(i + 1).padStart(4, '0')}`,
-      projectName: `MPLADS Public Development Works (${c.constituency})`,
-      contractorName: `${c.state} Regional Infrastructure Agency`,
-      mpName: c.mpName,
+      id: m.id || `${m.house === 'Lok Sabha' ? 'LS' : 'RS'}-${String(i + 1).padStart(3, '0')}`,
+      projectName: `${m.house} Public Works (${m.constituency})`,
+      contractorName: `${m.state} State Infrastructure & Works Ltd`,
+      mpName: m.mpName,
+      house: m.house,
+      mpType: m.mpType,
       riskScore,
       riskLevel,
       evidenceCount: isAugmented ? 12 : 5,
-      state: c.state,
-      constituency: c.constituency,
-      sanctionedAmount: c.allocatedAmount,
-      awardValue: Math.round(c.allocatedAmount * 0.94),
-      disbursedAmount: Math.round(c.allocatedAmount * 0.72),
-      contractValue: c.allocatedAmount,
+      state: m.state,
+      constituency: m.constituency,
+      sanctionedAmount: m.allocatedAmount,
+      awardValue: Math.round(m.allocatedAmount * 0.94),
+      disbursedAmount: Math.round(m.allocatedAmount * 0.72),
+      contractValue: m.allocatedAmount,
       isAugmented,
     };
   }),
@@ -180,10 +186,11 @@ const all543OfficialTargets: TargetItem[] = [
 export default function AIInvestigatorPage() {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
-  const [targets, setTargets] = useState<TargetItem[]>(all543OfficialTargets);
+  const [targets, setTargets] = useState<TargetItem[]>(all774ParliamentTargets);
   const [selectedCaseId, setSelectedCaseId] = useState('AR-2026-001024');
   const [targetSelectorOpen, setTargetSelectorOpen] = useState(false);
   const [targetSearchQuery, setTargetSearchQuery] = useState('');
+  const [targetFilterHouse, setTargetFilterHouse] = useState<'all' | 'Lok Sabha' | 'Rajya Sabha'>('all');
   const [targetFilterState, setTargetFilterState] = useState('');
   const [targetFilterType, setTargetFilterType] = useState<'all' | 'augmented' | 'baseline'>('all');
 
@@ -444,8 +451,12 @@ export default function AIInvestigatorPage() {
               </div>
               {selectedCase.mpName && (
                 <div>
-                  <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Member of Parliament (Lok Sabha)</div>
-                  <div className="text-[13px] font-bold text-amber-300">Hon. {selectedCase.mpName}</div>
+                  <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
+                    Member of Parliament ({selectedCase.house || 'Lok Sabha'})
+                  </div>
+                  <div className="text-[13px] font-bold text-amber-300">
+                    Hon. {selectedCase.mpName} {selectedCase.mpType ? `• ${selectedCase.mpType}` : ''}
+                  </div>
                 </div>
               )}
               <div>
@@ -732,7 +743,7 @@ export default function AIInvestigatorPage() {
         open={targetSelectorOpen}
         onClose={() => setTargetSelectorOpen(false)}
         title="Select Target File to Investigate"
-        subtitle={`Choose any of the ${targets.length} official projects and cases across 543 Parliamentary Constituencies`}
+        subtitle={`Choose from ${targets.length} official Parliamentary MPs across Lok Sabha (543) and Rajya Sabha (231)`}
         size="xl"
       >
         <div className="space-y-3">
@@ -744,7 +755,7 @@ export default function AIInvestigatorPage() {
                 type="text"
                 value={targetSearchQuery}
                 onChange={(e) => setTargetSearchQuery(e.target.value)}
-                placeholder="Search constituency (e.g. Varanasi, Kannauj, Pune), MP name (e.g. Modi, Akhilesh), or project..."
+                placeholder="Search MP (e.g. Modi, Nirmala, Sonia, Akhilesh), constituency, state, or ID..."
                 className="input pl-9 text-[13px] bg-slate-900/90 border-slate-700 w-full"
                 autoFocus
               />
@@ -759,13 +770,35 @@ export default function AIInvestigatorPage() {
             )}
           </div>
 
-          {/* State Filter & Type Selector */}
+          {/* House Selector, State Filter & Outlay Type */}
           <div className="flex items-center gap-2 flex-wrap text-[12px]">
+            {/* House Tabs */}
+            <div className="flex items-center rounded-md bg-slate-900 border border-slate-800 p-0.5 text-[11px]">
+              <button
+                onClick={() => setTargetFilterHouse('all')}
+                className={cn("px-2.5 py-1 rounded transition-colors", targetFilterHouse === 'all' ? "bg-sky-600 text-white font-semibold" : "text-slate-400 hover:text-slate-200")}
+              >
+                All Parliament (774)
+              </button>
+              <button
+                onClick={() => setTargetFilterHouse('Lok Sabha')}
+                className={cn("px-2.5 py-1 rounded transition-colors", targetFilterHouse === 'Lok Sabha' ? "bg-blue-600 text-white font-semibold" : "text-slate-400 hover:text-slate-200")}
+              >
+                Lok Sabha (543)
+              </button>
+              <button
+                onClick={() => setTargetFilterHouse('Rajya Sabha')}
+                className={cn("px-2.5 py-1 rounded transition-colors", targetFilterHouse === 'Rajya Sabha' ? "bg-purple-600 text-white font-semibold" : "text-slate-400 hover:text-slate-200")}
+              >
+                Rajya Sabha (231)
+              </button>
+            </div>
+
             <select
               value={targetFilterState}
               onChange={(e) => setTargetFilterState(e.target.value)}
               aria-label="Filter by state"
-              className="bg-slate-900 border border-slate-700 text-white rounded-md px-2.5 py-1.5 focus:outline-none focus:border-sky-500 max-w-[200px]"
+              className="bg-slate-900 border border-slate-700 text-white rounded-md px-2.5 py-1.5 focus:outline-none focus:border-sky-500 max-w-[180px]"
             >
               <option value="">All States ({targets.length})</option>
               {Array.from(new Set(targets.map((t) => t.state))).sort().map((st) => (
@@ -778,27 +811,22 @@ export default function AIInvestigatorPage() {
             <div className="flex items-center rounded-md bg-slate-900 border border-slate-800 p-0.5 text-[11px]">
               <button
                 onClick={() => setTargetFilterType('all')}
-                className={cn("px-2.5 py-1 rounded transition-colors", targetFilterType === 'all' ? "bg-sky-600 text-white font-semibold" : "text-slate-400 hover:text-slate-200")}
+                className={cn("px-2 py-1 rounded transition-colors", targetFilterType === 'all' ? "bg-slate-700 text-white font-semibold" : "text-slate-400 hover:text-slate-200")}
               >
-                All (543)
+                All Outlays
               </button>
               <button
                 onClick={() => setTargetFilterType('augmented')}
-                className={cn("px-2.5 py-1 rounded transition-colors", targetFilterType === 'augmented' ? "bg-amber-600 text-white font-semibold" : "text-slate-400 hover:text-slate-200")}
+                className={cn("px-2 py-1 rounded transition-colors", targetFilterType === 'augmented' ? "bg-amber-600 text-white font-semibold" : "text-slate-400 hover:text-slate-200")}
               >
-                High Outlay (156)
-              </button>
-              <button
-                onClick={() => setTargetFilterType('baseline')}
-                className={cn("px-2.5 py-1 rounded transition-colors", targetFilterType === 'baseline' ? "bg-slate-700 text-white font-semibold" : "text-slate-400 hover:text-slate-200")}
-              >
-                Standard (387)
+                High Outlay
               </button>
             </div>
 
             <span className="text-[11px] text-slate-400 ml-auto font-mono">
               Showing <strong className="text-sky-400">{
                 targets.filter((t) => {
+                  if (targetFilterHouse !== 'all' && t.house !== targetFilterHouse) return false;
                   if (targetFilterState && t.state !== targetFilterState) return false;
                   if (targetFilterType === 'augmented' && !t.isAugmented) return false;
                   if (targetFilterType === 'baseline' && t.isAugmented) return false;
@@ -813,14 +841,15 @@ export default function AIInvestigatorPage() {
                     t.id.toLowerCase().includes(q)
                   );
                 }).length
-              }</strong> of {targets.length} official constituencies
+              }</strong> MPs
             </span>
           </div>
 
-          {/* Full 543 Parliamentary Constituency List */}
+          {/* Full Parliament MP List */}
           <div className="max-h-[460px] overflow-y-auto space-y-2 pr-1 scrollbar-thin">
             {targets
               .filter((t) => {
+                if (targetFilterHouse !== 'all' && t.house !== targetFilterHouse) return false;
                 if (targetFilterState && t.state !== targetFilterState) return false;
                 if (targetFilterType === 'augmented' && !t.isAugmented) return false;
                 if (targetFilterType === 'baseline' && t.isAugmented) return false;
@@ -849,6 +878,14 @@ export default function AIInvestigatorPage() {
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2 flex-wrap">
                       <span className="text-[12px] font-bold text-sky-400 font-mono">{target.id}</span>
+                      <span className={cn(
+                        "text-[10px] px-1.5 py-0.5 rounded font-semibold border",
+                        target.house === 'Rajya Sabha'
+                          ? "bg-purple-500/15 border-purple-500/30 text-purple-300"
+                          : "bg-blue-500/15 border-blue-500/30 text-blue-300"
+                      )}>
+                        {target.house || 'Lok Sabha'}
+                      </span>
                       <span className="text-[10px] px-1.5 py-0.5 bg-slate-800 border border-slate-700 text-slate-300 rounded font-medium">
                         {target.constituency}, {target.state}
                       </span>

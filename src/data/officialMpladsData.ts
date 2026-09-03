@@ -366,5 +366,40 @@ export const stateAllocationSummaries: StateSummary[] = [
 
 
 import constituenciesJson from './constituencies.json';
+import rajyaSabhaJson from './rajya_sabha.json';
+import allMpsJson from './all_mps.json';
+
+export interface RajyaSabhaAllocation {
+  srNo: number;
+  state: string;
+  mpName: string;
+  house: 'Rajya Sabha';
+  mpType: 'Elected MP' | 'Nominated MP';
+  allocatedAmount: number;
+  isBaseline: boolean;
+}
+
+export interface CombinedParliamentAllocation {
+  id: string;
+  house: 'Lok Sabha' | 'Rajya Sabha';
+  srNo: number;
+  state: string;
+  mpName: string;
+  constituency: string;
+  allocatedAmount: number;
+  isBaseline: boolean;
+  mpType: string;
+}
 
 export const officialMPAllocations: MPAllocation[] = constituenciesJson as MPAllocation[];
+export const officialRajyaSabhaAllocations: RajyaSabhaAllocation[] = rajyaSabhaJson as RajyaSabhaAllocation[];
+export const allParliamentAllocations: CombinedParliamentAllocation[] = allMpsJson as CombinedParliamentAllocation[];
+
+export const parliamentSummary = {
+  lokSabhaTotal: 83336673298.01,
+  lokSabhaCount: 543,
+  rajyaSabhaTotal: 33638482301.82,
+  rajyaSabhaCount: 231,
+  grandTotal: 116975155599.83,
+  grandTotalMPs: 774,
+};

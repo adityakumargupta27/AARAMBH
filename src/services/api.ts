@@ -88,6 +88,43 @@ export const api = {
   },
 
   /**
+   * Fetch official 231 Rajya Sabha Members of Parliament
+   */
+  async getRajyaSabha(query = '', state = ''): Promise<any[]> {
+    try {
+      const params = new URLSearchParams();
+      if (query) params.set('q', query);
+      if (state) params.set('state', state);
+
+      const res = await fetch(`${API_BASE_URL}/rajya-sabha?${params.toString()}`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const json = await res.json();
+      return json.data;
+    } catch {
+      return [];
+    }
+  },
+
+  /**
+   * Fetch all 774 Parliament Members (Lok Sabha + Rajya Sabha)
+   */
+  async getAllParliamentMPs(query = '', state = '', house = ''): Promise<any[]> {
+    try {
+      const params = new URLSearchParams();
+      if (query) params.set('q', query);
+      if (state) params.set('state', state);
+      if (house) params.set('house', house);
+
+      const res = await fetch(`${API_BASE_URL}/all-mps?${params.toString()}`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const json = await res.json();
+      return json.data;
+    } catch {
+      return [];
+    }
+  },
+
+  /**
    * Fetch Projects (Live from MongoDB Atlas)
    */
   async getProjects(): Promise<Project[]> {

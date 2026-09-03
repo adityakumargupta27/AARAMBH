@@ -32,7 +32,7 @@ const navSections = [
   {
     label: 'Overview',
     items: [
-      { label: '543 Constituencies', path: '/constituencies', icon: Landmark, badge: '543', badgeColor: 'bg-sky-500/15 text-sky-300 border border-sky-500/25' },
+      { label: 'Parliamentary MPs', path: '/constituencies', icon: Landmark, badge: '774', badgeColor: 'bg-sky-500/15 text-sky-300 border border-sky-500/25' },
       { label: 'Projects', path: '/projects', icon: FolderKanban, badge: '1,284' },
       { label: 'Tenders', path: '/tenders', icon: FileText },
       { label: 'Contracts', path: '/contracts', icon: PenTool },
