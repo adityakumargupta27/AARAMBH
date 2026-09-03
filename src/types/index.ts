@@ -246,6 +246,9 @@ export interface AIResponseStructure {
   evidence?: string[];
   recommendation?: string;
   disclaimer?: string;
+  thoughtSteps?: { step: number; title: string; detail: string }[];
+  statutoryRules?: { rule: string; title: string; clause: string }[];
+  recommendedActions?: { id: string; label: string; icon: string; description: string }[];
 }
 
 export interface ComparableProject {

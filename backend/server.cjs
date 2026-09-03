@@ -9,6 +9,7 @@ const {
   evaluateBenfordLaw,
   evaluatePreDisbursementGate,
   computeCompositeRisk,
+  queryForensicAgent,
 } = require('./anomalyDetector.cjs');
 
 
@@ -245,25 +246,54 @@ const server = http.createServer((req, res) => {
     req.on('data', (chunk) => {
       body += chunk;
     });
-    req.on('end', () => {
+    req.on('end', async () => {
       try {
-        const { question, caseId = 'AR-2026-001024' } = JSON.parse(body);
-        const answer = `Based on investigation record ${caseId} for Construction of Community Hall (MPLADS-1024):
-1. Unit cost of civil items is ₹12,000/unit (+45.5% vs benchmark ₹8,250).
-2. Tender T-9281 shows a bid spread of 2.4% between 5 bidders (historical median is 6.8%).
-3. Physical execution stands at 68% while ₹42.7L (86.8%) has been disbursed.
-4. Agreement Document AGR-9281 indicates ₹82,00,000 vs sanction of ₹52,00,000.
-Recommendation: Conduct physical verification before releasing remaining ₹6.5 Lakhs balance.`;
+        const { question, caseId = 'AR-2026-001024', caseContext = null } = JSON.parse(body || '{}');
+        
+        // Execute grounded forensic agent engine
+        const agentResult = queryForensicAgent(question, caseId, caseContext);
 
-        return sendJson(res, 200, {
-          caseId,
-          question,
-          answer,
-          evidenceCited: ['EVD-001', 'EVD-002', 'EVD-003', 'DOC-004'],
-          grounded: true,
-        });
+        // Optional: If GEMINI_API_KEY is configured in process.env, augment answer
+        if (process.env.GEMINI_API_KEY) {
+          try {
+            const prompt = `You are the Aarambha AI Procurement Investigator, auditing Indian public procurement and MPLADS projects.
+Context:
+Project: ${caseContext?.projectName || 'Construction of Community Hall (MPLADS-1024)'}
+Contractor: ${caseContext?.contractorName || 'ABC Infrastructure Pvt Ltd'}
+Unit Price: ₹12,000/unit (+45.5% vs CPWD benchmark ₹8,250)
+Tender Spread: 2.4% (vs 6.8% historical median)
+Physical Progress: 68% vs Financial Disbursement: 86.8%
+GFR Rules: Rule 149 & Rule 173 of GFR 2017, CPWD Works Manual Section 10CA.
+
+User Question: "${question}"
+
+Provide a concise, professional vigilance audit assessment citing these exact numbers, relevant GFR/CPWD clauses, and recommend verification steps. Do not declare guilt; state analytical signals.`;
+
+            const geminiRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                contents: [{ parts: [{ text: prompt }] }],
+                generationConfig: { maxOutputTokens: 350, temperature: 0.2 }
+              })
+            });
+
+            if (geminiRes.ok) {
+              const geminiData = await geminiRes.json();
+              const text = geminiData?.candidates?.[0]?.content?.parts?.[0]?.text;
+              if (text) {
+                agentResult.answer = text;
+                agentResult.provider = 'gemini-1.5-flash';
+              }
+            }
+          } catch (geminiErr) {
+            console.warn('Gemini API call skipped, using heuristic reasoning:', geminiErr.message);
+          }
+        }
+
+        return sendJson(res, 200, agentResult);
       } catch (e) {
-        return sendJson(res, 400, { error: 'Invalid query payload' });
+        return sendJson(res, 400, { error: 'Invalid query payload', details: e.message });
       }
     });
     return;
