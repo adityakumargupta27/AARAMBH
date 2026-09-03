@@ -3,6 +3,7 @@ import HomePage from '@/pages/HomePage';
 import AppLayout from '@/layouts/AppLayout';
 import { PlaceholderPage } from '@/pages/PlaceholderPage';
 import OverviewPage from '@/pages/OverviewPage';
+import ConstituenciesPage from '@/pages/ConstituenciesPage';
 import ProjectsPage from '@/pages/ProjectsPage';
 import Project360Page from '@/pages/Project360Page';
 import TendersPage, { TenderDetailPage } from '@/pages/TendersPage';
@@ -27,7 +28,9 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route element={<AppLayout />}>
             <Route path="/overview" element={<OverviewPage />} />
+            <Route path="/constituencies" element={<ConstituenciesPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
+
             <Route path="/projects/:id" element={<Project360Page />} />
             <Route path="/tenders" element={<TendersPage />} />
             <Route path="/tenders/:id" element={<TenderDetailPage />} />

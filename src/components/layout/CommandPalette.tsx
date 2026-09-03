@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, FolderKanban, FileText, PenTool, Users, Gauge, Bot, ArrowRight, LayoutDashboard, FileBarChart } from 'lucide-react';
+import { Search, FolderKanban, FileText, PenTool, Users, Gauge, Bot, ArrowRight, LayoutDashboard, FileBarChart, Landmark } from 'lucide-react';
 import { cn } from '@/utils/cn';
 import { mockProjects, mockTenders, mockContracts, mockContractors, mockInvestigationCases } from '@/data/mockData';
+import { officialMPAllocations } from '@/data/officialMpladsData';
 
 interface CommandPaletteProps {
   open: boolean;
@@ -12,7 +13,7 @@ interface CommandPaletteProps {
 interface SearchResult {
   id: string;
   label: string;
-  type: 'Project' | 'Tender' | 'Contract' | 'Contractor' | 'Investigation';
+  type: 'Project' | 'Tender' | 'Contract' | 'Contractor' | 'Investigation' | 'Constituency';
   path: string;
   meta: string;
 }
@@ -26,12 +27,14 @@ interface CommandItem {
 
 const commands: CommandItem[] = [
   { id: 'cmd-overview', label: 'Go to Overview', path: '/overview', icon: LayoutDashboard },
+  { id: 'cmd-constituencies', label: 'Go to 543 Constituencies Registry', path: '/constituencies', icon: Landmark },
   { id: 'cmd-projects', label: 'Go to Projects', path: '/projects', icon: FolderKanban },
   { id: 'cmd-risk', label: 'Go to Risk Explorer', path: '/risk', icon: Gauge },
   { id: 'cmd-investigations', label: 'Go to Investigation Center', path: '/investigations', icon: Search },
   { id: 'cmd-ai', label: 'Go to AI Investigator', path: '/ai-investigator', icon: Bot },
   { id: 'cmd-reports', label: 'Go to Reports', path: '/reports', icon: FileBarChart },
 ];
+
 
 export function CommandPalette({ open, onClose }: CommandPaletteProps) {
   const [query, setQuery] = useState('');
@@ -82,7 +85,19 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
         searchResults.push({ id: c.id, label: `${c.id} — ${c.projectName}`, type: 'Investigation', path: `/investigations/${c.id}`, meta: c.contractorName });
       }
     });
+    officialMPAllocations.forEach((m) => {
+      if (m.constituency.toLowerCase().includes(q) || m.mpName.toLowerCase().includes(q)) {
+        searchResults.push({
+          id: `MP-${m.srNo}`,
+          label: `${m.constituency} (Hon. ${m.mpName})`,
+          type: 'Constituency',
+          path: `/constituencies`,
+          meta: `${m.state} · ₹${(m.allocatedAmount / 10000000).toFixed(2)} Cr`,
+        });
+      }
+    });
   }
+
 
   const matchingCommands = query.trim()
     ? commands.filter((c) => c.label.toLowerCase().includes(query.toLowerCase()))
@@ -128,20 +143,28 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
 
   return (
     <div className="fixed inset-0 z-[60] flex items-start justify-center pt-[15vh] px-4 animate-fade-in">
-      <div className="absolute inset-0 bg-navy-950/40 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative w-full max-w-xl bg-white rounded-lg shadow-modal animate-slide-up">
+      <div className="absolute inset-0 backdrop-blur-md" style={{ background: 'rgba(0, 0, 0, 0.6)' }} onClick={onClose} />
+      <div className="relative w-full max-w-xl rounded-xl shadow-modal animate-slide-up"
+        style={{
+          background: 'rgba(15, 23, 42, 0.95)',
+          backdropFilter: 'blur(20px)',
+          border: '1px solid rgba(148, 163, 184, 0.1)',
+        }}
+      >
         {/* Search input */}
-        <div className="flex items-center gap-3 px-4 py-3.5 border-b border-slate-100">
-          <Search className="w-4.5 h-4.5 text-slate-400 flex-shrink-0" />
+        <div className="flex items-center gap-3 px-4 py-3.5" style={{ borderBottom: '1px solid rgba(148, 163, 184, 0.08)' }}>
+          <Search className="w-4.5 h-4.5 text-slate-500 flex-shrink-0" />
           <input
             ref={inputRef}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder="Search projects, tenders, contractors... or type a command"
-            className="flex-1 text-[14px] text-slate-800 placeholder-slate-400 bg-transparent outline-none"
+            className="flex-1 text-[14px] text-white placeholder-slate-500 bg-transparent outline-none"
           />
-          <span className="text-[10px] text-slate-400 px-1.5 py-0.5 bg-slate-100 rounded font-medium">ESC</span>
+          <span className="text-[10px] px-1.5 py-0.5 rounded font-medium"
+            style={{ background: 'rgba(30, 41, 59, 0.6)', color: '#64748b', border: '1px solid rgba(148, 163, 184, 0.1)' }}
+          >ESC</span>
         </div>
 
         {/* Results */}
@@ -166,11 +189,11 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
                     onMouseEnter={() => setSelectedIndex(idx)}
                     className={cn(
                       'w-full flex items-center gap-3 px-4 py-2 text-left transition-colors',
-                      selectedIndex === idx ? 'bg-navy-50' : 'hover:bg-slate-50'
+                      selectedIndex === idx ? 'bg-sky-500/10' : ''
                     )}
                   >
                     <Icon className="w-4 h-4 text-slate-400 flex-shrink-0" />
-                    <span className="flex-1 text-[13px] text-slate-700">{cmd.label}</span>
+                    <span className="flex-1 text-[13px] text-slate-300">{cmd.label}</span>
                     <ArrowRight className="w-3.5 h-3.5 text-slate-300" />
                   </button>
                 );
@@ -192,15 +215,17 @@ export function CommandPalette({ open, onClose }: CommandPaletteProps) {
                     onMouseEnter={() => setSelectedIndex(idx)}
                     className={cn(
                       'w-full flex items-center gap-3 px-4 py-2 text-left transition-colors',
-                      selectedIndex === idx ? 'bg-navy-50' : 'hover:bg-slate-50'
+                      selectedIndex === idx ? 'bg-sky-500/10' : ''
                     )}
                   >
                     <Icon className="w-4 h-4 text-slate-400 flex-shrink-0" />
                     <div className="flex-1 min-w-0">
-                      <div className="text-[13px] text-slate-700 truncate">{r.label}</div>
+                      <div className="text-[13px] text-slate-200 truncate">{r.label}</div>
                       <div className="text-[11px] text-slate-400 truncate">{r.meta}</div>
                     </div>
-                    <span className="text-[10px] text-slate-400 px-1.5 py-0.5 bg-slate-100 rounded font-medium flex-shrink-0">{r.type}</span>
+                    <span className="text-[10px] px-1.5 py-0.5 rounded font-medium flex-shrink-0"
+                      style={{ background: 'rgba(30, 41, 59, 0.6)', color: '#64748b', border: '1px solid rgba(148, 163, 184, 0.1)' }}
+                    >{r.type}</span>
                   </button>
                 );
               })}

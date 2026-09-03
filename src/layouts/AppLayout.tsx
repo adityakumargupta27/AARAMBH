@@ -27,15 +27,15 @@ export default function AppLayout() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col">
-      <div className="flex flex-1 min-h-0">
+    <div className="h-screen w-full flex flex-col overflow-hidden" style={{ background: '#0b1120' }}>
+      <div className="flex flex-1 min-h-0 overflow-hidden">
         <Sidebar
           collapsed={collapsed}
           onToggle={() => setCollapsed(!collapsed)}
           mobileOpen={mobileOpen}
           onMobileClose={() => setMobileOpen(false)}
         />
-        <div className="flex flex-col flex-1 min-w-0">
+        <div className="flex flex-col flex-1 min-w-0 h-full overflow-hidden">
           <Header
             onMobileMenuClick={() => setMobileOpen(true)}
             onSearchClick={() => setSearchOpen(true)}
