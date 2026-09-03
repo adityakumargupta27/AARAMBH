@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
   Bot,
   Send,
@@ -17,6 +17,9 @@ import {
   AlertTriangle,
   RefreshCw,
   CheckCircle2,
+  Search,
+  Check,
+  Building,
 } from 'lucide-react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Card, CardHeader, CardBody } from '@/components/ui/Card';
@@ -124,9 +127,99 @@ function FormattedMessage({ content }: { content: string }) {
   );
 }
 
+interface TargetItem {
+  id: string;
+  projectName: string;
+  contractorName: string;
+  riskScore: number;
+  riskLevel: 'high' | 'review' | 'watch' | 'normal';
+  evidenceCount: number;
+  state: string;
+  constituency: string;
+  sanctionedAmount: number;
+  awardValue: number;
+  disbursedAmount: number;
+  contractValue: number;
+}
+
 export default function AIInvestigatorPage() {
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [targets, setTargets] = useState<TargetItem[]>(
+    availableCases.map((c) => ({
+      ...c,
+      awardValue: c.contractValue || c.sanctionedAmount,
+    }))
+  );
   const [selectedCaseId, setSelectedCaseId] = useState('AR-2026-001024');
+  const [targetSelectorOpen, setTargetSelectorOpen] = useState(false);
+  const [targetSearchQuery, setTargetSearchQuery] = useState('');
+
+  // Load official live projects from MongoDB Atlas
+  useEffect(() => {
+    api.getProjects().then((projs) => {
+      if (projs && projs.length > 0) {
+        const mapped: TargetItem[] = projs.map((p) => ({
+          id: p.id,
+          projectName: p.name,
+          contractorName: p.contractor?.name || 'Assigned Regional Contractor',
+          riskScore: p.riskScore || 65,
+          riskLevel: (p.riskLevel as 'high' | 'review' | 'watch' | 'normal') || 'review',
+          evidenceCount: Math.max(4, Math.floor((p.riskScore || 50) / 10)),
+          state: p.state,
+          constituency: p.constituency,
+          sanctionedAmount: p.sanctionedAmount || 5000000,
+          awardValue: p.estimatedCost || p.sanctionedAmount || 5000000,
+          disbursedAmount: p.expenditure || Math.round((p.sanctionedAmount || 5000000) * 0.72),
+          contractValue: p.estimatedCost || p.sanctionedAmount || 6000000,
+        }));
+
+        setTargets((prev) => {
+          const existingIds = new Set(prev.map((c) => c.id));
+          const filtered = mapped.filter((m) => !existingIds.has(m.id));
+          return [...prev, ...filtered];
+        });
+      }
+    });
+  }, []);
+
+  // Sync with URL query parameter
+  useEffect(() => {
+    const tId = searchParams.get('projectId') || searchParams.get('caseId') || searchParams.get('targetId');
+    if (tId) {
+      setSelectedCaseId(tId);
+    }
+  }, [searchParams]);
+
+  const selectedCase = targets.find((c) => c.id === selectedCaseId) || targets[0] || availableCases[0];
+
+  const selectTarget = (target: TargetItem) => {
+    setSelectedCaseId(target.id);
+    setSearchParams({ targetId: target.id });
+    setTargetSelectorOpen(false);
+
+    setMessages([
+      {
+        id: `init-${target.id}`,
+        role: 'assistant',
+        timestamp: new Date().toISOString(),
+        content: `**CONFIDENTIAL VIGILANCE BRIEFING — FILE: ${target.id}**\n\nGood day, Officer. You are now auditing **${target.projectName}** (${target.constituency}, ${target.state}) awarded to **${target.contractorName}** with a composite Risk Index of **${target.riskScore}/100**.\n\n• **Financial Outlay**: Sanctioned at ₹${(target.sanctionedAmount / 100000).toFixed(2)} Lakhs with ₹${(target.disbursedAmount / 100000).toFixed(2)} Lakhs disbursed.\n• **Vigilance Scope**: Ingested telemetry profile, CPWD Schedule of Rates benchmarks, and GFR 2017 compliance tracking.\n\nYou can ask any question, examine bid patterns, or click **"Official Vigilance Report"** to view and print the complete statutory inspection docket for this file.`,
+        structured: {
+          thoughtSteps: [
+            { step: 1, title: 'Case Loaded', detail: `Loaded forensic profile for ${target.id} (${target.constituency}, ${target.state}).` },
+            { step: 2, title: 'Statutory Standards Active', detail: 'Cross-referencing Rule 149 & 173 GFR 2017 & Section 10CA CPWD Works Manual.' },
+          ],
+          recommendedActions: [
+            { id: 'view_report', label: '📄 Official Vigilance Report', icon: 'FileText', description: 'Complete official statutory docket' },
+            { id: 'draft_notice', label: 'Draft Show-Cause Notice', icon: 'FileText', description: 'Statutory GFR/CVC Notice' },
+            { id: 'smart_lock', label: 'Engage PFMS Smart Lock', icon: 'Lock', description: 'Freeze pending tranches' },
+            { id: 'collusion_graph', label: 'Inspect Collusion Network', icon: 'Network', description: 'Director DIN linkages' },
+          ],
+        },
+      },
+    ]);
+  };
+
   const [messages, setMessages] = useState<AIMessage[]>([
     {
       id: 'init',
@@ -154,7 +247,6 @@ export default function AIInvestigatorPage() {
   const [activeModal, setActiveModal] = useState<'notice' | 'smart_lock' | 'collusion' | 'jury' | 'report' | null>(null);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const selectedCase = availableCases.find((c) => c.id === selectedCaseId) || availableCases[0];
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -235,6 +327,14 @@ export default function AIInvestigatorPage() {
         action={
           <div className="flex items-center gap-2 flex-wrap">
             <button
+              onClick={() => setTargetSelectorOpen(true)}
+              className="btn-secondary flex items-center gap-1.5 text-[12px] bg-slate-800/90 hover:bg-slate-700/80 border-slate-700 text-sky-300"
+              title="Choose which project, tender, or constituency to investigate"
+            >
+              <Search className="w-3.5 h-3.5 text-sky-400" />
+              <span>Switch Target File ({selectedCase.constituency})</span>
+            </button>
+            <button
               onClick={() => setActiveModal('report')}
               className="btn-primary flex items-center gap-1.5 text-[12px] shadow-sm shadow-sky-500/20"
             >
@@ -242,16 +342,19 @@ export default function AIInvestigatorPage() {
               <span>Official Vigilance Report</span>
             </button>
             <div className="flex items-center gap-2">
-              <span className="text-[11px] text-slate-400 font-medium">Case:</span>
+              <span className="text-[11px] text-slate-400 font-medium hidden sm:inline">Active:</span>
               <select
                 value={selectedCaseId}
-                onChange={(e) => setSelectedCaseId(e.target.value)}
+                onChange={(e) => {
+                  const t = targets.find((c) => c.id === e.target.value);
+                  if (t) selectTarget(t);
+                }}
                 aria-label="Select investigation case"
-                className="text-[12px] bg-slate-800/80 border border-slate-700/50 text-white rounded-md px-2.5 py-1.5 focus:outline-none focus:border-sky-500"
+                className="text-[12px] bg-slate-800/80 border border-slate-700/50 text-white rounded-md px-2.5 py-1.5 focus:outline-none focus:border-sky-500 max-w-[220px] truncate"
               >
-                {availableCases.map((c) => (
+                {targets.slice(0, 60).map((c) => (
                   <option key={c.id} value={c.id} className="bg-slate-900 text-white">
-                    {c.id} — {c.constituency} ({c.riskScore}/100)
+                    {c.constituency} — {c.id} ({c.riskScore}/100)
                   </option>
                 ))}
               </select>
@@ -552,6 +655,104 @@ export default function AIInvestigatorPage() {
             onOpenNoticeModal={() => setActiveModal('notice')}
             onOpenSyndicateModal={() => setActiveModal('collusion')}
           />
+        </div>
+      </Modal>
+
+      {/* Target Selection Modal */}
+      <Modal
+        open={targetSelectorOpen}
+        onClose={() => setTargetSelectorOpen(false)}
+        title="Select Target File to Investigate"
+        subtitle={`Choose any of the ${targets.length} official projects and cases across 543 Parliamentary Constituencies`}
+        size="xl"
+      >
+        <div className="space-y-4">
+          {/* Search Input */}
+          <div className="flex items-center gap-2">
+            <div className="relative flex-1">
+              <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <input
+                type="text"
+                value={targetSearchQuery}
+                onChange={(e) => setTargetSearchQuery(e.target.value)}
+                placeholder="Search constituency (e.g. Varanasi, Kannauj, Pune), contractor, or project ID..."
+                className="input pl-9 text-[13px] bg-slate-900/90 border-slate-700 w-full"
+                autoFocus
+              />
+            </div>
+            {targetSearchQuery && (
+              <button
+                onClick={() => setTargetSearchQuery('')}
+                className="btn-secondary text-[12px]"
+              >
+                Clear
+              </button>
+            )}
+          </div>
+
+          {/* Project List */}
+          <div className="max-h-[420px] overflow-y-auto space-y-2 pr-1 scrollbar-thin">
+            {targets
+              .filter((t) => {
+                if (!targetSearchQuery.trim()) return true;
+                const q = targetSearchQuery.toLowerCase();
+                return (
+                  t.constituency.toLowerCase().includes(q) ||
+                  t.state.toLowerCase().includes(q) ||
+                  t.projectName.toLowerCase().includes(q) ||
+                  t.contractorName.toLowerCase().includes(q) ||
+                  t.id.toLowerCase().includes(q)
+                );
+              })
+              .slice(0, 50)
+              .map((target) => (
+                <div
+                  key={target.id}
+                  onClick={() => selectTarget(target)}
+                  className={cn(
+                    "p-3 rounded-lg border transition-all cursor-pointer flex items-center justify-between gap-3",
+                    target.id === selectedCase.id
+                      ? "bg-sky-500/15 border-sky-500/50 shadow-md shadow-sky-500/10"
+                      : "bg-slate-900/60 border-slate-800 hover:bg-slate-800/80 hover:border-slate-700"
+                  )}
+                >
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="text-[12px] font-bold text-sky-400 font-mono">{target.id}</span>
+                      <span className="text-[10px] px-1.5 py-0.5 bg-slate-800 border border-slate-700 text-slate-300 rounded font-medium">
+                        {target.constituency}, {target.state}
+                      </span>
+                      <RiskBadge level={target.riskLevel} />
+                    </div>
+                    <div className="text-[13px] font-semibold text-white mt-1 truncate">{target.projectName}</div>
+                    <div className="text-[11px] text-slate-400 mt-0.5 flex items-center gap-4 flex-wrap">
+                      <span>Agency: <strong className="text-slate-300">{target.contractorName}</strong></span>
+                      <span>Budget: <strong className="text-slate-300">₹{(target.sanctionedAmount / 100000).toFixed(1)} Lakhs</strong></span>
+                      <span>Score: <strong className="text-amber-400">{target.riskScore}/100</strong></span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2 flex-shrink-0">
+                    {target.id === selectedCase.id ? (
+                      <span className="text-[11px] font-semibold text-sky-300 px-3 py-1.5 bg-sky-500/20 border border-sky-500/40 rounded flex items-center gap-1">
+                        <Check className="w-3.5 h-3.5" /> Active Target
+                      </span>
+                    ) : (
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          selectTarget(target);
+                        }}
+                        className="btn-primary text-[11px] px-3 py-1.5 flex items-center gap-1"
+                      >
+                        <Bot className="w-3 h-3" />
+                        <span>Audit File</span>
+                      </button>
+                    )}
+                  </div>
+                </div>
+              ))}
+          </div>
         </div>
       </Modal>
     </div>

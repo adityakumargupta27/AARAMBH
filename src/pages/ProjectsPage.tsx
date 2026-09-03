@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, Filter, X, Download, ArrowUpDown, ChevronLeft, ChevronRight, FolderKanban, Database } from 'lucide-react';
+import { Search, Filter, X, Download, ArrowUpDown, ChevronLeft, ChevronRight, FolderKanban, Database, Bot } from 'lucide-react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Card, CardBody } from '@/components/ui/Card';
 import { RiskBadge, RiskBar } from '@/components/ui/RiskBadge';
@@ -197,6 +197,7 @@ export default function ProjectsPage() {
                   <th className="cursor-pointer" onClick={() => handleSort('lastUpdated')}>
                     <span className="flex items-center gap-1">Updated <ArrowUpDown className="w-3 h-3" /></span>
                   </th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -216,6 +217,16 @@ export default function ProjectsPage() {
                       </div>
                     </td>
                     <td className="text-[12px] text-slate-500">{formatDate(p.lastUpdated)}</td>
+                    <td onClick={(e) => e.stopPropagation()}>
+                      <button
+                        onClick={() => navigate(`/ai-investigator?projectId=${p.id}`)}
+                        className="btn-ghost btn-xs text-[11px] text-sky-400 hover:text-sky-300 hover:bg-sky-500/15 flex items-center gap-1 px-2 py-1 rounded border border-sky-500/20"
+                        title="Open AI Forensic Investigation & Report"
+                      >
+                        <Bot className="w-3 h-3" />
+                        <span>Audit</span>
+                      </button>
+                    </td>
                   </tr>
                 ))}
               </tbody>
