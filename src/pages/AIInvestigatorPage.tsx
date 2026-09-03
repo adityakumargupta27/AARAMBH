@@ -324,15 +324,15 @@ export default function AIInvestigatorPage() {
       <PageHeader
         title="AI Investigator Agent"
         subtitle="Autonomous forensic intelligence agent for procurement audit, GFR compliance, and pre-disbursement verification."
-        action={
+        actions={
           <div className="flex items-center gap-2 flex-wrap">
             <button
               onClick={() => setTargetSelectorOpen(true)}
-              className="btn-secondary flex items-center gap-1.5 text-[12px] bg-slate-800/90 hover:bg-slate-700/80 border-slate-700 text-sky-300"
+              className="btn-secondary flex items-center gap-1.5 text-[12px] bg-slate-800/90 hover:bg-slate-700/80 border-slate-700 text-sky-300 shadow-sm"
               title="Choose which project, tender, or constituency to investigate"
             >
               <Search className="w-3.5 h-3.5 text-sky-400" />
-              <span>Switch Target File ({selectedCase.constituency})</span>
+              <span>Choose Target ({selectedCase.constituency})</span>
             </button>
             <button
               onClick={() => setActiveModal('report')}
@@ -367,8 +367,33 @@ export default function AIInvestigatorPage() {
         {/* Left: Case Context & Forensic Telemetry */}
         <div className="space-y-3">
           <Card>
-            <CardHeader title="Case Dossier" subtitle="Active telemetry profile" />
+            <CardHeader
+              title="Case Dossier"
+              subtitle="Active telemetry profile"
+              action={
+                <button
+                  onClick={() => setTargetSelectorOpen(true)}
+                  className="btn-primary text-[11px] px-2.5 py-1 flex items-center gap-1 bg-sky-600 hover:bg-sky-500 shadow-sm"
+                  title="Choose which constituency or project to investigate"
+                >
+                  <Search className="w-3 h-3" /> Change
+                </button>
+              }
+            />
             <CardBody className="space-y-3">
+              {/* Prominent Change Target Button */}
+              <button
+                onClick={() => setTargetSelectorOpen(true)}
+                className="w-full py-2 px-3 rounded-md bg-sky-500/15 hover:bg-sky-500/25 border border-sky-500/40 text-sky-300 font-semibold text-[12px] flex items-center justify-between transition-all"
+              >
+                <div className="flex items-center gap-1.5 truncate">
+                  <Search className="w-3.5 h-3.5 text-sky-400 flex-shrink-0" />
+                  <span className="truncate">Choose from 543 Constituencies</span>
+                </div>
+                <span className="text-[10px] px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-200 uppercase font-mono">
+                  Select
+                </span>
+              </button>
               <div>
                 <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Case Reference</div>
                 <button
