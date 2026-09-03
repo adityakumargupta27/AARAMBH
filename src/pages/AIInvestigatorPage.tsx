@@ -31,6 +31,7 @@ import { JurySandboxModal } from '@/components/ui/JurySandboxModal';
 import { SmartLockWidget } from '@/components/ui/SmartLockWidget';
 import { VigilanceReportModal } from '@/components/ui/VigilanceReportModal';
 import { api } from '@/services/api';
+import { officialMPAllocations } from '@/data/officialMpladsData';
 import { aiQuickQuestions, demoRiskAssessment } from '@/data/mockData';
 import type { AIMessage } from '@/types';
 import { cn } from '@/utils/cn';
@@ -131,6 +132,7 @@ interface TargetItem {
   id: string;
   projectName: string;
   contractorName: string;
+  mpName?: string;
   riskScore: number;
   riskLevel: 'high' | 'review' | 'watch' | 'normal';
   evidenceCount: number;
@@ -140,20 +142,50 @@ interface TargetItem {
   awardValue: number;
   disbursedAmount: number;
   contractValue: number;
+  isAugmented?: boolean;
 }
+
+const all543OfficialTargets: TargetItem[] = [
+  ...availableCases.map((c) => ({
+    ...c,
+    awardValue: c.contractValue || c.sanctionedAmount,
+    mpName: 'Assigned MP',
+  })),
+  ...officialMPAllocations.map((c, i) => {
+    const isAugmented = !c.isBaseline;
+    const excessRatio = (c.allocatedAmount - 147000000) / 147000000;
+    const riskScore = isAugmented ? Math.min(96, Math.round(65 + excessRatio * 35)) : 38;
+    const riskLevel: 'high' | 'review' | 'watch' | 'normal' =
+      riskScore >= 75 ? 'high' : riskScore >= 50 ? 'review' : 'normal';
+
+    return {
+      id: `MPLADS-${String(i + 1).padStart(4, '0')}`,
+      projectName: `MPLADS Public Development Works (${c.constituency})`,
+      contractorName: `${c.state} Regional Infrastructure Agency`,
+      mpName: c.mpName,
+      riskScore,
+      riskLevel,
+      evidenceCount: isAugmented ? 12 : 5,
+      state: c.state,
+      constituency: c.constituency,
+      sanctionedAmount: c.allocatedAmount,
+      awardValue: Math.round(c.allocatedAmount * 0.94),
+      disbursedAmount: Math.round(c.allocatedAmount * 0.72),
+      contractValue: c.allocatedAmount,
+      isAugmented,
+    };
+  }),
+];
 
 export default function AIInvestigatorPage() {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
-  const [targets, setTargets] = useState<TargetItem[]>(
-    availableCases.map((c) => ({
-      ...c,
-      awardValue: c.contractValue || c.sanctionedAmount,
-    }))
-  );
+  const [targets, setTargets] = useState<TargetItem[]>(all543OfficialTargets);
   const [selectedCaseId, setSelectedCaseId] = useState('AR-2026-001024');
   const [targetSelectorOpen, setTargetSelectorOpen] = useState(false);
   const [targetSearchQuery, setTargetSearchQuery] = useState('');
+  const [targetFilterState, setTargetFilterState] = useState('');
+  const [targetFilterType, setTargetFilterType] = useState<'all' | 'augmented' | 'baseline'>('all');
 
   // Load official live projects from MongoDB Atlas
   useEffect(() => {
@@ -410,9 +442,21 @@ export default function AIInvestigatorPage() {
                   {selectedCase.constituency}, {selectedCase.state}
                 </div>
               </div>
+              {selectedCase.mpName && (
+                <div>
+                  <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Member of Parliament (Lok Sabha)</div>
+                  <div className="text-[13px] font-bold text-amber-300">Hon. {selectedCase.mpName}</div>
+                </div>
+              )}
               <div>
-                <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Contractor</div>
+                <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Contractor / Agency</div>
                 <div className="text-[13px] font-medium text-slate-100">{selectedCase.contractorName}</div>
+              </div>
+              <div>
+                <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">MoSPI Allocated Limit</div>
+                <div className="text-[14px] font-bold text-emerald-400 tabular-nums">
+                  ₹{(selectedCase.sanctionedAmount / 10000000).toFixed(2)} Crores
+                </div>
               </div>
               <div className="flex items-center gap-2 pt-1 border-t border-slate-700/30">
                 <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Composite Risk:</div>
@@ -691,7 +735,7 @@ export default function AIInvestigatorPage() {
         subtitle={`Choose any of the ${targets.length} official projects and cases across 543 Parliamentary Constituencies`}
         size="xl"
       >
-        <div className="space-y-4">
+        <div className="space-y-3">
           {/* Search Input */}
           <div className="flex items-center gap-2">
             <div className="relative flex-1">
@@ -700,7 +744,7 @@ export default function AIInvestigatorPage() {
                 type="text"
                 value={targetSearchQuery}
                 onChange={(e) => setTargetSearchQuery(e.target.value)}
-                placeholder="Search constituency (e.g. Varanasi, Kannauj, Pune), contractor, or project ID..."
+                placeholder="Search constituency (e.g. Varanasi, Kannauj, Pune), MP name (e.g. Modi, Akhilesh), or project..."
                 className="input pl-9 text-[13px] bg-slate-900/90 border-slate-700 w-full"
                 autoFocus
               />
@@ -715,10 +759,71 @@ export default function AIInvestigatorPage() {
             )}
           </div>
 
-          {/* Project List */}
-          <div className="max-h-[420px] overflow-y-auto space-y-2 pr-1 scrollbar-thin">
+          {/* State Filter & Type Selector */}
+          <div className="flex items-center gap-2 flex-wrap text-[12px]">
+            <select
+              value={targetFilterState}
+              onChange={(e) => setTargetFilterState(e.target.value)}
+              aria-label="Filter by state"
+              className="bg-slate-900 border border-slate-700 text-white rounded-md px-2.5 py-1.5 focus:outline-none focus:border-sky-500 max-w-[200px]"
+            >
+              <option value="">All States ({targets.length})</option>
+              {Array.from(new Set(targets.map((t) => t.state))).sort().map((st) => (
+                <option key={st} value={st}>
+                  {st} ({targets.filter((t) => t.state === st).length})
+                </option>
+              ))}
+            </select>
+
+            <div className="flex items-center rounded-md bg-slate-900 border border-slate-800 p-0.5 text-[11px]">
+              <button
+                onClick={() => setTargetFilterType('all')}
+                className={cn("px-2.5 py-1 rounded transition-colors", targetFilterType === 'all' ? "bg-sky-600 text-white font-semibold" : "text-slate-400 hover:text-slate-200")}
+              >
+                All (543)
+              </button>
+              <button
+                onClick={() => setTargetFilterType('augmented')}
+                className={cn("px-2.5 py-1 rounded transition-colors", targetFilterType === 'augmented' ? "bg-amber-600 text-white font-semibold" : "text-slate-400 hover:text-slate-200")}
+              >
+                High Outlay (156)
+              </button>
+              <button
+                onClick={() => setTargetFilterType('baseline')}
+                className={cn("px-2.5 py-1 rounded transition-colors", targetFilterType === 'baseline' ? "bg-slate-700 text-white font-semibold" : "text-slate-400 hover:text-slate-200")}
+              >
+                Standard (387)
+              </button>
+            </div>
+
+            <span className="text-[11px] text-slate-400 ml-auto font-mono">
+              Showing <strong className="text-sky-400">{
+                targets.filter((t) => {
+                  if (targetFilterState && t.state !== targetFilterState) return false;
+                  if (targetFilterType === 'augmented' && !t.isAugmented) return false;
+                  if (targetFilterType === 'baseline' && t.isAugmented) return false;
+                  if (!targetSearchQuery.trim()) return true;
+                  const q = targetSearchQuery.toLowerCase();
+                  return (
+                    t.constituency.toLowerCase().includes(q) ||
+                    t.state.toLowerCase().includes(q) ||
+                    t.projectName.toLowerCase().includes(q) ||
+                    t.contractorName.toLowerCase().includes(q) ||
+                    (t.mpName && t.mpName.toLowerCase().includes(q)) ||
+                    t.id.toLowerCase().includes(q)
+                  );
+                }).length
+              }</strong> of {targets.length} official constituencies
+            </span>
+          </div>
+
+          {/* Full 543 Parliamentary Constituency List */}
+          <div className="max-h-[460px] overflow-y-auto space-y-2 pr-1 scrollbar-thin">
             {targets
               .filter((t) => {
+                if (targetFilterState && t.state !== targetFilterState) return false;
+                if (targetFilterType === 'augmented' && !t.isAugmented) return false;
+                if (targetFilterType === 'baseline' && t.isAugmented) return false;
                 if (!targetSearchQuery.trim()) return true;
                 const q = targetSearchQuery.toLowerCase();
                 return (
@@ -726,10 +831,10 @@ export default function AIInvestigatorPage() {
                   t.state.toLowerCase().includes(q) ||
                   t.projectName.toLowerCase().includes(q) ||
                   t.contractorName.toLowerCase().includes(q) ||
+                  (t.mpName && t.mpName.toLowerCase().includes(q)) ||
                   t.id.toLowerCase().includes(q)
                 );
               })
-              .slice(0, 50)
               .map((target) => (
                 <div
                   key={target.id}
@@ -747,13 +852,18 @@ export default function AIInvestigatorPage() {
                       <span className="text-[10px] px-1.5 py-0.5 bg-slate-800 border border-slate-700 text-slate-300 rounded font-medium">
                         {target.constituency}, {target.state}
                       </span>
+                      {target.mpName && (
+                        <span className="text-[10px] px-1.5 py-0.5 bg-amber-500/10 border border-amber-500/20 text-amber-300 rounded font-semibold">
+                          MP: {target.mpName}
+                        </span>
+                      )}
                       <RiskBadge level={target.riskLevel} />
                     </div>
                     <div className="text-[13px] font-semibold text-white mt-1 truncate">{target.projectName}</div>
                     <div className="text-[11px] text-slate-400 mt-0.5 flex items-center gap-4 flex-wrap">
                       <span>Agency: <strong className="text-slate-300">{target.contractorName}</strong></span>
-                      <span>Budget: <strong className="text-slate-300">₹{(target.sanctionedAmount / 100000).toFixed(1)} Lakhs</strong></span>
-                      <span>Score: <strong className="text-amber-400">{target.riskScore}/100</strong></span>
+                      <span>Allocated Limit: <strong className="text-emerald-400">₹{(target.sanctionedAmount / 10000000).toFixed(2)} Cr</strong></span>
+                      <span>Risk Score: <strong className="text-amber-400">{target.riskScore}/100</strong></span>
                     </div>
                   </div>
 
