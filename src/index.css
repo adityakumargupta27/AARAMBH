@@ -63,7 +63,7 @@
   }
 
   .card-hover {
-    @apply card transition-all duration-200 hover:border-slate-300 hover:shadow-sm;
+    @apply card transition-all duration-200 hover:border-slate-300 hover:shadow-card-hover hover:-translate-y-0.5;
   }
 
   .input {
@@ -147,11 +147,16 @@
   }
 
   .nav-link {
-    @apply flex items-center gap-2.5 px-3 py-2 text-[13px] font-medium text-slate-600 rounded-md transition-all duration-150 hover:bg-slate-100 hover:text-slate-900 cursor-pointer;
+    @apply flex items-center gap-2.5 px-3 py-2 text-[13px] font-medium text-slate-400 rounded-md transition-all duration-150 hover:bg-navy-800/60 hover:text-slate-200 cursor-pointer relative;
   }
 
   .nav-link-active {
-    @apply bg-navy-50 text-navy-800 hover:bg-navy-50 hover:text-navy-800;
+    @apply bg-navy-800 text-white hover:bg-navy-800 hover:text-white;
+  }
+
+  .nav-link-active::before {
+    content: '';
+    @apply absolute left-0 top-1.5 bottom-1.5 w-0.5 bg-navy-400 rounded-full;
   }
 
   .nav-section-label {
@@ -184,16 +189,27 @@
   }
 
   .animate-fade-in {
-    animation: fadeIn 200ms ease-out;
+    animation: fadeIn 250ms ease-out;
   }
 
   .animate-slide-up {
-    animation: slideUp 250ms ease-out;
+    animation: slideUp 300ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .animate-slide-in-right {
-    animation: slideInRight 250ms ease-out;
+    animation: slideInRight 300ms cubic-bezier(0.16, 1, 0.3, 1);
   }
+
+  .animate-scale-in {
+    animation: scaleIn 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-stagger-1 { animation: slideUp 300ms cubic-bezier(0.16,1,0.3,1) both; animation-delay: 40ms; }
+  .animate-stagger-2 { animation: slideUp 300ms cubic-bezier(0.16,1,0.3,1) both; animation-delay: 80ms; }
+  .animate-stagger-3 { animation: slideUp 300ms cubic-bezier(0.16,1,0.3,1) both; animation-delay: 120ms; }
+  .animate-stagger-4 { animation: slideUp 300ms cubic-bezier(0.16,1,0.3,1) both; animation-delay: 160ms; }
+  .animate-stagger-5 { animation: slideUp 300ms cubic-bezier(0.16,1,0.3,1) both; animation-delay: 200ms; }
+  .animate-stagger-6 { animation: slideUp 300ms cubic-bezier(0.16,1,0.3,1) both; animation-delay: 240ms; }
 
   @keyframes fadeIn {
     from { opacity: 0; }
@@ -201,21 +217,37 @@
   }
 
   @keyframes slideUp {
-    from { opacity: 0; transform: translateY(8px); }
+    from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
   @keyframes slideInRight {
-    from { opacity: 0; transform: translateX(20px); }
+    from { opacity: 0; transform: translateX(24px); }
     to { opacity: 1; transform: translateX(0); }
   }
 
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
   @keyframes pulse-dot {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
   }
 
   .pulse-dot {
     animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  .shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
   }
 }

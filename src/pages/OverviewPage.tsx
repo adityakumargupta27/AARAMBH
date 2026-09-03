@@ -55,12 +55,12 @@ export default function OverviewPage() {
 
       {/* KPI Section */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-        <KPICard label="Total Projects" value={kpiData.totalProjects.toLocaleString('en-IN')} supporting="Across monitored records" trend={{ direction: 'up', value: '+2.1%' }} to="/projects" icon={<FolderKanban className="w-4 h-4" />} />
-        <KPICard label="Active Projects" value={kpiData.activeProjects.toLocaleString('en-IN')} supporting="Currently active" trend={{ direction: 'up', value: '+1.4%' }} to="/projects" icon={<TrendingUp className="w-4 h-4" />} />
-        <KPICard label="Total Tenders" value={kpiData.totalTenders.toLocaleString('en-IN')} supporting="Procurement opportunities" trend={{ direction: 'up', value: '+3.8%' }} to="/tenders" icon={<FileText className="w-4 h-4" />} />
-        <KPICard label="Contracts Awarded" value={kpiData.contractsAwarded.toLocaleString('en-IN')} supporting="Awarded contracts" trend={{ direction: 'up', value: '+1.9%' }} to="/contracts" icon={<PenTool className="w-4 h-4" />} />
-        <KPICard label="Procurement Value" value={kpiData.procurementValue} supporting="Aggregate monitored value" trend={{ direction: 'up', value: '+5.2%' }} icon={<IndianRupee className="w-4 h-4" />} />
-        <KPICard label="High Priority Reviews" value={kpiData.highPriorityReviews} supporting="Require investigation" trend={{ direction: 'up', value: '+6' }} accent="risk" to="/risk" icon={<AlertTriangle className="w-4 h-4" />} />
+        <KPICard label="Total Projects" value={kpiData.totalProjects.toLocaleString('en-IN')} supporting="Across monitored records" trend={{ direction: 'up', value: '+2.1%' }} to="/projects" icon={<FolderKanban className="w-4 h-4" />} className="animate-stagger-1" />
+        <KPICard label="Active Projects" value={kpiData.activeProjects.toLocaleString('en-IN')} supporting="Currently active" trend={{ direction: 'up', value: '+1.4%' }} to="/projects" icon={<TrendingUp className="w-4 h-4" />} className="animate-stagger-2" />
+        <KPICard label="Total Tenders" value={kpiData.totalTenders.toLocaleString('en-IN')} supporting="Procurement opportunities" trend={{ direction: 'up', value: '+3.8%' }} to="/tenders" icon={<FileText className="w-4 h-4" />} className="animate-stagger-3" />
+        <KPICard label="Contracts Awarded" value={kpiData.contractsAwarded.toLocaleString('en-IN')} supporting="Awarded contracts" trend={{ direction: 'up', value: '+1.9%' }} to="/contracts" icon={<PenTool className="w-4 h-4" />} className="animate-stagger-4" />
+        <KPICard label="Procurement Value" value={kpiData.procurementValue} supporting="Aggregate monitored value" trend={{ direction: 'up', value: '+5.2%' }} icon={<IndianRupee className="w-4 h-4" />} className="animate-stagger-5" />
+        <KPICard label="High Priority Reviews" value={kpiData.highPriorityReviews} supporting="Require investigation" trend={{ direction: 'up', value: '+6' }} accent="risk" to="/risk" icon={<AlertTriangle className="w-4 h-4" />} className="animate-stagger-6" />
       </div>
 
       {/* Risk Overview — two columns */}

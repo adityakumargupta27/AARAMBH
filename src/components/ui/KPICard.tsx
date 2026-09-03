@@ -11,13 +11,14 @@ interface KPICardProps {
   accent?: 'default' | 'risk';
   to?: string;
   icon?: ReactNode;
+  className?: string;
 }
 
-export function KPICard({ label, value, supporting, trend, accent = 'default', to, icon }: KPICardProps) {
+export function KPICard({ label, value, supporting, trend, accent = 'default', to, icon, className }: KPICardProps) {
   const content = (
     <div
       className={cn(
-        'card p-4 transition-all duration-200',
+        'card p-4 transition-all duration-200', className,
         to && 'hover:border-slate-300 hover:shadow-card-hover cursor-pointer',
         accent === 'risk' && 'border-l-4 border-l-red-400'
       )}

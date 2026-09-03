@@ -41,7 +41,7 @@ export function Modal({ open, onClose, title, subtitle, children, footer, size =
       <div className="absolute inset-0 bg-navy-950/40 backdrop-blur-sm" onClick={onClose} />
       <div
         className={cn(
-          'relative bg-white rounded-lg shadow-modal w-full max-h-[90vh] flex flex-col animate-slide-up',
+          'relative bg-white rounded-lg shadow-modal w-full max-h-[90vh] flex flex-col animate-scale-in',
           sizeClasses[size]
         )}
       >

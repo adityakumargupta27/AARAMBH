@@ -68,7 +68,7 @@ export function Sidebar({ collapsed, onToggle, mobileOpen, onMobileClose }: Side
   const sidebarContent = (
     <div className="flex flex-col h-full bg-navy-900 text-slate-300">
       {/* Logo */}
-      <div className={cn('flex items-center gap-2.5 px-4 h-16 border-b border-navy-800 flex-shrink-0', collapsed && 'justify-center px-2')}>
+      <div className={cn('flex items-center gap-2.5 px-4 h-16 border-b border-navy-800 flex-shrink-0 bg-gradient-to-b from-navy-800/50 to-transparent', collapsed && 'justify-center px-2')}>
         <div className="w-8 h-8 rounded-lg bg-navy-700 flex items-center justify-center flex-shrink-0">
           <Shield className="w-4.5 h-4.5 text-white" strokeWidth={2.5} />
         </div>
