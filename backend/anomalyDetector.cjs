@@ -401,24 +401,59 @@ function queryForensicAgent(question = '', caseId = 'AR-2026-001024', customCont
   const isGreeting = /^(hi|hello|hey|namaste|greetings|good\s*(morning|afternoon|evening)|help)\b/i.test(q);
 
   if (isGreeting) {
-    answer = `Hello Investigator! I am your **Aarambha AI Forensic Vigilance Agent**.
+    answer = `**CONFIDENTIAL VIGILANCE BRIEFING — CASE ${ctx.caseId}**
 
-I am actively tracking **${ctx.projectName}** (${ctx.constituency}, ${ctx.state}) assigned to **${ctx.contractorName}** (Risk Score: 82/100).
+Good day, Officer. Routine algorithmic screening has flagged **Tender T-9281** (${ctx.projectName}, ${ctx.constituency}) awarded to **${ctx.contractorName}** with an elevated Risk Index of **82/100 (HIGH PRIORITY)**.
 
-You can ask me to:
-• **Audit CPWD Rates**: *"Why is the unit price flagged?"*
-• **Examine Bid Collusion**: *"Check tender spread and cover bidders"*
-• **Audit Disbursement vs Milestones**: *"Compare physical progress with financial outlays"*
-• **Verify GFR/CVC Rules**: *"What statutory violations are cited?"*
-• **Simulate Actions**: Ask to draft a show-cause notice or engage the PFMS smart lock.`;
+• **Core Concerns**: Unapproved civil unit rate (+45.5% over CPWD benchmark), a compressed 2.4% cartel bid spread with directorship overlap (DIN: 08472911), and an unverified financial-to-physical progress disparity (+18.8%).
+
+You can click **"Official Vigilance Report"** above or below to examine, print, or download the full statutory inspection docket.`;
     thoughtSteps.length = 0;
     thoughtSteps.push({
       step: 1,
-      title: 'Session Ready',
-      detail: `Agent initialized for ${ctx.caseId} (${ctx.projectName}). Ready to evaluate forensic evidence, GFR rules, and CPWD rates.`
+      title: 'Dossier Loaded',
+      detail: `Active file: ${ctx.caseId} (${ctx.projectName}). Cross-referencing Rule 149/173 GFR 2017 & Section 10CA CPWD Manual.`
     });
-    statutoryRules.length = 0; // Clear violation badges for simple greeting
-    recommendedActions = [allActions[0], allActions[1], allActions[2]];
+    statutoryRules.length = 0; // Clear violation badges for initial briefing
+    recommendedActions = [
+      { id: 'view_report', label: '📄 View Full Vigilance Report', icon: 'FileText', description: 'Complete official CAG/CVC audit docket' },
+      allActions[0],
+      allActions[1]
+    ];
+  } else if (q.includes('report') || q.includes('brief') || q.includes('memo') || q.includes('docket') || q.includes('inspect') || q.includes('audit')) {
+    answer = `### 🏛️ CENTRAL VIGILANCE AUDIT BRIEFING (MEMO: CVC/MoSPI/2026/${ctx.caseId})
+
+**Target Project**: ${ctx.projectName} (${ctx.constituency}, ${ctx.state})
+**Executing Agency**: ${ctx.contractorName} | **Composite Risk Index**: 82/100 (HIGH PRIORITY)
+
+---
+
+#### 1. Executive Inspection Summary
+Pursuant to routine procurement surveillance, automated algorithmic inspection flagged substantial statutory deviations in Work Order **WO-9281**. While initial sanction was ₹${(ctx.sanctionedAmount / 100000).toFixed(2)} Lakhs, agreement documentation reveals an unapproved variation to ₹${(ctx.contractValue / 100000).toFixed(2)} Lakhs (+66.7% overrun).
+
+#### 2. Key Forensic Findings
+• **Civil Rate Escalation**: Primary concrete works billed at **₹${ctx.unitPrice.toLocaleString('en-IN')}/unit** (+${ctx.unitDeviation}% over CPWD Schedule of Rates benchmark of ₹${ctx.benchmarkPrice.toLocaleString('en-IN')}/unit). No Superintending Engineer variation sanction exists under CPWD Manual Section 10CA.
+• **Cartel Coordination**: Bidding spread across 5 participants is restricted to **${ctx.bidSpread}%** (regional baseline: ${ctx.historicalSpread}%). Shared DIN (08472911) detected between L1 winner and L2 bidder violating Rule 173 of GFR 2017.
+• **Disbursement-Progress Divergence**: On-ground physical completion stands at **${ctx.physicalProgress}%**, whereas payouts have reached **${ctx.financialUtilization}%** (₹${(ctx.disbursedAmount / 100000).toFixed(2)} Lakhs), leaving ₹18.40L unverified under Rule 149 of GFR 2017.
+
+#### 3. Operative Directives
+1. **PFMS Escrow Lock**: Immediate pre-disbursement hold on remaining ₹18.40 Lakhs.
+2. **Statutory Notice**: Issue 7-day Show-Cause Notice under Rule 173 GFR 2017.
+3. **Physical Inspection**: Constitute Joint Measurement Committee with Executive Engineer (PWD).
+
+*Click **"Generate Official Audit Report"** below to print or download the complete 3-page CAG/CVC audit docket.*`;
+
+    thoughtSteps.length = 0;
+    thoughtSteps.push({
+      step: 1,
+      title: 'Audit Dossier Compiled',
+      detail: `Aggregated 12 telemetry records for ${ctx.caseId}. Formatted as official CVC/MoSPI inspection memorandum.`
+    });
+    recommendedActions = [
+      { id: 'view_report', label: '📄 Generate Official Audit Report', icon: 'FileText', description: 'Print or export official CVC/CAG docket' },
+      allActions[0],
+      allActions[1]
+    ];
   } else if (q.includes('flag') || q.includes('why') || q.includes('score') || q.includes('risk')) {
     answer = `**Case ${ctx.caseId}** was flagged with a composite risk score of **82/100 (HIGH PRIORITY)** based on three concurrent forensic anomalies:
 

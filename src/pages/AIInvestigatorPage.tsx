@@ -26,6 +26,7 @@ import { ShowCauseNoticeModal } from '@/components/ui/ShowCauseNoticeModal';
 import { CollusionNetworkModal } from '@/components/ui/CollusionNetworkModal';
 import { JurySandboxModal } from '@/components/ui/JurySandboxModal';
 import { SmartLockWidget } from '@/components/ui/SmartLockWidget';
+import { VigilanceReportModal } from '@/components/ui/VigilanceReportModal';
 import { api } from '@/services/api';
 import { aiQuickQuestions, demoRiskAssessment } from '@/data/mockData';
 import type { AIMessage } from '@/types';
@@ -82,15 +83,16 @@ export default function AIInvestigatorPage() {
       role: 'assistant',
       timestamp: new Date().toISOString(),
       content:
-        'I am the Aarambha AI Investigator Agent. I have ingested the case telemetry, Schedule of Rates (CPWD), tender bid registries, and PFMS payment records. Ask me any question about the evidence, statistical anomalies, or statutory violations.',
+        '**CONFIDENTIAL VIGILANCE BRIEFING — CASE AR-2026-001024**\n\nGood day, Officer. Routine algorithmic screening has flagged **Tender T-9281** (Construction of Community Hall, Pune) awarded to **ABC Infrastructure Pvt Ltd** with an elevated Risk Index of **82/100 (HIGH PRIORITY)**.\n\n• **Primary Irregularities**: Unapproved civil unit rate (+45.5% over CPWD benchmark), a compressed 2.4% cartel bid spread with directorship overlap (DIN: 08472911), and an unverified financial-to-physical progress disparity (+18.8%).\n\nYou can click **"Official Vigilance Report"** above or below to examine, print, or download the full statutory inspection docket.',
       structured: {
         thoughtSteps: [
-          { step: 1, title: 'Telemetry Ingestion', detail: 'Loaded 12 primary evidence records for Case AR-2026-001024.' },
-          { step: 2, title: 'Forensic Models Active', detail: 'Benford χ², CPWD SoR Rate Variance, and Bid Cluster detectors ready.' },
+          { step: 1, title: 'Case Loaded', detail: 'Loaded forensic profile for AR-2026-001024 (Pune, Maharashtra).' },
+          { step: 2, title: 'Statutory Standards Active', detail: 'Cross-referencing Rule 149 & 173 GFR 2017 & Section 10CA CPWD Works Manual.' },
         ],
         recommendedActions: [
+          { id: 'view_report', label: '📄 Official Vigilance Report', icon: 'FileText', description: 'Complete official CAG/CVC audit docket' },
           { id: 'draft_notice', label: 'Draft Show-Cause Notice', icon: 'FileText', description: 'Statutory GFR/CVC Notice' },
-          { id: 'smart_lock', label: 'Engage PFMS Smart Lock', icon: 'Lock', description: 'Freeze pending tranches' },
+          { id: 'smart_lock', label: 'Engage PFMS Smart Lock', icon: 'Lock', description: 'Freeze pending ₹18.4L tranche' },
           { id: 'collusion_graph', label: 'Inspect Collusion Network', icon: 'Network', description: 'Director DIN linkages' },
         ],
       },
@@ -99,7 +101,7 @@ export default function AIInvestigatorPage() {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [expandedThoughts, setExpandedThoughts] = useState<Record<string, boolean>>({ init: false });
-  const [activeModal, setActiveModal] = useState<'notice' | 'smart_lock' | 'collusion' | 'jury' | null>(null);
+  const [activeModal, setActiveModal] = useState<'notice' | 'smart_lock' | 'collusion' | 'jury' | 'report' | null>(null);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const selectedCase = availableCases.find((c) => c.id === selectedCaseId) || availableCases[0];
@@ -117,6 +119,7 @@ export default function AIInvestigatorPage() {
     else if (actionId === 'smart_lock') setActiveModal('smart_lock');
     else if (actionId === 'collusion_graph') setActiveModal('collusion');
     else if (actionId === 'jury_sandbox') setActiveModal('jury');
+    else if (actionId === 'view_report' || actionId === 'formal_report') setActiveModal('report');
   };
 
   const sendMessage = async (question: string) => {
@@ -180,20 +183,29 @@ export default function AIInvestigatorPage() {
         title="AI Investigator Agent"
         subtitle="Autonomous forensic intelligence agent for procurement audit, GFR compliance, and pre-disbursement verification."
         action={
-          <div className="flex items-center gap-2">
-            <span className="text-[11px] text-slate-400 font-medium">Investigating Case:</span>
-            <select
-              value={selectedCaseId}
-              onChange={(e) => setSelectedCaseId(e.target.value)}
-              aria-label="Select investigation case"
-              className="text-[12px] bg-slate-800/80 border border-slate-700/50 text-white rounded-md px-2.5 py-1.5 focus:outline-none focus:border-sky-500"
+          <div className="flex items-center gap-2 flex-wrap">
+            <button
+              onClick={() => setActiveModal('report')}
+              className="btn-primary flex items-center gap-1.5 text-[12px] shadow-sm shadow-sky-500/20"
             >
-              {availableCases.map((c) => (
-                <option key={c.id} value={c.id} className="bg-slate-900 text-white">
-                  {c.id} — {c.constituency} ({c.riskScore}/100)
-                </option>
-              ))}
-            </select>
+              <FileText className="w-3.5 h-3.5" />
+              <span>Official Vigilance Report</span>
+            </button>
+            <div className="flex items-center gap-2">
+              <span className="text-[11px] text-slate-400 font-medium">Case:</span>
+              <select
+                value={selectedCaseId}
+                onChange={(e) => setSelectedCaseId(e.target.value)}
+                aria-label="Select investigation case"
+                className="text-[12px] bg-slate-800/80 border border-slate-700/50 text-white rounded-md px-2.5 py-1.5 focus:outline-none focus:border-sky-500"
+              >
+                {availableCases.map((c) => (
+                  <option key={c.id} value={c.id} className="bg-slate-900 text-white">
+                    {c.id} — {c.constituency} ({c.riskScore}/100)
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
         }
       />
@@ -474,6 +486,7 @@ export default function AIInvestigatorPage() {
       </div>
 
       {/* In-Chat Executable Action Modals */}
+      <VigilanceReportModal open={activeModal === 'report'} onClose={() => setActiveModal(null)} caseData={selectedCase} />
       <ShowCauseNoticeModal open={activeModal === 'notice'} onClose={() => setActiveModal(null)} />
       <CollusionNetworkModal open={activeModal === 'collusion'} onClose={() => setActiveModal(null)} />
       <JurySandboxModal open={activeModal === 'jury'} onClose={() => setActiveModal(null)} />
