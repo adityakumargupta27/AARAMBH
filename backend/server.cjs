@@ -455,7 +455,7 @@ User Question: "${question}"
 
 Provide a concise, professional vigilance audit assessment citing these exact numbers, relevant GFR/CPWD clauses, and recommend verification steps. Do not declare guilt; state analytical signals.`;
 
-            const geminiRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`, {
+            const geminiRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${process.env.GEMINI_API_KEY}`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
@@ -469,7 +469,7 @@ Provide a concise, professional vigilance audit assessment citing these exact nu
               const text = geminiData?.candidates?.[0]?.content?.parts?.[0]?.text;
               if (text) {
                 agentResult.answer = text;
-                agentResult.provider = 'gemini-1.5-flash';
+                agentResult.provider = 'gemini-3.6-flash';
               }
             }
           } catch (geminiErr) {
