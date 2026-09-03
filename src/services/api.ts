@@ -5,8 +5,8 @@
 // ============================================================
 
 import { officialMPAllocations } from '@/data/officialMpladsData';
+import { officialParliamentProjects } from '@/data/officialProjects';
 import {
-  mockProjects,
   mockContractors,
   mockTenders,
   mockContracts,
@@ -125,16 +125,22 @@ export const api = {
   },
 
   /**
-   * Fetch Projects (Live from MongoDB Atlas)
+   * Fetch Projects (Live from MongoDB Atlas with 774 Parliament Fallback)
    */
   async getProjects(): Promise<Project[]> {
     try {
-      const res = await fetch(`${API_BASE_URL}/projects`);
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 2500);
+      const res = await fetch(`${API_BASE_URL}/projects`, { signal: controller.signal });
+      clearTimeout(timeout);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const json = await res.json();
-      return json.data;
+      if (json.data && Array.isArray(json.data) && json.data.length > 0) {
+        return json.data;
+      }
+      return officialParliamentProjects as Project[];
     } catch {
-      return mockProjects;
+      return officialParliamentProjects as Project[];
     }
   },
 
