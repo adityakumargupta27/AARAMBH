@@ -1,0 +1,4889 @@
+[
+  {
+    "srNo": 1,
+    "state": "Maharashtra",
+    "mpName": "AASHTIKAR PATIL NAGESH BAPURAO",
+    "constituency": "HINGOLI",
+    "allocatedAmount": 190289442,
+    "isBaseline": false,
+    "variancePercentage": 29.45
+  },
+  {
+    "srNo": 2,
+    "state": "Jammu And Kashmir",
+    "mpName": "ABDUL RASHID SHEIKH",
+    "constituency": "BARAMULLAH",
+    "allocatedAmount": 154773472.11,
+    "isBaseline": false,
+    "variancePercentage": 5.29
+  },
+  {
+    "srNo": 3,
+    "state": "Bihar",
+    "mpName": "ABHAY KUMAR SINHA",
+    "constituency": "AURANGABAD_BR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 4,
+    "state": "West Bengal",
+    "mpName": "ABHIJIT GANGOPADHYAY",
+    "constituency": "TAMLUK",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 5,
+    "state": "West Bengal",
+    "mpName": "Abu Taher Khan",
+    "constituency": "MURSHIDABAD",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 6,
+    "state": "West Bengal",
+    "mpName": "ADHIKARI SOUMENDU",
+    "constituency": "KANTHI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 7,
+    "state": "Uttar Pradesh",
+    "mpName": "ADITYA YADAV",
+    "constituency": "BADAUN",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 8,
+    "state": "Kerala",
+    "mpName": "Adv Adoor Prakash",
+    "constituency": "ATTINGAL",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 9,
+    "state": "Kerala",
+    "mpName": "Adv Dean Kuriakose",
+    "constituency": "IDUKKI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 10,
+    "state": "Maharashtra",
+    "mpName": "ADV GOWAAL KAGADA PADAVI",
+    "constituency": "NANDURBAR(ST)",
+    "allocatedAmount": 147816309.11,
+    "isBaseline": false,
+    "variancePercentage": 0.56
+  },
+  {
+    "srNo": 11,
+    "state": "Kerala",
+    "mpName": "ADV K FRANCIS GEORGE",
+    "constituency": "KOTTAYAM",
+    "allocatedAmount": 188722256.11,
+    "isBaseline": false,
+    "variancePercentage": 28.38
+  },
+  {
+    "srNo": 12,
+    "state": "Uttar Pradesh",
+    "mpName": "AFZAL ANSARI",
+    "constituency": "GHAZIPUR",
+    "allocatedAmount": 220500000,
+    "isBaseline": false,
+    "variancePercentage": 50
+  },
+  {
+    "srNo": 13,
+    "state": "Jammu And Kashmir",
+    "mpName": "AGA SYED RUHULLAH MEHDI",
+    "constituency": "SRINAGAR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 14,
+    "state": "Uttarakhand",
+    "mpName": "Ajay Bhatt NAINITAL UDHAM SINGH",
+    "constituency": "NAG.",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 15,
+    "state": "Bihar",
+    "mpName": "Ajay Kumar Mandal",
+    "constituency": "BHAGALPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 16,
+    "state": "Uttarakhand",
+    "mpName": "Ajay Tamta",
+    "constituency": "ALMORA(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 17,
+    "state": "Uttar Pradesh",
+    "mpName": "AJENDRA SINGH LODHI",
+    "constituency": "HAMIRPUR_UP",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 18,
+    "state": "Uttar Pradesh",
+    "mpName": "AKHILESH YADAV",
+    "constituency": "KANNAUJ",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 19,
+    "state": "Uttar Pradesh",
+    "mpName": "AKSHAYA YADAV",
+    "constituency": "FIROZABAD",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 20,
+    "state": "Manipur",
+    "mpName": "ALFRED KANNGAM S ARTHUR OUTER",
+    "constituency": "MANIPUR(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 21,
+    "state": "Bihar",
+    "mpName": "Alok Kumar Suman GOPALGANJ",
+    "constituency": "(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 22,
+    "state": "Madhya Pradesh",
+    "mpName": "ALOK SHARMA",
+    "constituency": "BHOPAL",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 23,
+    "state": "Maharashtra",
+    "mpName": "AMAR SHARADRAO KALE",
+    "constituency": "WARDHA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 24,
+    "state": "Assam",
+    "mpName": "AMARSING TISSO Diphu",
+    "constituency": "(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 25,
+    "state": "Andhra Pradesh",
+    "mpName": "AMBICA G LAKSHMINARAYANA VALMIKI",
+    "constituency": "ANANTAPUR",
+    "allocatedAmount": 201899064.11,
+    "isBaseline": false,
+    "variancePercentage": 37.35
+  },
+  {
+    "srNo": 26,
+    "state": "Maharashtra",
+    "mpName": "Amol Ramsing Kolhe",
+    "constituency": "SHIRUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 27,
+    "state": "Rajasthan",
+    "mpName": "AMRARAM",
+    "constituency": "SIKAR",
+    "allocatedAmount": 165691544.11,
+    "isBaseline": false,
+    "variancePercentage": 12.72
+  },
+  {
+    "srNo": 28,
+    "state": "Punjab",
+    "mpName": "AMRINDER SINGH RAJA WARRING",
+    "constituency": "LUDHIANA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 29,
+    "state": "Uttar Pradesh",
+    "mpName": "ANAND BHADAURIYA",
+    "constituency": "DHAURAHRA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 30,
+    "state": "Uttar Pradesh",
+    "mpName": "ANAND KUMAR",
+    "constituency": "BAHRAICH(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 31,
+    "state": "Odisha",
+    "mpName": "ANANTA NAYAK",
+    "constituency": "KEONJHAR(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 32,
+    "state": "Tamil Nadu",
+    "mpName": "Andimuthu Raja",
+    "constituency": "NILGIRIS(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 33,
+    "state": "Meghalaya",
+    "mpName": "ANDREW J. SYNGKON",
+    "constituency": "SHILLONG",
+    "allocatedAmount": 98000000,
+    "isBaseline": false,
+    "variancePercentage": -33.33
+  },
+  {
+    "srNo": 34,
+    "state": "Manipur",
+    "mpName": "ANGOMCHA BIMOL AKOIJAM INNER",
+    "constituency": "MANIPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 35,
+    "state": "Uttarakhand",
+    "mpName": "ANIL BALUNI",
+    "constituency": "GARHWAL",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 36,
+    "state": "Maharashtra",
+    "mpName": "ANIL YESHWANT DESAI",
+    "constituency": "MUMBAI SOUTH CENTRAL",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 37,
+    "state": "Madhya Pradesh",
+    "mpName": "ANITA NAGARSINGH CHOUHAN",
+    "constituency": "RATLAM(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 38,
+    "state": "Odisha",
+    "mpName": "ANITA SUBHADARSHINI",
+    "constituency": "ASKA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 39,
+    "state": "Jharkhand",
+    "mpName": "Annpurna Devi",
+    "constituency": "KODARMA",
+    "allocatedAmount": 166665931.8,
+    "isBaseline": false,
+    "variancePercentage": 13.38
+  },
+  {
+    "srNo": 40,
+    "state": "Uttar Pradesh",
+    "mpName": "ANOOP PRADHAN BALMIKI HATHRAS",
+    "constituency": "(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 41,
+    "state": "Kerala",
+    "mpName": "Anto Antony",
+    "constituency": "PATHANAMTHITTA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 42,
+    "state": "Maharashtra",
+    "mpName": "ANUP SANJAY DHOTRE",
+    "constituency": "AKOLA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 43,
+    "state": "Uttar Pradesh",
+    "mpName": "Anurag Sharma",
+    "constituency": "JHANSI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 44,
+    "state": "Himachal Pradesh",
+    "mpName": "Anurag Singh Thakur",
+    "constituency": "HAMIRPUR_HP",
+    "allocatedAmount": 149570117.11,
+    "isBaseline": false,
+    "variancePercentage": 1.75
+  },
+  {
+    "srNo": 45,
+    "state": "Andhra Pradesh",
+    "mpName": "Appalanaidu Kalisetti",
+    "constituency": "VIZIANAGARAM",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 46,
+    "state": "Bihar",
+    "mpName": "ARUN BHARTI",
+    "constituency": "JAMUI(SC)",
+    "allocatedAmount": 194924621.11,
+    "isBaseline": false,
+    "variancePercentage": 32.6
+  },
+  {
+    "srNo": 47,
+    "state": "Uttar Pradesh",
+    "mpName": "ARUN GOVIL",
+    "constituency": "MEERUT",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 48,
+    "state": "Tamil Nadu",
+    "mpName": "ARUN NEHRU",
+    "constituency": "PERAMBALUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 49,
+    "state": "Telangana",
+    "mpName": "ARUNA. D. K",
+    "constituency": "MAHABUBNAGAR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 50,
+    "state": "West Bengal",
+    "mpName": "ARUP CHAKRABORTY",
+    "constituency": "BANKURA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 51,
+    "state": "Telangana",
+    "mpName": "Arvind Dharmapuri",
+    "constituency": "NIZAMABAD",
+    "allocatedAmount": 281396355.11,
+    "isBaseline": false,
+    "variancePercentage": 91.43
+  },
+  {
+    "srNo": 52,
+    "state": "Maharashtra",
+    "mpName": "Arvind Ganpat Sawant",
+    "constituency": "MUMBAI SOUTH",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 53,
+    "state": "Telangana",
+    "mpName": "Asaduddin Owaisi",
+    "constituency": "HYDERABAD",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 54,
+    "state": "Madhya Pradesh",
+    "mpName": "ASHISH DUBEY",
+    "constituency": "JABALPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 55,
+    "state": "Uttar Pradesh",
+    "mpName": "Ashok Kumar Rawat",
+    "constituency": "MISRIKH(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 56,
+    "state": "Bihar",
+    "mpName": "Ashok Kumar Yadav",
+    "constituency": "MADHUBANI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 57,
+    "state": "West Bengal",
+    "mpName": "Asit Kumar Mal",
+    "constituency": "BOLPUR(SC)",
+    "allocatedAmount": 275694456.74,
+    "isBaseline": false,
+    "variancePercentage": 87.55
+  },
+  {
+    "srNo": 58,
+    "state": "Uttar Pradesh",
+    "mpName": "ATUL GARG",
+    "constituency": "GHAZIABAD",
+    "allocatedAmount": 155336470,
+    "isBaseline": false,
+    "variancePercentage": 5.67
+  },
+  {
+    "srNo": 59,
+    "state": "Odisha",
+    "mpName": "AVIMANYU SETHI",
+    "constituency": "BHADRAK(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 60,
+    "state": "Uttar Pradesh",
+    "mpName": "AWADHESH PRASAD",
+    "constituency": "FAIZABAD",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 61,
+    "state": "West Bengal",
+    "mpName": "AZAD KIRTI JHA",
+    "constituency": "BARDHAMAN-DURGAPUR",
+    "allocatedAmount": 179658399.98,
+    "isBaseline": false,
+    "variancePercentage": 22.22
+  },
+  {
+    "srNo": 62,
+    "state": "Andhra Pradesh",
+    "mpName": "B K PARTHASARATHI",
+    "constituency": "HINDUPUR",
+    "allocatedAmount": 160491894.11,
+    "isBaseline": false,
+    "variancePercentage": 9.18
+  },
+  {
+    "srNo": 63,
+    "state": "Uttar Pradesh",
+    "mpName": "BABU SINGH KUSHWAHA",
+    "constituency": "JAUNPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 64,
+    "state": "Maharashtra",
+    "mpName": "BACHHAV SHOBHA DINESH",
+    "constituency": "DHULE",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 65,
+    "state": "West Bengal",
+    "mpName": "BAG MITALI",
+    "constituency": "ARAMBAG(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 66,
+    "state": "Odisha",
+    "mpName": "BAIJAYANT PANDA",
+    "constituency": "KENDRAPARA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 67,
+    "state": "Maharashtra",
+    "mpName": "BAJRANG MANOHAR SONWANE",
+    "constituency": "BEED",
+    "allocatedAmount": 165899107.19,
+    "isBaseline": false,
+    "variancePercentage": 12.86
+  },
+  {
+    "srNo": 68,
+    "state": "Odisha",
+    "mpName": "BALABHADRA MAJHI",
+    "constituency": "NABARANGPUR(ST)",
+    "allocatedAmount": 147413962.11,
+    "isBaseline": false,
+    "variancePercentage": 0.28
+  },
+  {
+    "srNo": 69,
+    "state": "Andhra Pradesh",
+    "mpName": "Balashowry Vallabbhaneni",
+    "constituency": "MACHILIPATNAM",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 70,
+    "state": "Telangana",
+    "mpName": "BALRAM NAIK PORIKA",
+    "constituency": "MAHABUBABAD",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 71,
+    "state": "Maharashtra",
+    "mpName": "BALWANT BASWANT WANKHADE",
+    "constituency": "AMRAVATI(SC)",
+    "allocatedAmount": 198293678,
+    "isBaseline": false,
+    "variancePercentage": 34.89
+  },
+  {
+    "srNo": 72,
+    "state": "Maharashtra",
+    "mpName": "BALYA MAMA SURESH GOPINATH MHATRE",
+    "constituency": "BHIWANDI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 73,
+    "state": "Delhi",
+    "mpName": "Bansuri Swaraj",
+    "constituency": "NEW DELHI",
+    "allocatedAmount": 154306950,
+    "isBaseline": false,
+    "variancePercentage": 4.97
+  },
+  {
+    "srNo": 74,
+    "state": "West Bengal",
+    "mpName": "BAPI HALDAR",
+    "constituency": "MATHURAPUR(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 75,
+    "state": "Karnataka",
+    "mpName": "BASAVARAJ BOMMAI",
+    "constituency": "HAVERI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 76,
+    "state": "Andhra Pradesh",
+    "mpName": "BASTIPATI NAGARAJU PANCHALINGALA",
+    "constituency": "KURNOOL",
+    "allocatedAmount": 159998515.11,
+    "isBaseline": false,
+    "variancePercentage": 8.84
+  },
+  {
+    "srNo": 77,
+    "state": "Rajasthan",
+    "mpName": "Bhagirath Chaudhary",
+    "constituency": "AJMER",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 78,
+    "state": "Rajasthan",
+    "mpName": "BHAJAN LAL JATAV",
+    "constituency": "KARAULI-DHOLPUR(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 79,
+    "state": "Madhya Pradesh",
+    "mpName": "BHARAT SINGH KUSHWAH",
+    "constituency": "GWALIOR",
+    "allocatedAmount": 151455276.04,
+    "isBaseline": false,
+    "variancePercentage": 3.03
+  },
+  {
+    "srNo": 80,
+    "state": "Gujarat",
+    "mpName": "BHARATBHAI MANUBHAI SUTARIYA",
+    "constituency": "AMRELI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 81,
+    "state": "Gujarat",
+    "mpName": "Bharatsinhji Shankarji Dabhi",
+    "constituency": "PATAN",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 82,
+    "state": "Madhya Pradesh",
+    "mpName": "BHARTI PARDHI",
+    "constituency": "BALAGHAT",
+    "allocatedAmount": 154398389.01,
+    "isBaseline": false,
+    "variancePercentage": 5.03
+  },
+  {
+    "srNo": 83,
+    "state": "Maharashtra",
+    "mpName": "BHASKAR MURLIDHAR BHAGARE",
+    "constituency": "DINDORI(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 84,
+    "state": "Maharashtra",
+    "mpName": "BHAUSAHEB RAJARAM WAKCHAURE",
+    "constituency": "SHIRDI(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 85,
+    "state": "Chhattisgarh",
+    "mpName": "BHOJRAJ NAG",
+    "constituency": "KANKER(ST)",
+    "allocatedAmount": 164672734.11,
+    "isBaseline": false,
+    "variancePercentage": 12.02
+  },
+  {
+    "srNo": 86,
+    "state": "Uttar Pradesh",
+    "mpName": "Bhola Singh",
+    "constituency": "BULANDSHAHR(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 87,
+    "state": "Maharashtra",
+    "mpName": "BHUMARE SANDIPANRAO ASARAM",
+    "constituency": "AURANGABAD_MH",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 88,
+    "state": "Andhra Pradesh",
+    "mpName": "Bhupathiraju Srinivasa varma",
+    "constituency": "NARASAPURAM",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 89,
+    "state": "Rajasthan",
+    "mpName": "BHUPENDER YADAV",
+    "constituency": "ALWAR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 90,
+    "state": "Odisha",
+    "mpName": "BIBHU PRASAD TARAI",
+    "constituency": "JAGATSINGHPUR(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 91,
+    "state": "Jharkhand",
+    "mpName": "Bidyut Baran Mahato",
+    "constituency": "JAMSHEDPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 92,
+    "state": "Assam",
+    "mpName": "BIJULI KALITA MEDHI",
+    "constituency": "GUWAHATI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 93,
+    "state": "Tripura",
+    "mpName": "BIPLAB KUMAR DEB TRIPURA",
+    "constituency": "WEST",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 94,
+    "state": "Andaman And Nicobar Islands",
+    "mpName": "BISHNU PADA RAY",
+    "constituency": "ANDAMAN AND NICOBAR ISLANDS",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 95,
+    "state": "Rajasthan",
+    "mpName": "BRIJENDRA SINGH OLA",
+    "constituency": "JHUNJHUNU",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 96,
+    "state": "Chhattisgarh",
+    "mpName": "BRIJMOHAN AGRAWAL",
+    "constituency": "RAIPUR",
+    "allocatedAmount": 153766451.11,
+    "isBaseline": false,
+    "variancePercentage": 4.6
+  },
+  {
+    "srNo": 97,
+    "state": "Madhya Pradesh",
+    "mpName": "BUNTY VIVEK SAHU",
+    "constituency": "CHHINDWARA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 98,
+    "state": "Gujarat",
+    "mpName": "C R Patil",
+    "constituency": "NAVSARI",
+    "allocatedAmount": 158532494.36,
+    "isBaseline": false,
+    "variancePercentage": 7.85
+  },
+  {
+    "srNo": 99,
+    "state": "Andhra Pradesh",
+    "mpName": "C.M.RAMESH",
+    "constituency": "ANAKAPALLE",
+    "allocatedAmount": 202531656.11,
+    "isBaseline": false,
+    "variancePercentage": 37.78
+  },
+  {
+    "srNo": 100,
+    "state": "Karnataka",
+    "mpName": "CAPTAIN BRIJESH CHOWTA DAKSHINA",
+    "constituency": "KANNADA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 101,
+    "state": "Goa",
+    "mpName": "CAPTAIN VIRIATO FERNANDES SOUTH",
+    "constituency": "GOA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 102,
+    "state": "Telangana",
+    "mpName": "CHAMALA KIRAN KUMAR REDDY",
+    "constituency": "BHONGIR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 103,
+    "state": "Uttar Pradesh",
+    "mpName": "CHANDAN CHAUHAN",
+    "constituency": "BIJNOR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 104,
+    "state": "Rajasthan",
+    "mpName": "Chandra Prakash Joshi",
+    "constituency": "CHITTORGARH",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 105,
+    "state": "Uttar Pradesh",
+    "mpName": "CHANDRA SHEKHAR",
+    "constituency": "NAGINA(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 106,
+    "state": "Gujarat",
+    "mpName": "CHANDUBHAI CHHAGANBHAI SHIHORA",
+    "constituency": "SURENDRANAGAR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 107,
+    "state": "Punjab",
+    "mpName": "CHARANJIT SINGH CHANNI",
+    "constituency": "JALANDHAR(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 108,
+    "state": "Maharashtra",
+    "mpName": "CHAVAN VASANTRAO BALWANTRAO",
+    "constituency": "NANDED",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 109,
+    "state": "Uttar Pradesh",
+    "mpName": "CHHATRA PAL SINGH GANGWAR",
+    "constituency": "BAREILLY",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 110,
+    "state": "Maharashtra",
+    "mpName": "CHHATRAPATI SHAHU SHAHAJI",
+    "constituency": "KOLHAPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 111,
+    "state": "Uttar Pradesh",
+    "mpName": "CHHOTELAL",
+    "constituency": "ROBERTSGANJ(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 112,
+    "state": "Chhattisgarh",
+    "mpName": "CHINTAMANI MAHARAJ",
+    "constituency": "SARGUJA(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 113,
+    "state": "Bihar",
+    "mpName": "CHIRAG PASWAN",
+    "constituency": "HAJIPUR(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 114,
+    "state": "Tamil Nadu",
+    "mpName": "CN Annadurai",
+    "constituency": "TIRUVANNAMALAI",
+    "allocatedAmount": 148579509.11,
+    "isBaseline": false,
+    "variancePercentage": 1.07
+  },
+  {
+    "srNo": 115,
+    "state": "Tamil Nadu",
+    "mpName": "D M Kathir Anand",
+    "constituency": "VELLORE",
+    "allocatedAmount": 160196941.11,
+    "isBaseline": false,
+    "variancePercentage": 8.98
+  },
+  {
+    "srNo": 116,
+    "state": "Tamil Nadu",
+    "mpName": "D Ravikumar",
+    "constituency": "VILUPPURAM(SC)",
+    "allocatedAmount": 197598306.11,
+    "isBaseline": false,
+    "variancePercentage": 34.42
+  },
+  {
+    "srNo": 117,
+    "state": "Andhra Pradesh",
+    "mpName": "Daggubati Purandeshwari",
+    "constituency": "RAJAHMUNDRY",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 118,
+    "state": "Andhra Pradesh",
+    "mpName": "DAGGUMALLA PRASADA RAO",
+    "constituency": "CHITTOOR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 119,
+    "state": "Rajasthan",
+    "mpName": "DAMODAR AGARWAL",
+    "constituency": "BHILWARA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 120,
+    "state": "Uttar Pradesh",
+    "mpName": "DAROGA PRASAD SAROJ LALGANJ",
+    "constituency": "(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 121,
+    "state": "Madhya Pradesh",
+    "mpName": "DARSHAN SINGH CHOUDHARY",
+    "constituency": "HOSHANGABAD",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 122,
+    "state": "Haryana",
+    "mpName": "DEEPENDER SINGH HOODA",
+    "constituency": "ROHTAK",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 123,
+    "state": "Uttar Pradesh",
+    "mpName": "Devendra Alias Bhole Singh",
+    "constituency": "AKBARPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 124,
+    "state": "Bihar",
+    "mpName": "DEVESH CHANDRA THAKUR",
+    "constituency": "SITAMARHI",
+    "allocatedAmount": 163809205.11,
+    "isBaseline": false,
+    "variancePercentage": 11.43
+  },
+  {
+    "srNo": 125,
+    "state": "Uttar Pradesh",
+    "mpName": "DEVESH SHAKYA",
+    "constituency": "ETAH",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 126,
+    "state": "Gujarat",
+    "mpName": "Devusinh Jesingbhai Chauhan",
+    "constituency": "KHEDA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 127,
+    "state": "Maharashtra",
+    "mpName": "Dhairyasheel Sambhajirao Mane",
+    "constituency": "HATKANANGLE",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 128,
+    "state": "Maharashtra",
+    "mpName": "DHANORKAR PRATIBHA SURESH ALIAS BALUBHAU",
+    "constituency": "CHANDRAPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 129,
+    "state": "Odisha",
+    "mpName": "DHARMENDRA PRADHAN",
+    "constituency": "SAMBALPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 130,
+    "state": "Uttar Pradesh",
+    "mpName": "DHARMENDRA YADAV",
+    "constituency": "AZAMGARH",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 131,
+    "state": "Gujarat",
+    "mpName": "DHAVAL LAXMANBHAI PATEL",
+    "constituency": "VALSAD(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 132,
+    "state": "Bihar",
+    "mpName": "Dileshwar Kamait",
+    "constituency": "SUPAUL",
+    "allocatedAmount": 150450930.89,
+    "isBaseline": false,
+    "variancePercentage": 2.35
+  },
+  {
+    "srNo": 133,
+    "state": "Assam",
+    "mpName": "Dilip Saikia",
+    "constituency": "Darrang-Udalguri",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 134,
+    "state": "Bihar",
+    "mpName": "Dinesh Chandra Yadav",
+    "constituency": "MADHEPURA",
+    "allocatedAmount": 150070866.11,
+    "isBaseline": false,
+    "variancePercentage": 2.09
+  },
+  {
+    "srNo": 135,
+    "state": "Gujarat",
+    "mpName": "DINESHBHAI MAKWANA AHMEDABAD",
+    "constituency": "WEST(SC)",
+    "allocatedAmount": 160434965.11,
+    "isBaseline": false,
+    "variancePercentage": 9.14
+  },
+  {
+    "srNo": 136,
+    "state": "Andhra Pradesh",
+    "mpName": "DR BYREDDY SHABARI",
+    "constituency": "NANDYAL",
+    "allocatedAmount": 150675889.11,
+    "isBaseline": false,
+    "variancePercentage": 2.5
+  },
+  {
+    "srNo": 137,
+    "state": "Karnataka",
+    "mpName": "DR C N MANJUNATH",
+    "constituency": "BANGALORE RURAL",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 138,
+    "state": "Andhra Pradesh",
+    "mpName": "Dr Chandra Sekhar Pemmasani",
+    "constituency": "GUNTUR",
+    "allocatedAmount": 159774113.11,
+    "isBaseline": false,
+    "variancePercentage": 8.69
+  },
+  {
+    "srNo": 139,
+    "state": "Punjab",
+    "mpName": "DR DHARAMVIRA GANDHI",
+    "constituency": "PATIALA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 140,
+    "state": "West Bengal",
+    "mpName": "Dr Jayanta Kumar Roy",
+    "constituency": "JALPAIGURI(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 141,
+    "state": "Maharashtra",
+    "mpName": "DR KALGE SHIVAJI BANDAPPA",
+    "constituency": "LATUR(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 142,
+    "state": "Bihar",
+    "mpName": "Dr Mohammad Jawed",
+    "constituency": "KISHANGANJ",
+    "allocatedAmount": 148669229.11,
+    "isBaseline": false,
+    "variancePercentage": 1.14
+  },
+  {
+    "srNo": 143,
+    "state": "Uttar Pradesh",
+    "mpName": "DR RAJKUMAR SANGWAN",
+    "constituency": "BAGHPAT",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 144,
+    "state": "Tamil Nadu",
+    "mpName": "DR RANI SRI KUMAR",
+    "constituency": "TENKASI(SC)",
+    "allocatedAmount": 153060922.82,
+    "isBaseline": false,
+    "variancePercentage": 4.12
+  },
+  {
+    "srNo": 145,
+    "state": "Kerala",
+    "mpName": "Dr Shashi Tharoor",
+    "constituency": "THIRUVANANTHAPURAM",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 146,
+    "state": "West Bengal",
+    "mpName": "Dr Sukanta Majumdar",
+    "constituency": "BALURGHAT",
+    "allocatedAmount": 157085364.9,
+    "isBaseline": false,
+    "variancePercentage": 6.86
+  },
+  {
+    "srNo": 147,
+    "state": "Gujarat",
+    "mpName": "DR. HEMANG JOSHI",
+    "constituency": "VADODARA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 148,
+    "state": "Maharashtra",
+    "mpName": "DR. HEMANT VISHNU SAVARA",
+    "constituency": "PALGHAR(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 149,
+    "state": "Maharashtra",
+    "mpName": "DR. KIRSAN NAMDEO",
+    "constituency": "GADCHIROLI-CHIMUR(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 150,
+    "state": "Madhya Pradesh",
+    "mpName": "DR. LATA WANKHEDE",
+    "constituency": "SAGAR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 151,
+    "state": "Kerala",
+    "mpName": "DR. M.P ABDUSSAMAD SAMADANI",
+    "constituency": "PONNANI",
+    "allocatedAmount": 170434031.11,
+    "isBaseline": false,
+    "variancePercentage": 15.94
+  },
+  {
+    "srNo": 152,
+    "state": "Gujarat",
+    "mpName": "DR. MANSUKH MANDAVIYA",
+    "constituency": "PORBANDAR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 153,
+    "state": "Karnataka",
+    "mpName": "DR. PRABHA MALLIKARJUN",
+    "constituency": "DAVANAGERE",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 154,
+    "state": "Odisha",
+    "mpName": "DR. PRADEEP KUMAR PANIGRAHY",
+    "constituency": "BERHAMPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 155,
+    "state": "Maharashtra",
+    "mpName": "DR. PRASHANT YADAORAO PADOLE",
+    "constituency": "BHANDARA-GONDIYA",
+    "allocatedAmount": 159680283.39,
+    "isBaseline": false,
+    "variancePercentage": 8.63
+  },
+  {
+    "srNo": 156,
+    "state": "Punjab",
+    "mpName": "DR. RAJ KUMAR CHABBEWAL",
+    "constituency": "HOSHIARPUR(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 157,
+    "state": "Madhya Pradesh",
+    "mpName": "DR. RAJESH MISHRA",
+    "constituency": "SIDHI",
+    "allocatedAmount": 262724510.35,
+    "isBaseline": false,
+    "variancePercentage": 78.72
+  },
+  {
+    "srNo": 158,
+    "state": "Uttar Pradesh",
+    "mpName": "DR. S P SINGH",
+    "constituency": "PRATAPGARH",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 159,
+    "state": "West Bengal",
+    "mpName": "DR. SHARMILA SARKAR BARDHAMAN",
+    "constituency": "PURBA(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 160,
+    "state": "Karnataka",
+    "mpName": "DR.K.SUDHAKAR",
+    "constituency": "CHIKBALLAPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 161,
+    "state": "Telangana",
+    "mpName": "DR.MALLU RAVI",
+    "constituency": "NAGARKURNOOL(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 162,
+    "state": "Jharkhand",
+    "mpName": "DULU MAHATO",
+    "constituency": "DHANBAD",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 163,
+    "state": "Tamil Nadu",
+    "mpName": "DURAI VAIKO",
+    "constituency": "TIRUCHIRAPPALLI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 164,
+    "state": "Madhya Pradesh",
+    "mpName": "Durga Das Uikey",
+    "constituency": "BETUL(ST)",
+    "allocatedAmount": 151569502.91,
+    "isBaseline": false,
+    "variancePercentage": 3.11
+  },
+  {
+    "srNo": 165,
+    "state": "Rajasthan",
+    "mpName": "Dushyant Singh",
+    "constituency": "JHALAWAR-BARAN",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 166,
+    "state": "Karnataka",
+    "mpName": "E. TUKARAM",
+    "constituency": "BELLARY(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 167,
+    "state": "Kerala",
+    "mpName": "E.T. MOHAMMED BASHEER",
+    "constituency": "MALAPPURAM",
+    "allocatedAmount": 163895872.11,
+    "isBaseline": false,
+    "variancePercentage": 11.49
+  },
+  {
+    "srNo": 168,
+    "state": "Telangana",
+    "mpName": "EATALA RAJENDER",
+    "constituency": "MALKAJGIRI",
+    "allocatedAmount": 327477390.86,
+    "isBaseline": false,
+    "variancePercentage": 122.77
+  },
+  {
+    "srNo": 169,
+    "state": "Tamil Nadu",
+    "mpName": "ESWARASAMY K",
+    "constituency": "POLLACHI",
+    "allocatedAmount": 162315106.11,
+    "isBaseline": false,
+    "variancePercentage": 10.42
+  },
+  {
+    "srNo": 170,
+    "state": "Madhya Pradesh",
+    "mpName": "Faggan Singh Kulaste",
+    "constituency": "MANDLA(ST)",
+    "allocatedAmount": 151861648.41,
+    "isBaseline": false,
+    "variancePercentage": 3.31
+  },
+  {
+    "srNo": 171,
+    "state": "Karnataka",
+    "mpName": "G. KUMAR NAIK",
+    "constituency": "RAICHUR(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 172,
+    "state": "Maharashtra",
+    "mpName": "GAIKWAD VARSHA EKNATH",
+    "constituency": "MUMBAI NORTH-CENTRAL",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 173,
+    "state": "Madhya Pradesh",
+    "mpName": "Gajendra Singh Patel",
+    "constituency": "KHARGONE(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 174,
+    "state": "Rajasthan",
+    "mpName": "Gajendra Singh Shekhawat",
+    "constituency": "JODHPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 175,
+    "state": "Tamil Nadu",
+    "mpName": "GANAPATHY RAJKUMAR P",
+    "constituency": "COIMBATORE",
+    "allocatedAmount": 147370490.11,
+    "isBaseline": false,
+    "variancePercentage": 0.25
+  },
+  {
+    "srNo": 176,
+    "state": "Tamil Nadu",
+    "mpName": "Ganesan Selvam",
+    "constituency": "KANCHEEPURAM(SC)",
+    "allocatedAmount": 186508749.11,
+    "isBaseline": false,
+    "variancePercentage": 26.88
+  },
+  {
+    "srNo": 177,
+    "state": "Madhya Pradesh",
+    "mpName": "Ganesh Singh",
+    "constituency": "SATNA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 178,
+    "state": "Assam",
+    "mpName": "GAURAV GOGOI",
+    "constituency": "JORHAT",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 179,
+    "state": "Gujarat",
+    "mpName": "GENIBEN NAGAJI THAKOR",
+    "constituency": "BANASKANTHA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 180,
+    "state": "Bihar",
+    "mpName": "Giridhari Yadav",
+    "constituency": "BANKA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 181,
+    "state": "Bihar",
+    "mpName": "Giriraj Singh",
+    "constituency": "BEGUSARAI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 182,
+    "state": "Andhra Pradesh",
+    "mpName": "GM Harish Balayogi",
+    "constituency": "AMALAPURAM(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 183,
+    "state": "Telangana",
+    "mpName": "GODAM NAGESH",
+    "constituency": "ADILABAD(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 184,
+    "state": "Tamil Nadu",
+    "mpName": "GOPINATH K",
+    "constituency": "KRISHNAGIRI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 185,
+    "state": "Karnataka",
+    "mpName": "GOVIND MAKTHAPPA KARJOL",
+    "constituency": "CHITRADURGA(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 186,
+    "state": "Andhra Pradesh",
+    "mpName": "Gumma Thanuja Rani",
+    "constituency": "ARAKU(ST)",
+    "allocatedAmount": 149458905.11,
+    "isBaseline": false,
+    "variancePercentage": 1.67
+  },
+  {
+    "srNo": 187,
+    "state": "Punjab",
+    "mpName": "GURMEET SINGH MEET HAYER",
+    "constituency": "SANGRUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 188,
+    "state": "Madhya Pradesh",
+    "mpName": "Gyaneshwar Patil",
+    "constituency": "KHANDWA",
+    "allocatedAmount": 155690684.77,
+    "isBaseline": false,
+    "variancePercentage": 5.91
+  },
+  {
+    "srNo": 189,
+    "state": "Karnataka",
+    "mpName": "H.D. KUMARASWAMY",
+    "constituency": "MANDYA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 190,
+    "state": "Uttar Pradesh",
+    "mpName": "HARENDRA SINGH MALIK",
+    "constituency": "MUZAFFARNAGAR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 191,
+    "state": "Gujarat",
+    "mpName": "HARIBHAI PATEL",
+    "constituency": "MAHESANA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 192,
+    "state": "Rajasthan",
+    "mpName": "HARISH CHANDRA MEENA TONK-SAWAI",
+    "constituency": "MADHOPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 193,
+    "state": "Delhi",
+    "mpName": "Harsh Malhotra",
+    "constituency": "EAST DELHI",
+    "allocatedAmount": 147134131,
+    "isBaseline": false,
+    "variancePercentage": 0.09
+  },
+  {
+    "srNo": 194,
+    "state": "Gujarat",
+    "mpName": "Hasmukh Bhai Soma Bhai Patel AHMEDABAD",
+    "constituency": "EAST",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 195,
+    "state": "Uttar Pradesh",
+    "mpName": "IMRAN MASOOD",
+    "constituency": "SAHARANPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 196,
+    "state": "Sikkim",
+    "mpName": "Indra Hang Subba",
+    "constituency": "SIKKIM",
+    "allocatedAmount": 152003923.11,
+    "isBaseline": false,
+    "variancePercentage": 3.4
+  },
+  {
+    "srNo": 197,
+    "state": "Uttar Pradesh",
+    "mpName": "IQRA CHOUDHARY",
+    "constituency": "KAIRANA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 198,
+    "state": "West Bengal",
+    "mpName": "ISHA KHAN CHOUDHURY MALDAHA",
+    "constituency": "DAKSHIN",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 199,
+    "state": "West Bengal",
+    "mpName": "JAGADISH CHANDRA BARMA BASUNIA",
+    "constituency": "COOCHBEHAR(SC)",
+    "allocatedAmount": 168604641.11,
+    "isBaseline": false,
+    "variancePercentage": 14.7
+  },
+  {
+    "srNo": 200,
+    "state": "Karnataka",
+    "mpName": "JAGADISH SHETTAR",
+    "constituency": "BELGAUM",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 201,
+    "state": "West Bengal",
+    "mpName": "Jagannath Sarkar",
+    "constituency": "RANAGHAT(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 202,
+    "state": "Uttar Pradesh",
+    "mpName": "Jagdambika Pal",
+    "constituency": "DOMARIYAGANJ",
+    "allocatedAmount": 160643957.11,
+    "isBaseline": false,
+    "variancePercentage": 9.28
+  },
+  {
+    "srNo": 203,
+    "state": "Haryana",
+    "mpName": "JAI PARKASH",
+    "constituency": "HISAR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 204,
+    "state": "Uttar Pradesh",
+    "mpName": "Jai Prakash HARDOI",
+    "constituency": "(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 205,
+    "state": "Madhya Pradesh",
+    "mpName": "Janardan Mishra",
+    "constituency": "REWA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 206,
+    "state": "Gujarat",
+    "mpName": "JASHUBHAI BHILUBHAI RATHVA CHHOTA",
+    "constituency": "UDAIPUR(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 207,
+    "state": "Gujarat",
+    "mpName": "Jaswantsinh Sumanbhai Bhabhor",
+    "constituency": "DAHOD(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 208,
+    "state": "Bihar",
+    "mpName": "JITAN RAM MANJHI GAYA",
+    "constituency": "(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 209,
+    "state": "Uttar Pradesh",
+    "mpName": "JITENDRA KUMAR DOHARE",
+    "constituency": "ETAWAH(SC)",
+    "allocatedAmount": 188747306.26,
+    "isBaseline": false,
+    "variancePercentage": 28.4
+  },
+  {
+    "srNo": 210,
+    "state": "Jammu And Kashmir",
+    "mpName": "Jitendra Singh",
+    "constituency": "UDHAMPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 211,
+    "state": "Uttar Pradesh",
+    "mpName": "JITIN PRASADA",
+    "constituency": "PILIBHIT",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 212,
+    "state": "Jharkhand",
+    "mpName": "JOBA MAJHI",
+    "constituency": "SINGHBHUM(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 213,
+    "state": "Assam",
+    "mpName": "JOYANTA BASUMATARY KOKRAJHAR",
+    "constituency": "(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 214,
+    "state": "West Bengal",
+    "mpName": "JUNE MALIAH",
+    "constituency": "MEDINIPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 215,
+    "state": "Madhya Pradesh",
+    "mpName": "JYOTIRADITYA M. SCINDIA",
+    "constituency": "GUNA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 216,
+    "state": "Chhattisgarh",
+    "mpName": "Jyotsna Charandas Mahant",
+    "constituency": "KORBA",
+    "allocatedAmount": 155153738.11,
+    "isBaseline": false,
+    "variancePercentage": 5.55
+  },
+  {
+    "srNo": 217,
+    "state": "Tamil Nadu",
+    "mpName": "K E PRAKASH",
+    "constituency": "ERODE",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 218,
+    "state": "Kerala",
+    "mpName": "K RADHAKRISHNAN",
+    "constituency": "ALATHUR(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 219,
+    "state": "Tamil Nadu",
+    "mpName": "K Subbarayan",
+    "constituency": "TIRUPPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 220,
+    "state": "Kerala",
+    "mpName": "K. C VENUGOPAL",
+    "constituency": "ALAPPUZHA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 221,
+    "state": "Karnataka",
+    "mpName": "K. RAJASHEKAR BASAVARAJ HITNAL",
+    "constituency": "KOPPAL",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 222,
+    "state": "Telangana",
+    "mpName": "KADIYAM KAVYA",
+    "constituency": "WARANGEL(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 223,
+    "state": "West Bengal",
+    "mpName": "Kakoli Ghosh Dastidar",
+    "constituency": "BARASAT",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 224,
+    "state": "The Dadra And Nagar Haveli And Daman And Diu",
+    "mpName": "Kalaben Mohanbhai Delkar DADRA & NAGAR HAVELI",
+    "constituency": "(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 225,
+    "state": "Tamil Nadu",
+    "mpName": "Kalanidhi Veeraswamy",
+    "constituency": "CHENNAI NORTH",
+    "allocatedAmount": 171500000,
+    "isBaseline": false,
+    "variancePercentage": 16.67
+  },
+  {
+    "srNo": 226,
+    "state": "Jharkhand",
+    "mpName": "KALI CHARAN MUNDA",
+    "constituency": "KHUNTI(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 227,
+    "state": "Jharkhand",
+    "mpName": "KALI CHARAN SINGH",
+    "constituency": "CHATRA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 228,
+    "state": "West Bengal",
+    "mpName": "KALIPADA SAREN",
+    "constituency": "JHARGRAM(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 229,
+    "state": "West Bengal",
+    "mpName": "Kalyan Banerjee",
+    "constituency": "SREERAMPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 230,
+    "state": "Maharashtra",
+    "mpName": "KALYAN VAIJINATHRAO KALE",
+    "constituency": "JALNA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 231,
+    "state": "Assam",
+    "mpName": "KAMAKHYA PRASAD TASA",
+    "constituency": "Kaziranga",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 232,
+    "state": "Delhi",
+    "mpName": "Kamaljeet Sehrawat",
+    "constituency": "WEST DELHI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 233,
+    "state": "Chhattisgarh",
+    "mpName": "KAMLESH JANGDE JANJGIR",
+    "constituency": "CHAMPA(SC)",
+    "allocatedAmount": 150384382.11,
+    "isBaseline": false,
+    "variancePercentage": 2.3
+  },
+  {
+    "srNo": 234,
+    "state": "Uttar Pradesh",
+    "mpName": "Kamlesh Paswan",
+    "constituency": "BANSGAON(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 235,
+    "state": "Himachal Pradesh",
+    "mpName": "Kangana Ranaut",
+    "constituency": "MANDI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 236,
+    "state": "Tamil Nadu",
+    "mpName": "Kani K Navas",
+    "constituency": "RAMANATHAPURAM",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 237,
+    "state": "Tamil Nadu",
+    "mpName": "Kanimozhi Karunanidhi",
+    "constituency": "THOOTHUKKUDI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 238,
+    "state": "Uttar Pradesh",
+    "mpName": "KANWAR SINGH TANWAR",
+    "constituency": "AMROHA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 239,
+    "state": "Uttar Pradesh",
+    "mpName": "KARAN BHUSHAN SINGH",
+    "constituency": "KAISERGANJ",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 240,
+    "state": "West Bengal",
+    "mpName": "KARTICK CHANDRA PAUL",
+    "constituency": "RAIGANJ",
+    "allocatedAmount": 202677986.56,
+    "isBaseline": false,
+    "variancePercentage": 37.88
+  },
+  {
+    "srNo": 241,
+    "state": "Bihar",
+    "mpName": "Kaushalendra Kumar",
+    "constituency": "NALANDA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 242,
+    "state": "West Bengal",
+    "mpName": "Khagen Murmu MALDAHA",
+    "constituency": "UTTAR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 243,
+    "state": "West Bengal",
+    "mpName": "Khalilur Rahaman",
+    "constituency": "JANGIPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 244,
+    "state": "Andhra Pradesh",
+    "mpName": "Kinjarapu Ram Mohan Naidu",
+    "constituency": "SRIKAKULAM",
+    "allocatedAmount": 171200630.11,
+    "isBaseline": false,
+    "variancePercentage": 16.46
+  },
+  {
+    "srNo": 245,
+    "state": "Arunachal Pradesh",
+    "mpName": "Kiren Rijiju ARUNACHAL",
+    "constituency": "WEST",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 246,
+    "state": "Uttar Pradesh",
+    "mpName": "Kirti Vardhan Singh",
+    "constituency": "GONDA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 247,
+    "state": "Telangana",
+    "mpName": "Kishan Reddy Gangapuram",
+    "constituency": "SECUNDERABAD",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 248,
+    "state": "Uttar Pradesh",
+    "mpName": "KISHORI LAL",
+    "constituency": "AMETHI",
+    "allocatedAmount": 171500000,
+    "isBaseline": false,
+    "variancePercentage": 16.67
+  },
+  {
+    "srNo": 249,
+    "state": "Telangana",
+    "mpName": "KONDA VISHWESHWAR REDDY",
+    "constituency": "CHELVELLA",
+    "allocatedAmount": 233721420.96,
+    "isBaseline": false,
+    "variancePercentage": 58.99
+  },
+  {
+    "srNo": 250,
+    "state": "Karnataka",
+    "mpName": "KOTA SRINIVAS POOJARY UDUPI",
+    "constituency": "CHIKMAGALUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 251,
+    "state": "Assam",
+    "mpName": "Kripanath Mallah KARIMGANJ",
+    "constituency": "(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 252,
+    "state": "Haryana",
+    "mpName": "Krishan Pal Gurjar",
+    "constituency": "FARIDABAD",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 253,
+    "state": "Uttar Pradesh",
+    "mpName": "KRISHNA DEVI SHIVSHANKER PATEL",
+    "constituency": "BANDA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 254,
+    "state": "Andhra Pradesh",
+    "mpName": "Krishna Prasad Tenneti",
+    "constituency": "BAPATLA",
+    "allocatedAmount": 167796849.11,
+    "isBaseline": false,
+    "variancePercentage": 14.15
+  },
+  {
+    "srNo": 255,
+    "state": "Tripura",
+    "mpName": "KRITI DEVI DEBBARMAN TRIPURA",
+    "constituency": "EAST(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 256,
+    "state": "Rajasthan",
+    "mpName": "KULDEEP INDORA",
+    "constituency": "GANGANAGAR(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 257,
+    "state": "Telangana",
+    "mpName": "KUNDURU RAGHUVEER",
+    "constituency": "NALGONDA",
+    "allocatedAmount": 162952022,
+    "isBaseline": false,
+    "variancePercentage": 10.85
+  },
+  {
+    "srNo": 258,
+    "state": "Uttar Pradesh",
+    "mpName": "LALJI VERMA AMBEDKAR",
+    "constituency": "NAGAR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 259,
+    "state": "Andhra Pradesh",
+    "mpName": "Lavu Sri Krishna Devarayalu",
+    "constituency": "NARASARAOPET",
+    "allocatedAmount": 174009663.11,
+    "isBaseline": false,
+    "variancePercentage": 18.37
+  },
+  {
+    "srNo": 260,
+    "state": "Uttar Pradesh",
+    "mpName": "LAXMIKANT PAPPU NISHAD SANT KABIR",
+    "constituency": "NAGAR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 261,
+    "state": "Bihar",
+    "mpName": "LOVELY ANAND",
+    "constituency": "SHEOHAR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 262,
+    "state": "Rajasthan",
+    "mpName": "LUMBARAM",
+    "constituency": "JALORE",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 263,
+    "state": "Karnataka",
+    "mpName": "M. MALLESH BABU",
+    "constituency": "KOLAR(SC)",
+    "allocatedAmount": 147065957.11,
+    "isBaseline": false,
+    "variancePercentage": 0.04
+  },
+  {
+    "srNo": 264,
+    "state": "Tamil Nadu",
+    "mpName": "M.K. VISHNUPRASAD",
+    "constituency": "CUDDALORE",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 265,
+    "state": "Andhra Pradesh",
+    "mpName": "Maddila Gurumoorthy",
+    "constituency": "TIRUPATI(SC)",
+    "allocatedAmount": 180399007,
+    "isBaseline": false,
+    "variancePercentage": 22.72
+  },
+  {
+    "srNo": 266,
+    "state": "Telangana",
+    "mpName": "MADHAVANENI RAGHUNANDAN RAO",
+    "constituency": "MEDAK",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 267,
+    "state": "Andhra Pradesh",
+    "mpName": "Magunta Sreenivasulu Reddy",
+    "constituency": "ONGOLE",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 268,
+    "state": "Madhya Pradesh",
+    "mpName": "Mahendra Singh Solanky",
+    "constituency": "DEWAS(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 269,
+    "state": "Chhattisgarh",
+    "mpName": "MAHESH KASHYAP",
+    "constituency": "BASTAR(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 270,
+    "state": "Uttar Pradesh",
+    "mpName": "Mahesh Sharma GAUTAM BUDDHA",
+    "constituency": "NAGAR",
+    "allocatedAmount": 148816284.11,
+    "isBaseline": false,
+    "variancePercentage": 1.24
+  },
+  {
+    "srNo": 271,
+    "state": "Rajasthan",
+    "mpName": "MAHIMA KUMARI MEWAR",
+    "constituency": "RAJSAMAND",
+    "allocatedAmount": 183892143,
+    "isBaseline": false,
+    "variancePercentage": 25.1
+  },
+  {
+    "srNo": 272,
+    "state": "Uttarakhand",
+    "mpName": "Mala Rajya Laxmi Shah TEHRI",
+    "constituency": "GARHWAL",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 273,
+    "state": "West Bengal",
+    "mpName": "Mala Roy KOLKATA",
+    "constituency": "DAKSHIN",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 274,
+    "state": "Tamil Nadu",
+    "mpName": "MALAIYARASAN D",
+    "constituency": "KALLAKURICHI",
+    "allocatedAmount": 201599593,
+    "isBaseline": false,
+    "variancePercentage": 37.14
+  },
+  {
+    "srNo": 275,
+    "state": "Odisha",
+    "mpName": "MALVIKA DEVI",
+    "constituency": "KALAHANDI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 276,
+    "state": "Punjab",
+    "mpName": "MALVINDER SINGH KANG ANANDPUR",
+    "constituency": "SAHIB",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 277,
+    "state": "Tamil Nadu",
+    "mpName": "MANI. A.",
+    "constituency": "DHARAMAPURI",
+    "allocatedAmount": 164515071.11,
+    "isBaseline": false,
+    "variancePercentage": 11.92
+  },
+  {
+    "srNo": 278,
+    "state": "Tamil Nadu",
+    "mpName": "Manickam Tagore B",
+    "constituency": "VIRUDHUNAGAR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 279,
+    "state": "Jharkhand",
+    "mpName": "MANISH JAISWAL",
+    "constituency": "HAZARIBAGH",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 280,
+    "state": "Chandigarh",
+    "mpName": "MANISH TEWARI",
+    "constituency": "CHANDIGARH",
+    "allocatedAmount": 178351443.75,
+    "isBaseline": false,
+    "variancePercentage": 21.33
+  },
+  {
+    "srNo": 281,
+    "state": "Rajasthan",
+    "mpName": "MANJU SHARMA",
+    "constituency": "JAIPUR",
+    "allocatedAmount": 167082901.11,
+    "isBaseline": false,
+    "variancePercentage": 13.66
+  },
+  {
+    "srNo": 282,
+    "state": "Rajasthan",
+    "mpName": "MANNA LAL RAWAT",
+    "constituency": "UDAIPUR(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 283,
+    "state": "Haryana",
+    "mpName": "MANOHAR LAL",
+    "constituency": "KARNAL",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 284,
+    "state": "Bihar",
+    "mpName": "MANOJ KUMAR",
+    "constituency": "SASARAM(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 285,
+    "state": "West Bengal",
+    "mpName": "MANOJ TIGGA",
+    "constituency": "ALIPURDUARS(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 286,
+    "state": "Delhi",
+    "mpName": "Manoj Tiwari NORTH",
+    "constituency": "EAST DELHI",
+    "allocatedAmount": 225843858,
+    "isBaseline": false,
+    "variancePercentage": 53.64
+  },
+  {
+    "srNo": 287,
+    "state": "Gujarat",
+    "mpName": "Mansukhbhai Dhanjibhai Vasava",
+    "constituency": "BHARUCH",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 288,
+    "state": "Jammu And Kashmir",
+    "mpName": "MIAN ALTAF AHMAD",
+    "constituency": "ANANTNAG",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 289,
+    "state": "Andhra Pradesh",
+    "mpName": "Midhun Reddy",
+    "constituency": "RAJAMPET",
+    "allocatedAmount": 178951477.11,
+    "isBaseline": false,
+    "variancePercentage": 21.74
+  },
+  {
+    "srNo": 290,
+    "state": "Bihar",
+    "mpName": "MISHA BHARTI",
+    "constituency": "PATALIPUTRA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 291,
+    "state": "Gujarat",
+    "mpName": "Mitesh Rameshbhai Bakabhai Patel",
+    "constituency": "ANAND",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 292,
+    "state": "Ladakh",
+    "mpName": "Mohamed Haneefa",
+    "constituency": "LADAKH",
+    "allocatedAmount": 161114542,
+    "isBaseline": false,
+    "variancePercentage": 9.6
+  },
+  {
+    "srNo": 293,
+    "state": "Uttar Pradesh",
+    "mpName": "MOHIBBULLAH",
+    "constituency": "RAMPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 294,
+    "state": "Maharashtra",
+    "mpName": "MOHITE PATIL DHAIRYASHEEL RAJSINH",
+    "constituency": "MADHA",
+    "allocatedAmount": 195613601.7,
+    "isBaseline": false,
+    "variancePercentage": 33.07
+  },
+  {
+    "srNo": 295,
+    "state": "Bihar",
+    "mpName": "Mr Gopal Jee Thakur",
+    "constituency": "DARBHANGA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 296,
+    "state": "West Bengal",
+    "mpName": "Ms Mahua Moitra",
+    "constituency": "KRISHNANAGAR",
+    "allocatedAmount": 159865046,
+    "isBaseline": false,
+    "variancePercentage": 8.75
+  },
+  {
+    "srNo": 297,
+    "state": "Lakshadweep",
+    "mpName": "MUHAMMED HAMDULLAH SAYEED",
+    "constituency": "LAKSHADWEEP(ST)",
+    "allocatedAmount": 153942460.41,
+    "isBaseline": false,
+    "variancePercentage": 4.72
+  },
+  {
+    "srNo": 298,
+    "state": "Uttar Pradesh",
+    "mpName": "Mukesh Rajput",
+    "constituency": "FARRUKHABAD",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 299,
+    "state": "Gujarat",
+    "mpName": "MUKESHKUMAR CHANDRAKAANT DALAL",
+    "constituency": "SURAT",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 300,
+    "state": "Rajasthan",
+    "mpName": "MURARI LAL MEENA",
+    "constituency": "DAUSA(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 301,
+    "state": "Tamil Nadu",
+    "mpName": "MURASOLI S",
+    "constituency": "THANJAVUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 302,
+    "state": "Maharashtra",
+    "mpName": "MURLIDHAR MOHOL",
+    "constituency": "PUNE",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 303,
+    "state": "Odisha",
+    "mpName": "NABA CHARAN MAJHI MAYURBHANJ",
+    "constituency": "(ST)",
+    "allocatedAmount": 147563957.11,
+    "isBaseline": false,
+    "variancePercentage": 0.38
+  },
+  {
+    "srNo": 304,
+    "state": "Jharkhand",
+    "mpName": "NALIN SOREN",
+    "constituency": "DUMKA(ST)",
+    "allocatedAmount": 147364097.11,
+    "isBaseline": false,
+    "variancePercentage": 0.25
+  },
+  {
+    "srNo": 305,
+    "state": "Uttar Pradesh",
+    "mpName": "NARAYAN DAS AHIRWAR",
+    "constituency": "JALAUN(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 306,
+    "state": "Maharashtra",
+    "mpName": "NARAYAN TATU RANE",
+    "constituency": "RATNAGIRI-SINDHUDURG",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 307,
+    "state": "Uttar Pradesh",
+    "mpName": "NARESH CHANDRA UTTAM PATEL",
+    "constituency": "FATEHPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 308,
+    "state": "Maharashtra",
+    "mpName": "NARESH GANPAT MHASKE",
+    "constituency": "THANE",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 309,
+    "state": "Haryana",
+    "mpName": "NAVEEN JINDAL",
+    "constituency": "KURUKSHETRA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 310,
+    "state": "Uttar Pradesh",
+    "mpName": "NEERAJ MAURYA",
+    "constituency": "AONLA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 311,
+    "state": "Maharashtra",
+    "mpName": "NILESH DNYANDEV LANKE",
+    "constituency": "AHMEDNAGAR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 312,
+    "state": "Gujarat",
+    "mpName": "NIMUBEN JAYANTIBHAI BAMBHANIYA",
+    "constituency": "BHAVNAGAR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 313,
+    "state": "Jharkhand",
+    "mpName": "Nishikant Dubey",
+    "constituency": "GODDA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 314,
+    "state": "Maharashtra",
+    "mpName": "Nitin Jairam Gadkari",
+    "constituency": "NAGPUR",
+    "allocatedAmount": 168195086.11,
+    "isBaseline": false,
+    "variancePercentage": 14.42
+  },
+  {
+    "srNo": 315,
+    "state": "Bihar",
+    "mpName": "Nityanand Rai",
+    "constituency": "UJJARPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 316,
+    "state": "Rajasthan",
+    "mpName": "Om Birla",
+    "constituency": "KOTA",
+    "allocatedAmount": 163906956.6,
+    "isBaseline": false,
+    "variancePercentage": 11.5
+  },
+  {
+    "srNo": 317,
+    "state": "Maharashtra",
+    "mpName": "Omprakash Bhupalsinh Alias Pawan Rajenimbalkar",
+    "constituency": "OSMANABAD",
+    "allocatedAmount": 184758519.11,
+    "isBaseline": false,
+    "variancePercentage": 25.69
+  },
+  {
+    "srNo": 318,
+    "state": "Karnataka",
+    "mpName": "P C Mohan",
+    "constituency": "BANGALORE CENTRAL",
+    "allocatedAmount": 159995711.11,
+    "isBaseline": false,
+    "variancePercentage": 8.84
+  },
+  {
+    "srNo": 319,
+    "state": "Uttar Pradesh",
+    "mpName": "Pankaj Chowdhary",
+    "constituency": "MAHARAJGANJ_UP",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 320,
+    "state": "Assam",
+    "mpName": "PARIMAL SUKLABAIDYA",
+    "constituency": "SILCHAR",
+    "allocatedAmount": 148300157.11,
+    "isBaseline": false,
+    "variancePercentage": 0.88
+  },
+  {
+    "srNo": 321,
+    "state": "Gujarat",
+    "mpName": "PARSHOTTAMBHAI RUPALA",
+    "constituency": "RAJKOT",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 322,
+    "state": "West Bengal",
+    "mpName": "PARTHA BHOWMICK",
+    "constituency": "BARRACKPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 323,
+    "state": "Karnataka",
+    "mpName": "Parvatagouda Chandanagouda Gaddigoudar",
+    "constituency": "BAGALKOT",
+    "allocatedAmount": 167541747.11,
+    "isBaseline": false,
+    "variancePercentage": 13.97
+  },
+  {
+    "srNo": 324,
+    "state": "The Dadra And Nagar Haveli And Daman And Diu",
+    "mpName": "PATEL UMESHBHAI BABUBHAI DAMAN and",
+    "constituency": "DIU",
+    "allocatedAmount": 245063957,
+    "isBaseline": false,
+    "variancePercentage": 66.71
+  },
+  {
+    "srNo": 325,
+    "state": "West Bengal",
+    "mpName": "PATHAN YUSUF",
+    "constituency": "BAHARAMPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 326,
+    "state": "Assam",
+    "mpName": "PHANI BHUSAN CHOUDHURY",
+    "constituency": "BARPETA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 327,
+    "state": "Maharashtra",
+    "mpName": "Piyush Vedprakash Goyal",
+    "constituency": "MUMBAI NORTH",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 328,
+    "state": "Andhra Pradesh",
+    "mpName": "PRABHAKAR REDDY VEMIREDDY",
+    "constituency": "NELLORE(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 329,
+    "state": "Gujarat",
+    "mpName": "Prabhubhai Nagarbhai Vasava",
+    "constituency": "BARDOLI(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 330,
+    "state": "Assam",
+    "mpName": "Pradan Baruah",
+    "constituency": "LAKHIMPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 331,
+    "state": "Bihar",
+    "mpName": "Pradeep Kumar Singh",
+    "constituency": "ARARIA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 332,
+    "state": "Odisha",
+    "mpName": "PRADEEP PUROHIT",
+    "constituency": "BARGARH",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 333,
+    "state": "Assam",
+    "mpName": "Pradyut Bordoloi",
+    "constituency": "NOWGONG",
+    "allocatedAmount": 98000000,
+    "isBaseline": false,
+    "variancePercentage": -33.33
+  },
+  {
+    "srNo": 334,
+    "state": "Karnataka",
+    "mpName": "Pralhad Venkatesh Joshi",
+    "constituency": "DHARWAD",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 335,
+    "state": "Maharashtra",
+    "mpName": "PRANITI SUSHILKUMAR SHINDE",
+    "constituency": "SOLAPUR(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 336,
+    "state": "West Bengal",
+    "mpName": "Prasun Banerjee",
+    "constituency": "HOWRAH",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 337,
+    "state": "Odisha",
+    "mpName": "Pratap Chandra Sarangi",
+    "constituency": "BALASORE",
+    "allocatedAmount": 147064254.11,
+    "isBaseline": false,
+    "variancePercentage": 0.04
+  },
+  {
+    "srNo": 338,
+    "state": "Maharashtra",
+    "mpName": "Prataprao Jadhav",
+    "constituency": "BULDHANA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 339,
+    "state": "West Bengal",
+    "mpName": "Pratima Mondal",
+    "constituency": "JOYNAGAR(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 340,
+    "state": "Delhi",
+    "mpName": "Praveen Khandelwal",
+    "constituency": "CHANDINI CHOWK",
+    "allocatedAmount": 147470276,
+    "isBaseline": false,
+    "variancePercentage": 0.32
+  },
+  {
+    "srNo": 341,
+    "state": "Uttar Pradesh",
+    "mpName": "PRAVEEN PATEL",
+    "constituency": "PHULPUR",
+    "allocatedAmount": 151559884.09,
+    "isBaseline": false,
+    "variancePercentage": 3.1
+  },
+  {
+    "srNo": 342,
+    "state": "Uttar Pradesh",
+    "mpName": "PRIYA SAROJ",
+    "constituency": "MACHHLISHAHR(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 343,
+    "state": "Kerala",
+    "mpName": "Priyanka Gandhi Vadra",
+    "constituency": "WAYANAD",
+    "allocatedAmount": 122500000,
+    "isBaseline": false,
+    "variancePercentage": -16.67
+  },
+  {
+    "srNo": 344,
+    "state": "Karnataka",
+    "mpName": "PRIYANKA SATISH JARKIHOLI",
+    "constituency": "CHIKKODI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 345,
+    "state": "West Bengal",
+    "mpName": "Prof Sougata Ray DUM",
+    "constituency": "DUM",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 346,
+    "state": "Uttar Pradesh",
+    "mpName": "Prof SP Singh Baghel",
+    "constituency": "AGRA(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 347,
+    "state": "Uttar Pradesh",
+    "mpName": "PUSHPENDRA SAROJ",
+    "constituency": "KAUSHAMBI(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 348,
+    "state": "Andhra Pradesh",
+    "mpName": "Putta Mahesh Kumar",
+    "constituency": "ELURU",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 349,
+    "state": "Uttar Pradesh",
+    "mpName": "R.K. CHAUDHARY",
+    "constituency": "MOHANLALGANJ(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 350,
+    "state": "Odisha",
+    "mpName": "RABINDRA NARAYAN BEHERA",
+    "constituency": "JAJPUR(SC)",
+    "allocatedAmount": 147064617.11,
+    "isBaseline": false,
+    "variancePercentage": 0.04
+  },
+  {
+    "srNo": 351,
+    "state": "West Bengal",
+    "mpName": "RACHNA BANERJEE",
+    "constituency": "HOOGHLY",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 352,
+    "state": "Bihar",
+    "mpName": "Radha Mohan Singh PURVI",
+    "constituency": "CHAMPARAN",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 353,
+    "state": "Karnataka",
+    "mpName": "RADHAKRISHNA",
+    "constituency": "GULBARGA(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 354,
+    "state": "Chhattisgarh",
+    "mpName": "RADHE SHYAM RATHIYA",
+    "constituency": "RAIGARH(ST)",
+    "allocatedAmount": 159706972.09,
+    "isBaseline": false,
+    "variancePercentage": 8.64
+  },
+  {
+    "srNo": 355,
+    "state": "Uttar Pradesh",
+    "mpName": "RAHUL GANDHI RAE",
+    "constituency": "BARELI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 356,
+    "state": "Rajasthan",
+    "mpName": "Rahul Kaswan",
+    "constituency": "CHURU",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 357,
+    "state": "Madhya Pradesh",
+    "mpName": "RAHUL SINGH LODHI",
+    "constituency": "DAMOH",
+    "allocatedAmount": 163058785.37,
+    "isBaseline": false,
+    "variancePercentage": 10.92
+  },
+  {
+    "srNo": 358,
+    "state": "Bihar",
+    "mpName": "RAJ BHUSHAN CHOUDHARY",
+    "constituency": "MUZAFFARPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 359,
+    "state": "Rajasthan",
+    "mpName": "RAJ KUMAR ROAT",
+    "constituency": "BANSWARA(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 360,
+    "state": "Bihar",
+    "mpName": "RAJA RAM SINGH",
+    "constituency": "KARAKAT",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 361,
+    "state": "Maharashtra",
+    "mpName": "RAJABHAU",
+    "constituency": "NASHIK",
+    "allocatedAmount": 152878682.11,
+    "isBaseline": false,
+    "variancePercentage": 4
+  },
+  {
+    "srNo": 362,
+    "state": "Himachal Pradesh",
+    "mpName": "RAJEEV BHARDWAJ",
+    "constituency": "KANGRA",
+    "allocatedAmount": 179388967.11,
+    "isBaseline": false,
+    "variancePercentage": 22.03
+  },
+  {
+    "srNo": 363,
+    "state": "Uttar Pradesh",
+    "mpName": "RAJEEV RAI",
+    "constituency": "GHOSI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 364,
+    "state": "Bihar",
+    "mpName": "RAJESH RANJAN ALIAS PAPPU YADAV",
+    "constituency": "PURNEA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 365,
+    "state": "Bihar",
+    "mpName": "RAJESH VERMA",
+    "constituency": "KHAGARIA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 366,
+    "state": "Gujarat",
+    "mpName": "Rajeshbhai Naranbhai Chudasama",
+    "constituency": "JUNAGADH",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 367,
+    "state": "Bihar",
+    "mpName": "Rajiv Pratap Rudy",
+    "constituency": "SARAN",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 368,
+    "state": "Bihar",
+    "mpName": "Rajiv Ranjan (Lalan) Singh",
+    "constituency": "MUNGER",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 369,
+    "state": "Uttar Pradesh",
+    "mpName": "Rajkumar Chahar FATEHPUR",
+    "constituency": "SIKRI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 370,
+    "state": "Uttar Pradesh",
+    "mpName": "Rajnath Singh",
+    "constituency": "LUCKNOW",
+    "allocatedAmount": 154808797.11,
+    "isBaseline": false,
+    "variancePercentage": 5.31
+  },
+  {
+    "srNo": 371,
+    "state": "Gujarat",
+    "mpName": "RAJPALSINH MAHENDRASINH JADAV",
+    "constituency": "PANCHMAHAL",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 372,
+    "state": "West Bengal",
+    "mpName": "Raju Bista",
+    "constituency": "DARJEELING",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 373,
+    "state": "Uttar Pradesh",
+    "mpName": "RAKESH RATHOR",
+    "constituency": "SITAPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 374,
+    "state": "Assam",
+    "mpName": "RAKIBUL HUSSAIN",
+    "constituency": "DHUBRI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 375,
+    "state": "Uttar Pradesh",
+    "mpName": "RAM PRASAD CHAUDHARY",
+    "constituency": "BASTI",
+    "allocatedAmount": 204176957.11,
+    "isBaseline": false,
+    "variancePercentage": 38.9
+  },
+  {
+    "srNo": 376,
+    "state": "Uttar Pradesh",
+    "mpName": "Ram Shiromani",
+    "constituency": "SHRAWASTI",
+    "allocatedAmount": 151746878.11,
+    "isBaseline": false,
+    "variancePercentage": 3.23
+  },
+  {
+    "srNo": 377,
+    "state": "Telangana",
+    "mpName": "RAMASAHAYAM RAGHURAM REDDY",
+    "constituency": "KHAMMAM",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 378,
+    "state": "Uttar Pradesh",
+    "mpName": "RAMASHANKAR RAJBHAR",
+    "constituency": "SALEMPUR",
+    "allocatedAmount": 160056927.07,
+    "isBaseline": false,
+    "variancePercentage": 8.88
+  },
+  {
+    "srNo": 379,
+    "state": "Uttar Pradesh",
+    "mpName": "RAMBHUAL NISHAD",
+    "constituency": "SULTANPUR",
+    "allocatedAmount": 151231957.11,
+    "isBaseline": false,
+    "variancePercentage": 2.88
+  },
+  {
+    "srNo": 380,
+    "state": "Uttar Pradesh",
+    "mpName": "RAMESH AWASTHI",
+    "constituency": "KANPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 381,
+    "state": "Karnataka",
+    "mpName": "Ramesh Chandappa Jigajinagi",
+    "constituency": "BIJAPUR(SC)",
+    "allocatedAmount": 269500000,
+    "isBaseline": false,
+    "variancePercentage": 83.33
+  },
+  {
+    "srNo": 382,
+    "state": "Bihar",
+    "mpName": "Ramprit Mandal",
+    "constituency": "JHANJHARPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 383,
+    "state": "Delhi",
+    "mpName": "Ramvir Singh Bidhuri",
+    "constituency": "SOUTH DELHI",
+    "allocatedAmount": 147559100,
+    "isBaseline": false,
+    "variancePercentage": 0.38
+  },
+  {
+    "srNo": 384,
+    "state": "Assam",
+    "mpName": "RANJIT DUTTA",
+    "constituency": "Sonitpur",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 385,
+    "state": "Haryana",
+    "mpName": "Rao Inderjit Singh",
+    "constituency": "GURGAON",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 386,
+    "state": "Rajasthan",
+    "mpName": "Rao Rajendra Singh JAIPUR",
+    "constituency": "RURAL",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 387,
+    "state": "Bihar",
+    "mpName": "Ravi Shankar Prasad PATNA",
+    "constituency": "SAHIB",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 388,
+    "state": "Maharashtra",
+    "mpName": "RAVINDRA DATTARAM WAIKAR",
+    "constituency": "MUMBAI NORTH WEST",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 389,
+    "state": "Uttar Pradesh",
+    "mpName": "Ravindra Shyamnarayan Alias Ravi Kishan Shukla",
+    "constituency": "GORAKHPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 390,
+    "state": "Maharashtra",
+    "mpName": "Ravindra Vasantrao Chavan",
+    "constituency": "NANDED",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 391,
+    "state": "Mizoram",
+    "mpName": "RICHARD VANLALHMANGAIHA MIZORAM",
+    "constituency": "(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 392,
+    "state": "Tamil Nadu",
+    "mpName": "ROBERT BRUCE C",
+    "constituency": "TIRUNELVELI",
+    "allocatedAmount": 147475440.11,
+    "isBaseline": false,
+    "variancePercentage": 0.32
+  },
+  {
+    "srNo": 393,
+    "state": "Madhya Pradesh",
+    "mpName": "Rodmal Nagar",
+    "constituency": "RAJGARH",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 394,
+    "state": "Chhattisgarh",
+    "mpName": "ROOP KUMARI CHOUDHARY",
+    "constituency": "MAHASAMUND",
+    "allocatedAmount": 153035414,
+    "isBaseline": false,
+    "variancePercentage": 4.11
+  },
+  {
+    "srNo": 395,
+    "state": "Uttar Pradesh",
+    "mpName": "RUCHI VIRA",
+    "constituency": "MORADABAD",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 396,
+    "state": "Odisha",
+    "mpName": "RUDRA NARAYAN PANY",
+    "constituency": "DHENKANAL",
+    "allocatedAmount": 155013957.11,
+    "isBaseline": false,
+    "variancePercentage": 5.45
+  },
+  {
+    "srNo": 397,
+    "state": "Nagaland",
+    "mpName": "S SUPONGMEREN JAMIR",
+    "constituency": "NAGALAND",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 398,
+    "state": "Tamil Nadu",
+    "mpName": "S Venkatesan",
+    "constituency": "MADURAI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 399,
+    "state": "Tamil Nadu",
+    "mpName": "S. Jagathrakshakan",
+    "constituency": "ARAKKONAM",
+    "allocatedAmount": 180589332.34,
+    "isBaseline": false,
+    "variancePercentage": 22.85
+  },
+  {
+    "srNo": 400,
+    "state": "Tamil Nadu",
+    "mpName": "SACHITHANANTHAM R",
+    "constituency": "DINDIGUL",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 401,
+    "state": "Karnataka",
+    "mpName": "SAGAR ESHWAR KHANDRE",
+    "constituency": "BIDAR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 402,
+    "state": "Meghalaya",
+    "mpName": "SALENG A SANGMA",
+    "constituency": "TURA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 403,
+    "state": "Odisha",
+    "mpName": "SAMBIT PATRA",
+    "constituency": "PURI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 404,
+    "state": "Uttar Pradesh",
+    "mpName": "SANATAN PANDEY",
+    "constituency": "BALLIA",
+    "allocatedAmount": 180420041.4,
+    "isBaseline": false,
+    "variancePercentage": 22.73
+  },
+  {
+    "srNo": 405,
+    "state": "Maharashtra",
+    "mpName": "SANJAY DINA PATIL",
+    "constituency": "MUMBAI NORTH EAST",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 406,
+    "state": "Maharashtra",
+    "mpName": "Sanjay Haribhau Jadhav",
+    "constituency": "PARBHANI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 407,
+    "state": "Bihar",
+    "mpName": "Sanjay Jaiswal PASCHIM",
+    "constituency": "CHAMPARAN",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 408,
+    "state": "Telangana",
+    "mpName": "Sanjay Kumar Bandi",
+    "constituency": "KARIMNAGAR",
+    "allocatedAmount": 172775317.11,
+    "isBaseline": false,
+    "variancePercentage": 17.53
+  },
+  {
+    "srNo": 409,
+    "state": "Jharkhand",
+    "mpName": "Sanjay Seth",
+    "constituency": "RANCHI",
+    "allocatedAmount": 147064357.11,
+    "isBaseline": false,
+    "variancePercentage": 0.04
+  },
+  {
+    "srNo": 410,
+    "state": "Maharashtra",
+    "mpName": "Sanjay Uttamrao Deshmukh",
+    "constituency": "YAVATMAL-WASHIM",
+    "allocatedAmount": 185640423,
+    "isBaseline": false,
+    "variancePercentage": 26.29
+  },
+  {
+    "srNo": 411,
+    "state": "Rajasthan",
+    "mpName": "SANJNA JATAV",
+    "constituency": "BHARATPUR(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 412,
+    "state": "Chhattisgarh",
+    "mpName": "Santosh Pandey",
+    "constituency": "RAJNANDGAON",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 413,
+    "state": "Odisha",
+    "mpName": "Saptagiri Sankar Ulaka",
+    "constituency": "KORAPUT(ST)",
+    "allocatedAmount": 269500000,
+    "isBaseline": false,
+    "variancePercentage": 83.33
+  },
+  {
+    "srNo": 414,
+    "state": "Punjab",
+    "mpName": "SARABJEET SINGH KHALSA",
+    "constituency": "FARIDKOT(SC)",
+    "allocatedAmount": 150850348.15,
+    "isBaseline": false,
+    "variancePercentage": 2.62
+  },
+  {
+    "srNo": 415,
+    "state": "Tamil Nadu",
+    "mpName": "Sasikanth Senthil",
+    "constituency": "TIRUVALLUR(SC)",
+    "allocatedAmount": 171500000,
+    "isBaseline": false,
+    "variancePercentage": 16.67
+  },
+  {
+    "srNo": 416,
+    "state": "Haryana",
+    "mpName": "SATPAL BRAHAMCHARI",
+    "constituency": "SONEPAT",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 417,
+    "state": "West Bengal",
+    "mpName": "Saumitra khan",
+    "constituency": "BISHNUPUR(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 418,
+    "state": "Madhya Pradesh",
+    "mpName": "SAVITRI THAKUR",
+    "constituency": "DHAR(ST)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 419,
+    "state": "West Bengal",
+    "mpName": "SAYANI GHOSH",
+    "constituency": "JADAVPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 420,
+    "state": "Haryana",
+    "mpName": "SELJA",
+    "constituency": "SIRSA(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 421,
+    "state": "Tamil Nadu",
+    "mpName": "SELVAGANAPATHI T M",
+    "constituency": "SALEM",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 422,
+    "state": "Tamil Nadu",
+    "mpName": "SELVARAJ V",
+    "constituency": "NAGAPATTINAM(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 423,
+    "state": "Kerala",
+    "mpName": "SHAFI PARAMBIL",
+    "constituency": "VADAKARA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 424,
+    "state": "Bihar",
+    "mpName": "SHAMBHAVI",
+    "constituency": "SAMASTIPUR(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 425,
+    "state": "Madhya Pradesh",
+    "mpName": "Shankar Lalwani",
+    "constituency": "INDORE",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 426,
+    "state": "Uttar Pradesh",
+    "mpName": "SHASHANK MANI",
+    "constituency": "DEORIA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 427,
+    "state": "West Bengal",
+    "mpName": "Shatrughan Sinha",
+    "constituency": "ASANSOL",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 428,
+    "state": "Punjab",
+    "mpName": "SHER SINGH GHUBAYA",
+    "constituency": "FIROZPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 429,
+    "state": "Madhya Pradesh",
+    "mpName": "SHIVMANGAL SINGH TOMAR",
+    "constituency": "MORENA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 430,
+    "state": "Madhya Pradesh",
+    "mpName": "SHIVRAJ SINGH CHOUHAN",
+    "constituency": "VIDISHA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 431,
+    "state": "Karnataka",
+    "mpName": "SHOBHA KARANDLAJE",
+    "constituency": "BANGALORE NORTH",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 432,
+    "state": "Gujarat",
+    "mpName": "SHOBHANABEN MAHENDRASINH BARAIYA",
+    "constituency": "SABARKANTHA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 433,
+    "state": "Karnataka",
+    "mpName": "SHREYAS. M. PATEL",
+    "constituency": "HASSAN",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 434,
+    "state": "Haryana",
+    "mpName": "Shri Dharambir Singh BHIWANI",
+    "constituency": "MAHENDRAGARH",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 435,
+    "state": "West Bengal",
+    "mpName": "Shri Abhishek Banerjee DIAMOND",
+    "constituency": "HARBOUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 436,
+    "state": "Punjab",
+    "mpName": "Shri Amar Singh FATEHGARH",
+    "constituency": "SAHIB(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 437,
+    "state": "Gujarat",
+    "mpName": "Shri Amit Shah",
+    "constituency": "GANDHINAGAR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 438,
+    "state": "Madhya Pradesh",
+    "mpName": "Shri Anil Firojiya",
+    "constituency": "UJJAIN(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 439,
+    "state": "Rajasthan",
+    "mpName": "Shri Arjun Ram Meghwal",
+    "constituency": "BIKANER(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 440,
+    "state": "Uttar Pradesh",
+    "mpName": "Shri Arun Kumar Sagar",
+    "constituency": "SHAHJAHANPUR(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 441,
+    "state": "Karnataka",
+    "mpName": "Shri B Y Raghavendra",
+    "constituency": "SHIMOGA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 442,
+    "state": "Kerala",
+    "mpName": "Shri Benny Behanan",
+    "constituency": "CHALAKUDY",
+    "allocatedAmount": 164674770.11,
+    "isBaseline": false,
+    "variancePercentage": 12.02
+  },
+  {
+    "srNo": 443,
+    "state": "Odisha",
+    "mpName": "Shri Bhartruhari Mahtab",
+    "constituency": "CUTTACK",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 444,
+    "state": "Jharkhand",
+    "mpName": "Shri Chandra Prakash Choudhary",
+    "constituency": "GIRIDIH",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 445,
+    "state": "West Bengal",
+    "mpName": "Shri Deepak (Dev) Adhikari",
+    "constituency": "GHATAL",
+    "allocatedAmount": 200747364,
+    "isBaseline": false,
+    "variancePercentage": 36.56
+  },
+  {
+    "srNo": 446,
+    "state": "Punjab",
+    "mpName": "Shri Gurjeet Singh Aujla",
+    "constituency": "AMRITSAR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 447,
+    "state": "Rajasthan",
+    "mpName": "Shri Hanuman Beniwal",
+    "constituency": "NAGAUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 448,
+    "state": "Kerala",
+    "mpName": "Shri Hibi Eden",
+    "constituency": "ERNAKULAM",
+    "allocatedAmount": 162177260.11,
+    "isBaseline": false,
+    "variancePercentage": 10.32
+  },
+  {
+    "srNo": 449,
+    "state": "Bihar",
+    "mpName": "Shri Janardan Singh Sigriwal",
+    "constituency": "MAHARAJGANJ_BR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 450,
+    "state": "Odisha",
+    "mpName": "Shri Jual Oram SUNDARGARH",
+    "constituency": "(ST)",
+    "allocatedAmount": 173096756.91,
+    "isBaseline": false,
+    "variancePercentage": 17.75
+  },
+  {
+    "srNo": 451,
+    "state": "Jammu And Kashmir",
+    "mpName": "Shri Jugal Kishore Sharma",
+    "constituency": "JAMMU",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 452,
+    "state": "West Bengal",
+    "mpName": "Shri Jyotirmay Singh Mahato",
+    "constituency": "PURULIA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 453,
+    "state": "Tamil Nadu",
+    "mpName": "Shri Karti P Chidambaram",
+    "constituency": "SIVAGANGA",
+    "allocatedAmount": 159049284.11,
+    "isBaseline": false,
+    "variancePercentage": 8.2
+  },
+  {
+    "srNo": 454,
+    "state": "Kerala",
+    "mpName": "Shri Kumbakudi Sudhakaran",
+    "constituency": "KANNUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 455,
+    "state": "Karnataka",
+    "mpName": "Shri LS Tejasvi Surya",
+    "constituency": "BANGALORE SOUTH",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 456,
+    "state": "Kerala",
+    "mpName": "Shri M K Raghavan",
+    "constituency": "KOZHIKODE",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 457,
+    "state": "Uttar Pradesh",
+    "mpName": "Shri Narendra Modi",
+    "constituency": "VARANASI",
+    "allocatedAmount": 162070276.11,
+    "isBaseline": false,
+    "variancePercentage": 10.25
+  },
+  {
+    "srNo": 458,
+    "state": "Kerala",
+    "mpName": "Shri NK Premachandran",
+    "constituency": "KOLLAM",
+    "allocatedAmount": 171477994.11,
+    "isBaseline": false,
+    "variancePercentage": 16.65
+  },
+  {
+    "srNo": 459,
+    "state": "Rajasthan",
+    "mpName": "Shri PP Chaudhary",
+    "constituency": "PALI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 460,
+    "state": "Kerala",
+    "mpName": "Shri Rajmohan Unnithan",
+    "constituency": "KASARAGOD",
+    "allocatedAmount": 156754633.11,
+    "isBaseline": false,
+    "variancePercentage": 6.64
+  },
+  {
+    "srNo": 461,
+    "state": "Assam",
+    "mpName": "Shri Sarbananda Sonowal (18LS)",
+    "constituency": "DIBRUGARH",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 462,
+    "state": "Uttar Pradesh",
+    "mpName": "Shri Satish Kumar Gautam",
+    "constituency": "ALIGARH",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 463,
+    "state": "West Bengal",
+    "mpName": "Shri Shantanu Thakur",
+    "constituency": "BANGAON(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 464,
+    "state": "Madhya Pradesh",
+    "mpName": "Shri Sudheer Gupta",
+    "constituency": "MANDSOUR",
+    "allocatedAmount": 148988014.83,
+    "isBaseline": false,
+    "variancePercentage": 1.35
+  },
+  {
+    "srNo": 465,
+    "state": "Kerala",
+    "mpName": "Shri Suresh Kodikunnil",
+    "constituency": "MAVELIKKARA(SC)",
+    "allocatedAmount": 172429519.11,
+    "isBaseline": false,
+    "variancePercentage": 17.3
+  },
+  {
+    "srNo": 466,
+    "state": "Arunachal Pradesh",
+    "mpName": "Shri Tapir Gao ARUNACHAL",
+    "constituency": "EAST",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 467,
+    "state": "Tamil Nadu",
+    "mpName": "Shri vijayakumar Vasanth",
+    "constituency": "KANNIYAKUMARI",
+    "allocatedAmount": 171500000,
+    "isBaseline": false,
+    "variancePercentage": 16.67
+  },
+  {
+    "srNo": 468,
+    "state": "Maharashtra",
+    "mpName": "Shrikant Eknath Shinde",
+    "constituency": "KALYAN",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 469,
+    "state": "Maharashtra",
+    "mpName": "SHRIMANT CHH UDAYANRAJE PRATAPSINHAMAHARAJ BHONSLE",
+    "constituency": "SATARA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 470,
+    "state": "Goa",
+    "mpName": "Shripad Yesso Naik NORTH",
+    "constituency": "GOA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 471,
+    "state": "Maharashtra",
+    "mpName": "Shrirang Appa Barne",
+    "constituency": "MAVAL",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 472,
+    "state": "Maharashtra",
+    "mpName": "Shyamkumar",
+    "constituency": "RAMTEK(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 473,
+    "state": "Andhra Pradesh",
+    "mpName": "Sivanath Kesineni",
+    "constituency": "VIJAYAWADA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 474,
+    "state": "West Bengal",
+    "mpName": "SK NURUL ISLAM",
+    "constituency": "BASIRHAT",
+    "allocatedAmount": 49000000,
+    "isBaseline": false,
+    "variancePercentage": -66.67
+  },
+  {
+    "srNo": 475,
+    "state": "Maharashtra",
+    "mpName": "SMITA UDAY WAGH",
+    "constituency": "JALGAON",
+    "allocatedAmount": 148107373.11,
+    "isBaseline": false,
+    "variancePercentage": 0.75
+  },
+  {
+    "srNo": 476,
+    "state": "Uttar Pradesh",
+    "mpName": "Smt Anupriya Patel",
+    "constituency": "MIRZAPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 477,
+    "state": "Odisha",
+    "mpName": "Smt Aparajita Sarangi",
+    "constituency": "BHUBANESWAR",
+    "allocatedAmount": 147420861.41,
+    "isBaseline": false,
+    "variancePercentage": 0.29
+  },
+  {
+    "srNo": 478,
+    "state": "Uttar Pradesh",
+    "mpName": "Smt Dimple Yadav",
+    "constituency": "MAINPURI",
+    "allocatedAmount": 192042469.11,
+    "isBaseline": false,
+    "variancePercentage": 30.64
+  },
+  {
+    "srNo": 479,
+    "state": "Punjab",
+    "mpName": "Smt Harsimrat Kaur Badal",
+    "constituency": "BHATINDA",
+    "allocatedAmount": 159775982.39,
+    "isBaseline": false,
+    "variancePercentage": 8.69
+  },
+  {
+    "srNo": 480,
+    "state": "Uttar Pradesh",
+    "mpName": "Smt Hema Malini",
+    "constituency": "MATHURA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 481,
+    "state": "Madhya Pradesh",
+    "mpName": "Smt Himadri Singh SHAHDOL",
+    "constituency": "(ST)",
+    "allocatedAmount": 150724861.11,
+    "isBaseline": false,
+    "variancePercentage": 2.53
+  },
+  {
+    "srNo": 482,
+    "state": "Gujarat",
+    "mpName": "Smt Poonamben Hematbhai Maadam",
+    "constituency": "JAMNAGAR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 483,
+    "state": "Maharashtra",
+    "mpName": "Smt Raksha Nikhil Khadse",
+    "constituency": "RAVER",
+    "allocatedAmount": 153112586.11,
+    "isBaseline": false,
+    "variancePercentage": 4.16
+  },
+  {
+    "srNo": 484,
+    "state": "Tamil Nadu",
+    "mpName": "Smt S Jothimani",
+    "constituency": "KARUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 485,
+    "state": "West Bengal",
+    "mpName": "Smt Sajda Ahmed",
+    "constituency": "ULUBERIA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 486,
+    "state": "Madhya Pradesh",
+    "mpName": "Smt Sandhya Ray",
+    "constituency": "BHIND(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 487,
+    "state": "Odisha",
+    "mpName": "Smt Sangeeta Kumari Singh Deo",
+    "constituency": "BOLANGIR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 488,
+    "state": "West Bengal",
+    "mpName": "Smt Satabdi Roy (Banerjee)",
+    "constituency": "BIRBHUM",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 489,
+    "state": "Maharashtra",
+    "mpName": "Smt Supriya Sadanand Sule",
+    "constituency": "BARAMATI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 490,
+    "state": "Bihar",
+    "mpName": "Smt Veena Devi",
+    "constituency": "VAISHALI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 491,
+    "state": "Andhra Pradesh",
+    "mpName": "Sribharat MathuKumli",
+    "constituency": "VISAKHAPATNAM",
+    "allocatedAmount": 164841922,
+    "isBaseline": false,
+    "variancePercentage": 12.14
+  },
+  {
+    "srNo": 492,
+    "state": "Bihar",
+    "mpName": "SUDAMA PRASAD",
+    "constituency": "ARRAH",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 493,
+    "state": "Tamil Nadu",
+    "mpName": "SUDHA R",
+    "constituency": "MAYILADUTHURAI",
+    "allocatedAmount": 147332315.11,
+    "isBaseline": false,
+    "variancePercentage": 0.23
+  },
+  {
+    "srNo": 494,
+    "state": "Bihar",
+    "mpName": "SUDHAKAR SINGH",
+    "constituency": "BUXAR",
+    "allocatedAmount": 185211956.54,
+    "isBaseline": false,
+    "variancePercentage": 25.99
+  },
+  {
+    "srNo": 495,
+    "state": "West Bengal",
+    "mpName": "Sudip Bandyopadhyay KOLKATA",
+    "constituency": "UTTAR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 496,
+    "state": "Odisha",
+    "mpName": "SUKANTA KUMAR PANIGRAHI",
+    "constituency": "KANDHAMAL",
+    "allocatedAmount": 190712424.11,
+    "isBaseline": false,
+    "variancePercentage": 29.74
+  },
+  {
+    "srNo": 497,
+    "state": "Jharkhand",
+    "mpName": "SUKHDEO BHAGAT",
+    "constituency": "LOHARDAGA(ST)",
+    "allocatedAmount": 171821957.11,
+    "isBaseline": false,
+    "variancePercentage": 16.89
+  },
+  {
+    "srNo": 498,
+    "state": "Punjab",
+    "mpName": "SUKHJINDER SINGH RANDHAWA",
+    "constituency": "GURDASPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 499,
+    "state": "Karnataka",
+    "mpName": "SUNIL BOSE",
+    "constituency": "CHAMARAJANAGAR(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 500,
+    "state": "Maharashtra",
+    "mpName": "Sunil Dattatray Tatkare",
+    "constituency": "RAIGAD",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 501,
+    "state": "Bihar",
+    "mpName": "Sunil Kumar VALMIKI",
+    "constituency": "NAGAR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 502,
+    "state": "Bihar",
+    "mpName": "SURENDRA PRASAD YADAV",
+    "constituency": "JAHANABAD",
+    "allocatedAmount": 155325714,
+    "isBaseline": false,
+    "variancePercentage": 5.66
+  },
+  {
+    "srNo": 503,
+    "state": "Kerala",
+    "mpName": "SURESH GOPI",
+    "constituency": "THRISSUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 504,
+    "state": "Himachal Pradesh",
+    "mpName": "Suresh Kumar Kashyap SHIMLA",
+    "constituency": "(SC)",
+    "allocatedAmount": 153563957.11,
+    "isBaseline": false,
+    "variancePercentage": 4.47
+  },
+  {
+    "srNo": 505,
+    "state": "Telangana",
+    "mpName": "SURESH KUMAR SHETKAR",
+    "constituency": "ZAHIRABAD",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 506,
+    "state": "Uttar Pradesh",
+    "mpName": "Swami Sachchidanandhari Sakshi ji Maharaj",
+    "constituency": "UNNAO",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 507,
+    "state": "Tamil Nadu",
+    "mpName": "T Sumathy (A) Thamizhachi Thangapandian",
+    "constituency": "CHENNAI SOUTH",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 508,
+    "state": "Andhra Pradesh",
+    "mpName": "TANGELLA UDAY SRINIVAS",
+    "constituency": "KAKINADA",
+    "allocatedAmount": 199417886.76,
+    "isBaseline": false,
+    "variancePercentage": 35.66
+  },
+  {
+    "srNo": 509,
+    "state": "Uttar Pradesh",
+    "mpName": "TANUJ PUNIA",
+    "constituency": "BARABANKI(SC)",
+    "allocatedAmount": 148198170.11,
+    "isBaseline": false,
+    "variancePercentage": 0.82
+  },
+  {
+    "srNo": 510,
+    "state": "Bihar",
+    "mpName": "TARIQ ANWAR",
+    "constituency": "KATIHAR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 511,
+    "state": "Tamil Nadu",
+    "mpName": "Thalikkottai Rajuthevar Baalu",
+    "constituency": "SRIPERUMBUDUR",
+    "allocatedAmount": 196905535.11,
+    "isBaseline": false,
+    "variancePercentage": 33.95
+  },
+  {
+    "srNo": 512,
+    "state": "Tamil Nadu",
+    "mpName": "THANGA TAMILSELVAN",
+    "constituency": "THENI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 513,
+    "state": "Tamil Nadu",
+    "mpName": "THARANIVENTHAN M S",
+    "constituency": "ARANI",
+    "allocatedAmount": 168337124.35,
+    "isBaseline": false,
+    "variancePercentage": 14.52
+  },
+  {
+    "srNo": 514,
+    "state": "Tamil Nadu",
+    "mpName": "Thiru Dayanidhi Maran",
+    "constituency": "CHENNAI CENTRAL",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 515,
+    "state": "Tamil Nadu",
+    "mpName": "Thirumaa Valavan Thol",
+    "constituency": "CHIDAMBARAM(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 516,
+    "state": "Chhattisgarh",
+    "mpName": "TOKHAN SAHU",
+    "constituency": "BILASPUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 517,
+    "state": "Uttarakhand",
+    "mpName": "TRIVENDRA SINGH RAWAT",
+    "constituency": "HARDWAR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 518,
+    "state": "Uttar Pradesh",
+    "mpName": "UJJWAL RAMAN SINGH",
+    "constituency": "ALLAHABAD",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 519,
+    "state": "Rajasthan",
+    "mpName": "UMMEDA RAM BENIWAL",
+    "constituency": "BARMER",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 520,
+    "state": "Uttar Pradesh",
+    "mpName": "UTKARSH VERMA MADHUR",
+    "constituency": "KHERI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 521,
+    "state": "Tamil Nadu",
+    "mpName": "V S Matheswaran",
+    "constituency": "NAMAKKAL",
+    "allocatedAmount": 162539930.11,
+    "isBaseline": false,
+    "variancePercentage": 10.57
+  },
+  {
+    "srNo": 522,
+    "state": "Karnataka",
+    "mpName": "V. SOMANNA",
+    "constituency": "TUMKUR",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 523,
+    "state": "Puducherry",
+    "mpName": "Vaithilingam Ve",
+    "constituency": "Puducherry",
+    "allocatedAmount": 209368972.11,
+    "isBaseline": false,
+    "variancePercentage": 42.43
+  },
+  {
+    "srNo": 524,
+    "state": "Telangana",
+    "mpName": "VAMSI KRISHNA GADDAM",
+    "constituency": "PEDDAPALLE",
+    "allocatedAmount": 148451721.11,
+    "isBaseline": false,
+    "variancePercentage": 0.99
+  },
+  {
+    "srNo": 525,
+    "state": "Haryana",
+    "mpName": "VARUN CHAUDHRY AMBALA",
+    "constituency": "(SC)",
+    "allocatedAmount": 255454264,
+    "isBaseline": false,
+    "variancePercentage": 73.78
+  },
+  {
+    "srNo": 526,
+    "state": "Kerala",
+    "mpName": "Vellalath Kochukrishnan Nair Sreekandan",
+    "constituency": "PALAKKAD",
+    "allocatedAmount": 167807990.11,
+    "isBaseline": false,
+    "variancePercentage": 14.16
+  },
+  {
+    "srNo": 527,
+    "state": "Chhattisgarh",
+    "mpName": "Vijay Baghel",
+    "constituency": "DURG",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 528,
+    "state": "Uttar Pradesh",
+    "mpName": "Vijay Kumar Dubey KUSHI",
+    "constituency": "NAGAR",
+    "allocatedAmount": 148900000,
+    "isBaseline": false,
+    "variancePercentage": 1.29
+  },
+  {
+    "srNo": 529,
+    "state": "Jharkhand",
+    "mpName": "Vijay Kumar Hansdak",
+    "constituency": "RAJMAHAL(ST)",
+    "allocatedAmount": 147223957.11,
+    "isBaseline": false,
+    "variancePercentage": 0.15
+  },
+  {
+    "srNo": 530,
+    "state": "Bihar",
+    "mpName": "VIJAYLAKSHMI DEVI",
+    "constituency": "SIWAN",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 531,
+    "state": "Gujarat",
+    "mpName": "Vinod Chavda",
+    "constituency": "KACHCHH(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 532,
+    "state": "Uttar Pradesh",
+    "mpName": "VINOD KUMAR BIND",
+    "constituency": "BHADOHI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 533,
+    "state": "Madhya Pradesh",
+    "mpName": "Virendra Kumar",
+    "constituency": "TIKAMGARH(SC)",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 534,
+    "state": "Uttar Pradesh",
+    "mpName": "VIRENDRA SINGH",
+    "constituency": "CHANDAULI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 535,
+    "state": "Maharashtra",
+    "mpName": "VISHAL",
+    "constituency": "SANGLI",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 536,
+    "state": "Jharkhand",
+    "mpName": "Vishnu Dayal Ram",
+    "constituency": "PALAMU(SC)",
+    "allocatedAmount": 158176083.11,
+    "isBaseline": false,
+    "variancePercentage": 7.6
+  },
+  {
+    "srNo": 537,
+    "state": "Madhya Pradesh",
+    "mpName": "Vishnu Dutt Sharma",
+    "constituency": "KHAJURAHO",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 538,
+    "state": "Karnataka",
+    "mpName": "VISHWESHWAR HEGDE KAGERI UTTARA",
+    "constituency": "KANNADA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 539,
+    "state": "Bihar",
+    "mpName": "VIVEK THAKUR",
+    "constituency": "NAWADA",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 540,
+    "state": "Andhra Pradesh",
+    "mpName": "Y S Avinash Reddy",
+    "constituency": "KADAPA",
+    "allocatedAmount": 156430260.11,
+    "isBaseline": false,
+    "variancePercentage": 6.42
+  },
+  {
+    "srNo": 541,
+    "state": "Karnataka",
+    "mpName": "YADUVEER KRISHNADATTA CHAMARAJA WADIYAR",
+    "constituency": "MYSORE",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  },
+  {
+    "srNo": 542,
+    "state": "Delhi",
+    "mpName": "Yogendra Chandoliya",
+    "constituency": "NORTH WEST DELHI(SC)",
+    "allocatedAmount": 147876307,
+    "isBaseline": false,
+    "variancePercentage": 0.6
+  },
+  {
+    "srNo": 543,
+    "state": "Uttar Pradesh",
+    "mpName": "ZIA UR REHMAN",
+    "constituency": "SAMBHAL",
+    "allocatedAmount": 147000000,
+    "isBaseline": true,
+    "variancePercentage": 0
+  }
+]
