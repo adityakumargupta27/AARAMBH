@@ -393,8 +393,54 @@ const server = http.createServer(async (req, res) => {
         // Execute grounded forensic agent engine
         const agentResult = queryForensicAgent(question, caseId, caseContext);
 
+        // Optional: If OPENAI_API_KEY is configured in process.env, augment answer
+        if (process.env.OPENAI_API_KEY && !agentResult.provider) {
+          try {
+            const prompt = `You are the Aarambha AI Procurement Investigator, auditing Indian public procurement and MPLADS projects.
+Context:
+Project: ${caseContext?.projectName || 'Construction of Community Hall (MPLADS-1024)'}
+Contractor: ${caseContext?.contractorName || 'ABC Infrastructure Pvt Ltd'}
+Unit Price: ₹12,000/unit (+45.5% vs CPWD benchmark ₹8,250)
+Tender Spread: 2.4% (vs 6.8% historical median)
+Physical Progress: 68% vs Financial Disbursement: 86.8%
+GFR Rules: Rule 149 & Rule 173 of GFR 2017, CPWD Works Manual Section 10CA.
+
+User Question: "${question}"
+
+Provide a concise, professional vigilance audit assessment citing these exact numbers, relevant GFR/CPWD clauses, and recommend verification steps. Do not declare guilt; state analytical signals.`;
+
+            const aiRes = await fetch('https://api.openai.com/v1/chat/completions', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
+              },
+              body: JSON.stringify({
+                model: 'gpt-4o-mini',
+                messages: [
+                  { role: 'system', content: 'You are the Aarambha Forensic Audit Assistant for MoSPI MPLADS procurement.' },
+                  { role: 'user', content: prompt }
+                ],
+                max_tokens: 350,
+                temperature: 0.2
+              })
+            });
+
+            if (aiRes.ok) {
+              const aiData = await aiRes.json();
+              const text = aiData?.choices?.[0]?.message?.content;
+              if (text) {
+                agentResult.answer = text;
+                agentResult.provider = 'gpt-4o-mini';
+              }
+            }
+          } catch (openAiErr) {
+            console.warn('OpenAI API call skipped, using heuristic reasoning:', openAiErr.message);
+          }
+        }
+
         // Optional: If GEMINI_API_KEY is configured in process.env, augment answer
-        if (process.env.GEMINI_API_KEY) {
+        if (process.env.GEMINI_API_KEY && !agentResult.provider) {
           try {
             const prompt = `You are the Aarambha AI Procurement Investigator, auditing Indian public procurement and MPLADS projects.
 Context:
