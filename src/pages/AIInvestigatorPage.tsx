@@ -536,11 +536,12 @@ export default function AIInvestigatorPage() {
   };
 
   return (
-    <div className="h-[calc(100vh-5rem)] flex flex-col bg-[#0b1120] text-slate-100 rounded-xl overflow-hidden border border-slate-800 shadow-2xl">
+    <div className="h-[calc(100vh-6.5rem)] flex flex-col bg-[#0b1120] text-slate-100 rounded-xl overflow-hidden border border-slate-800/90 shadow-2xl">
       {/* Top Global Bar */}
-      <header className="h-13 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-4 flex items-center justify-between gap-3 flex-shrink-0 z-10">
+      <header className="h-14 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 px-4 py-2.5 flex items-center justify-between gap-3 flex-shrink-0 z-10">
         <div className="flex items-center gap-2 min-w-0">
           <button
+            type="button"
             onClick={() => setHistorySidebarOpen(!historySidebarOpen)}
             className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
             title={historySidebarOpen ? 'Hide Chat History' : 'Show Chat History'}
@@ -552,7 +553,7 @@ export default function AIInvestigatorPage() {
 
           <div className="flex items-center gap-2 min-w-0">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse hidden sm:inline-block" />
-            <span className="font-bold text-white text-[13px] sm:text-[14px] truncate">
+            <span className="font-bold text-white text-[13px] sm:text-[14px] truncate leading-tight">
               {activeSession.title}
             </span>
             <span className={cn(
