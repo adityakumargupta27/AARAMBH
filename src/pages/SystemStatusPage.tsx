@@ -21,13 +21,13 @@ export default function SystemStatusPage() {
                   <div className="flex items-start gap-3">
                     <div className={cn(
                       'w-9 h-9 rounded-md flex items-center justify-center flex-shrink-0',
-                      isDemo ? 'bg-amber-50' : 'bg-emerald-50'
+                      isDemo ? 'bg-amber-500/15 border border-amber-500/25' : 'bg-emerald-500/15 border border-emerald-500/25'
                     )}>
-                      <Icon className={cn('w-4.5 h-4.5', isDemo ? 'text-amber-600' : 'text-emerald-600')} />
+                      <Icon className={cn('w-4.5 h-4.5', isDemo ? 'text-amber-400' : 'text-emerald-400')} />
                     </div>
                     <div>
-                      <div className="text-[14px] font-semibold text-slate-900">{s.name}</div>
-                      <div className="text-[12px] text-slate-500 mt-0.5">{s.detail}</div>
+                      <div className="text-[14px] font-semibold text-white">{s.name}</div>
+                      <div className="text-[12px] text-slate-400 mt-0.5">{s.detail}</div>
                     </div>
                   </div>
                   <StatusDot status={isDemo ? 'demo' : 'operational'} label={s.status} />
@@ -43,7 +43,7 @@ export default function SystemStatusPage() {
           <div className="flex items-center justify-between flex-wrap gap-3">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-5 h-5 text-emerald-500" />
-              <span className="text-[14px] font-medium text-slate-800">All systems operational</span>
+              <span className="text-[14px] font-medium text-slate-100">All systems operational</span>
             </div>
             <div className="text-[12px] text-slate-400">
               Last refresh: 03 Sep 2026, 06:42 IST

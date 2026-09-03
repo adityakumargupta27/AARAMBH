@@ -92,7 +92,7 @@ export default function ProjectsPage() {
                 className="input pl-8"
               />
             </div>
-            <button className={cn('btn-secondary', showFilters && 'border-navy-300 text-navy-700')} onClick={() => setShowFilters(!showFilters)}>
+            <button className={cn('btn-secondary', showFilters && 'border-navy-300 text-sky-400')} onClick={() => setShowFilters(!showFilters)}>
               <Filter className="w-4 h-4" /> Filters {activeFilters > 0 && <span className="ml-1 px-1.5 py-0.5 bg-navy-600 text-white rounded-full text-[10px]">{activeFilters}</span>}
             </button>
             {activeFilters > 0 && (
@@ -103,7 +103,7 @@ export default function ProjectsPage() {
           </div>
 
           {showFilters && (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-3 pt-3 border-t border-slate-100">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-3 pt-3 border-t border-slate-700/20">
               <div>
                 <label className="label">State</label>
                 <select className="input" value={stateFilter} onChange={(e) => { setStateFilter(e.target.value); setPage(1); }}>
@@ -155,7 +155,7 @@ export default function ProjectsPage() {
       <Card>
         {loading ? (
           <div className="p-4 space-y-2 animate-pulse">
-            {Array.from({ length: 8 }).map((_, i) => <div key={i} className="h-10 bg-slate-100 rounded" />)}
+            {Array.from({ length: 8 }).map((_, i) => <div key={i} className="h-10 bg-slate-800/30 rounded" />)}
           </div>
         ) : paged.length === 0 ? (
           <EmptyState icon={<FolderKanban className="w-8 h-8" />} title="No projects found" description="Try adjusting your filters or search query." />
@@ -186,7 +186,7 @@ export default function ProjectsPage() {
               <tbody>
                 {paged.map((p) => (
                   <tr key={p.id} onClick={() => navigate(`/projects/${p.id}`)}>
-                    <td className="font-medium text-navy-700">{p.id}</td>
+                    <td className="font-medium text-sky-400">{p.id}</td>
                     <td className="max-w-[200px] truncate">{p.name}</td>
                     <td>{p.state}</td>
                     <td>{p.constituency}</td>
@@ -196,7 +196,7 @@ export default function ProjectsPage() {
                     <td>
                       <div className="flex items-center gap-2">
                         <RiskBadge level={p.riskLevel} showLabel={false} />
-                        <span className="text-[12px] font-semibold tabular-nums text-slate-700 w-6">{p.riskScore}</span>
+                        <span className="text-[12px] font-semibold tabular-nums text-slate-300 w-6">{p.riskScore}</span>
                       </div>
                     </td>
                     <td className="text-[12px] text-slate-500">{formatDate(p.lastUpdated)}</td>
@@ -209,7 +209,7 @@ export default function ProjectsPage() {
 
         {/* Pagination */}
         {filtered.length > 0 && (
-          <div className="flex items-center justify-between px-4 py-3 border-t border-slate-100">
+          <div className="flex items-center justify-between px-4 py-3 border-t border-slate-700/20">
             <span className="text-[12px] text-slate-500">
               Showing {(page - 1) * pageSize + 1}–{Math.min(page * pageSize, filtered.length)} of {filtered.length}
             </span>
@@ -231,7 +231,7 @@ export default function ProjectsPage() {
 
 function FilterChip({ label, onClear }: { label: string; onClear: () => void }) {
   return (
-    <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-navy-50 text-navy-700 border border-navy-200 rounded-md text-[11px] font-medium">
+    <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-sky-500/10 text-sky-400 border border-navy-200 rounded-md text-[11px] font-medium">
       {label}
       <button onClick={onClear} className="hover:text-navy-900"><X className="w-3 h-3" /></button>
     </span>

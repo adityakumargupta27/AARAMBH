@@ -80,17 +80,17 @@ export default function AIInvestigatorPage() {
             <CardBody className="space-y-3">
               <div>
                 <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Case</div>
-                <button onClick={() => navigate(`/investigations/${caseData.id}`)} className="text-[14px] font-bold text-navy-700 hover:text-navy-900">
+                <button onClick={() => navigate(`/investigations/${caseData.id}`)} className="text-[14px] font-bold text-sky-400 hover:text-navy-900">
                   {caseData.id}
                 </button>
               </div>
               <div>
                 <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Project</div>
-                <div className="text-[13px] font-medium text-slate-800">{caseData.projectName}</div>
+                <div className="text-[13px] font-medium text-slate-100">{caseData.projectName}</div>
               </div>
               <div>
                 <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Contractor</div>
-                <div className="text-[13px] font-medium text-slate-800">{caseData.contractorName}</div>
+                <div className="text-[13px] font-medium text-slate-100">{caseData.contractorName}</div>
               </div>
               <div className="flex items-center gap-2">
                 <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Risk:</div>
@@ -105,9 +105,9 @@ export default function AIInvestigatorPage() {
             <CardHeader title="Top Signals" />
             <CardBody className="space-y-2">
               {demoRiskAssessment.signals.slice(0, 3).map((s) => (
-                <div key={s.id} className="flex items-center justify-between p-2 bg-slate-50 rounded">
-                  <span className="text-[12px] font-medium text-slate-700">{s.label}</span>
-                  <span className="text-[13px] font-bold tabular-nums text-slate-900">{s.score}</span>
+                <div key={s.id} className="flex items-center justify-between p-2 bg-slate-800/40 border border-slate-700/30 rounded">
+                  <span className="text-[12px] font-medium text-slate-300">{s.label}</span>
+                  <span className="text-[13px] font-bold tabular-nums text-white">{s.score}</span>
                 </div>
               ))}
             </CardBody>
@@ -118,7 +118,7 @@ export default function AIInvestigatorPage() {
               <div className="flex items-center justify-between">
                 <div>
                   <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Evidence</div>
-                  <div className="text-[18px] font-bold text-slate-900 tabular-nums">{caseData.evidenceCount} records</div>
+                  <div className="text-[18px] font-bold text-white tabular-nums">{caseData.evidenceCount} records</div>
                 </div>
                 <FileText className="w-6 h-6 text-slate-300" />
               </div>
@@ -141,29 +141,29 @@ export default function AIInvestigatorPage() {
                     ) : (
                       <div className="flex items-start gap-2.5">
                         <div className="w-7 h-7 rounded-md bg-navy-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <Bot className="w-4 h-4 text-navy-700" />
+                          <Bot className="w-4 h-4 text-sky-400" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="bg-slate-50 border border-slate-100 rounded-lg rounded-tl-sm px-4 py-3">
-                            <p className="text-[13px] text-slate-700 leading-relaxed">{msg.content}</p>
+                          <div className="bg-slate-800/60 border border-slate-700/40 rounded-lg rounded-tl-sm px-4 py-3">
+                            <p className="text-[13px] text-slate-200 leading-relaxed">{msg.content}</p>
 
                             {msg.structured?.signals && (
                               <div className="mt-3 space-y-2">
                                 {msg.structured.signals.map((sig, i) => (
-                                  <div key={i} className="p-2.5 bg-white border border-slate-200 rounded-md">
-                                    <div className="text-[12px] font-semibold text-navy-800">{sig.label}</div>
-                                    <div className="text-[12px] text-slate-600 mt-0.5">{sig.description}</div>
+                                  <div key={i} className="p-2.5 rounded-md border" style={{ background: 'rgba(15, 23, 42, 0.6)', borderColor: 'rgba(148, 163, 184, 0.12)' }}>
+                                    <div className="text-[12px] font-semibold text-sky-400">{sig.label}</div>
+                                    <div className="text-[12px] text-slate-300 mt-0.5">{sig.description}</div>
                                   </div>
                                 ))}
                               </div>
                             )}
 
                             {msg.structured?.recommendation && (
-                              <div className="mt-3 p-2.5 bg-navy-50 border border-navy-100 rounded-md flex items-start gap-2">
-                                <Lightbulb className="w-3.5 h-3.5 text-navy-600 flex-shrink-0 mt-0.5" />
+                              <div className="mt-3 p-2.5 rounded-md flex items-start gap-2 border" style={{ background: 'rgba(56, 189, 248, 0.1)', borderColor: 'rgba(56, 189, 248, 0.2)' }}>
+                                <Lightbulb className="w-3.5 h-3.5 text-sky-400 flex-shrink-0 mt-0.5" />
                                 <div>
-                                  <div className="text-[10px] font-semibold text-navy-700 uppercase">Recommendation</div>
-                                  <p className="text-[12px] text-slate-700 mt-0.5">{msg.structured.recommendation}</p>
+                                  <div className="text-[10px] font-semibold text-sky-400 uppercase">Recommendation</div>
+                                  <p className="text-[12px] text-slate-300 mt-0.5">{msg.structured.recommendation}</p>
                                 </div>
                               </div>
                             )}
@@ -172,15 +172,15 @@ export default function AIInvestigatorPage() {
                               <div className="mt-2 flex items-center gap-1.5 flex-wrap">
                                 <span className="text-[10px] text-slate-400 font-medium">Evidence used:</span>
                                 {msg.structured.evidence.map((ev, i) => (
-                                  <span key={i} className="text-[10px] px-1.5 py-0.5 bg-white border border-slate-200 rounded text-slate-600">{ev}</span>
+                                  <span key={i} className="text-[10px] px-1.5 py-0.5 rounded text-slate-300 border" style={{ background: 'rgba(30, 41, 59, 0.6)', borderColor: 'rgba(148, 163, 184, 0.12)' }}>{ev}</span>
                                 ))}
                               </div>
                             )}
 
                             {msg.structured?.disclaimer && (
-                              <div className="mt-2.5 p-2 bg-amber-50 border border-amber-100 rounded flex items-start gap-1.5">
-                                <Shield className="w-3 h-3 text-amber-600 flex-shrink-0 mt-0.5" />
-                                <p className="text-[10px] text-amber-800 leading-snug">{msg.structured.disclaimer}</p>
+                              <div className="mt-2.5 p-2 rounded flex items-start gap-1.5 border" style={{ background: 'rgba(217, 119, 6, 0.1)', borderColor: 'rgba(217, 119, 6, 0.2)' }}>
+                                <Shield className="w-3 h-3 text-amber-400 flex-shrink-0 mt-0.5" />
+                                <p className="text-[10px] text-amber-300 leading-snug">{msg.structured.disclaimer}</p>
                               </div>
                             )}
                           </div>
@@ -194,11 +194,11 @@ export default function AIInvestigatorPage() {
               {loading && (
                 <div className="flex items-start gap-2.5">
                   <div className="w-7 h-7 rounded-md bg-navy-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Sparkles className="w-4 h-4 text-navy-700 animate-pulse" />
+                    <Sparkles className="w-4 h-4 text-sky-400 animate-pulse" />
                   </div>
-                  <div className="bg-slate-50 border border-slate-100 rounded-lg rounded-tl-sm px-4 py-3">
+                  <div className="bg-slate-800/60 border border-slate-700/40 rounded-lg rounded-tl-sm px-4 py-3">
                     <div className="flex items-center gap-1.5">
-                      <span className="text-[12px] text-slate-500">Analyzing available evidence</span>
+                      <span className="text-[12px] text-slate-300">Analyzing available evidence</span>
                       <span className="flex gap-0.5">
                         <span className="w-1 h-1 bg-slate-400 rounded-full animate-pulse" />
                         <span className="w-1 h-1 bg-slate-400 rounded-full animate-pulse" style={{ animationDelay: '150ms' }} />
@@ -213,14 +213,14 @@ export default function AIInvestigatorPage() {
 
             {/* Quick Questions */}
             {messages.length <= 2 && (
-              <div className="px-4 py-2.5 border-t border-slate-100">
+              <div className="px-4 py-2.5 border-t border-slate-700/20">
                 <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-2">Quick Questions</div>
                 <div className="flex flex-wrap gap-1.5">
                   {aiQuickQuestions.map((q) => (
                     <button
                       key={q}
                       onClick={() => sendMessage(q)}
-                      className="text-[11px] px-2.5 py-1.5 bg-slate-50 border border-slate-200 text-slate-600 rounded-md hover:bg-navy-50 hover:border-navy-200 hover:text-navy-700 transition-all"
+                      className="text-[11px] px-2.5 py-1.5 bg-slate-800/60 border border-slate-700/40 text-slate-200 rounded-md hover:bg-sky-500/15 hover:border-sky-500/30 hover:text-sky-300 transition-all"
                     >
                       {q}
                     </button>
@@ -230,7 +230,7 @@ export default function AIInvestigatorPage() {
             )}
 
             {/* Input */}
-            <div className="p-3 border-t border-slate-100">
+            <div className="p-3 border-t border-slate-700/20">
               <div className="flex items-center gap-2">
                 <input
                   value={input}

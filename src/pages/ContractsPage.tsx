@@ -1,12 +1,13 @@
 import { useState, useMemo } from 'react';
 import { useNavigate, Link, useParams } from 'react-router-dom';
-import { Search, Filter, X, Download, ArrowLeft, PenTool, Calendar, TrendingUp } from 'lucide-react';
+import { Search, Filter, X, Download, ArrowLeft, PenTool, Calendar, TrendingUp, CheckCircle2, Clock, AlertTriangle, Circle } from 'lucide-react';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Card, CardHeader, CardBody } from '@/components/ui/Card';
 import { RiskBadge, RiskBar } from '@/components/ui/RiskBadge';
 import { EmptyState } from '@/components/ui/State';
 import { useToast } from '@/components/ui/Toast';
-import { mockContracts, demoContract, demoTransactions } from '@/data/mockData';
+import { mockContracts, demoContract, demoTransactions, demoTimeline } from '@/data/mockData';
+
 import { formatCurrency, formatCurrencyShort, formatDate } from '@/utils/format';
 import { cn } from '@/utils/cn';
 
@@ -42,7 +43,7 @@ export default function ContractsPage() {
               <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
               <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search contracts..." className="input pl-8" />
             </div>
-            <button className={cn('btn-secondary', showFilters && 'border-navy-300 text-navy-700')} onClick={() => setShowFilters(!showFilters)}>
+            <button className={cn('btn-secondary', showFilters && 'border-navy-300 text-sky-400')} onClick={() => setShowFilters(!showFilters)}>
               <Filter className="w-4 h-4" /> Filters
             </button>
             {(statusFilter || riskFilter) && (
@@ -52,7 +53,7 @@ export default function ContractsPage() {
             )}
           </div>
           {showFilters && (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-3 pt-3 border-t border-slate-100">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-3 pt-3 border-t border-slate-700/20">
               <div>
                 <label className="label">Status</label>
                 <select className="input" value={statusFilter} onChange={(e) => setStatusFilter(e.target.value)}>
@@ -98,7 +99,7 @@ export default function ContractsPage() {
               <tbody>
                 {filtered.map((c) => (
                   <tr key={c.id} onClick={() => navigate(`/contracts/${c.id}`)}>
-                    <td className="font-medium text-navy-700">{c.id}</td>
+                    <td className="font-medium text-sky-400">{c.id}</td>
                     <td className="max-w-[180px] truncate">{c.projectName}</td>
                     <td className="max-w-[140px] truncate">{c.contractorName}</td>
                     <td className="text-right tabular-nums">{formatCurrencyShort(c.awardValue)}</td>
@@ -106,7 +107,7 @@ export default function ContractsPage() {
                     <td><span className="text-[12px] capitalize text-slate-600">{c.status}</span></td>
                     <td>
                       <div className="flex items-center gap-2 min-w-[80px]">
-                        <div className="flex-1 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                        <div className="flex-1 h-1.5 bg-slate-800/30 rounded-full overflow-hidden">
                           <div className="h-full bg-navy-600 rounded-full" style={{ width: `${c.currentProgress}%` }} />
                         </div>
                         <span className="text-[11px] tabular-nums text-slate-500">{c.currentProgress}%</span>
@@ -151,13 +152,52 @@ export function ContractDetailPage() {
           <Card key={c.label}>
             <CardBody className="p-3">
               <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">{c.label}</div>
-              <div className="text-[16px] font-bold text-slate-900 tabular-nums mt-1">{c.value}</div>
+              <div className="text-[16px] font-bold text-white tabular-nums mt-1">{c.value}</div>
             </CardBody>
           </Card>
         ))}
       </div>
 
+      {/* Contract Lifecycle Timeline (Prompt 06) */}
+      <Card>
+        <CardHeader title="Contract & Execution Lifecycle" subtitle="Milestones from procurement to execution and payments" />
+        <CardBody>
+          <div className="flex items-stretch overflow-x-auto scrollbar-thin pb-2">
+            {demoTimeline.map((event, i) => (
+              <div key={event.id} className="flex items-stretch flex-shrink-0">
+                <div className="flex flex-col items-center w-32">
+                  <div className={cn(
+                    'w-8 h-8 rounded-full flex items-center justify-center border-2',
+                    event.status === 'completed' && 'bg-emerald-500/15 border-emerald-500/40 text-emerald-400',
+                    event.status === 'in-progress' && 'bg-sky-500/15 border-sky-500/40 text-sky-400',
+                    event.status === 'flagged' && 'bg-red-500/20 border-red-500/40 text-red-400',
+                    event.status === 'pending' && 'bg-slate-800/40 border-slate-700/40 text-slate-400',
+                  )}>
+                    {event.status === 'completed' && <CheckCircle2 className="w-4 h-4 text-emerald-500" />}
+                    {event.status === 'in-progress' && <Clock className="w-4 h-4 text-sky-400" />}
+                    {event.status === 'flagged' && <AlertTriangle className="w-4 h-4 text-red-500" />}
+                    {event.status === 'pending' && <Circle className="w-4 h-4 text-slate-300" />}
+                  </div>
+                  <div className="text-[11px] font-medium text-slate-300 mt-2 text-center leading-tight">{event.label}</div>
+                  <div className="text-[10px] text-slate-400 mt-0.5">{formatDate(event.date)}</div>
+                  <div className="text-[10px] text-slate-400 mt-0.5 text-center leading-tight">{event.description}</div>
+                </div>
+                {i < demoTimeline.length - 1 && (
+                  <div className="flex items-center pt-4">
+                    <div className={cn(
+                      'w-6 h-0.5',
+                      event.status === 'completed' ? 'bg-emerald-300' : 'bg-slate-200'
+                    )} />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </CardBody>
+      </Card>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
         <Card>
           <CardHeader title="Contract Details" />
           <CardBody>
@@ -176,7 +216,7 @@ export function ContractDetailPage() {
               ].map(([label, value]) => (
                 <div key={label} className="flex items-center justify-between py-1.5 border-b border-slate-50 last:border-0">
                   <dt className="text-[12px] text-slate-500">{label}</dt>
-                  <dd className="text-[13px] font-medium text-slate-800 capitalize">{value}</dd>
+                  <dd className="text-[13px] font-medium text-slate-100 capitalize">{value}</dd>
                 </div>
               ))}
             </dl>
@@ -216,17 +256,17 @@ export function ContractDetailPage() {
         <CardHeader title="Related Records" />
         <CardBody>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-            <Link to={`/projects/${contract.projectId}`} className="flex items-center gap-2 p-3 rounded-md border border-slate-200 hover:border-navy-300 hover:bg-navy-50 transition-all group">
-              <PenTool className="w-4 h-4 text-slate-400 group-hover:text-navy-700" />
-              <span className="text-[12px] font-medium text-slate-600 group-hover:text-navy-800">Open Project</span>
+            <Link to={`/projects/${contract.projectId}`} className="flex items-center gap-2 p-3 rounded-md border border-slate-700/30 hover:border-navy-300 hover:bg-sky-500/10 transition-all group">
+              <PenTool className="w-4 h-4 text-slate-400 group-hover:text-sky-400" />
+              <span className="text-[12px] font-medium text-slate-600 group-hover:text-sky-300">Open Project</span>
             </Link>
-            <Link to={`/tenders/${contract.tenderId}`} className="flex items-center gap-2 p-3 rounded-md border border-slate-200 hover:border-navy-300 hover:bg-navy-50 transition-all group">
-              <Calendar className="w-4 h-4 text-slate-400 group-hover:text-navy-700" />
-              <span className="text-[12px] font-medium text-slate-600 group-hover:text-navy-800">Open Tender</span>
+            <Link to={`/tenders/${contract.tenderId}`} className="flex items-center gap-2 p-3 rounded-md border border-slate-700/30 hover:border-navy-300 hover:bg-sky-500/10 transition-all group">
+              <Calendar className="w-4 h-4 text-slate-400 group-hover:text-sky-400" />
+              <span className="text-[12px] font-medium text-slate-600 group-hover:text-sky-300">Open Tender</span>
             </Link>
-            <Link to={`/contractors/${contract.contractorId}`} className="flex items-center gap-2 p-3 rounded-md border border-slate-200 hover:border-navy-300 hover:bg-navy-50 transition-all group">
-              <TrendingUp className="w-4 h-4 text-slate-400 group-hover:text-navy-700" />
-              <span className="text-[12px] font-medium text-slate-600 group-hover:text-navy-800">Open Contractor</span>
+            <Link to={`/contractors/${contract.contractorId}`} className="flex items-center gap-2 p-3 rounded-md border border-slate-700/30 hover:border-navy-300 hover:bg-sky-500/10 transition-all group">
+              <TrendingUp className="w-4 h-4 text-slate-400 group-hover:text-sky-400" />
+              <span className="text-[12px] font-medium text-slate-600 group-hover:text-sky-300">Open Contractor</span>
             </Link>
           </div>
         </CardBody>

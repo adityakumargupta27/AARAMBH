@@ -71,7 +71,7 @@ export default function Project360Page() {
               <div className="h-8 w-px bg-slate-200" />
               <div>
                 <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Status</div>
-                <div className="text-[13px] font-medium text-slate-700 capitalize">{project.status}</div>
+                <div className="text-[13px] font-medium text-slate-300 capitalize">{project.status}</div>
               </div>
               <div className="h-8 w-px bg-slate-200" />
               <div>
@@ -93,7 +93,7 @@ export default function Project360Page() {
           <Card key={card.label}>
             <CardBody className="p-3">
               <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">{card.label}</div>
-              <div className="text-[18px] font-bold text-slate-900 tabular-nums mt-1">{card.value}</div>
+              <div className="text-[18px] font-bold text-white tabular-nums mt-1">{card.value}</div>
             </CardBody>
           </Card>
         ))}
@@ -109,14 +109,14 @@ export default function Project360Page() {
                 <div className="flex flex-col items-center w-32">
                   <div className={cn(
                     'w-8 h-8 rounded-full flex items-center justify-center border-2',
-                    event.status === 'completed' && 'bg-emerald-50 border-emerald-300',
-                    event.status === 'in-progress' && 'bg-navy-50 border-navy-300',
-                    event.status === 'flagged' && 'bg-red-50 border-red-300',
-                    event.status === 'pending' && 'bg-slate-50 border-slate-200',
+                    event.status === 'completed' && 'bg-emerald-500/15 border-emerald-500/40 text-emerald-400',
+                    event.status === 'in-progress' && 'bg-sky-500/15 border-sky-500/40 text-sky-400',
+                    event.status === 'flagged' && 'bg-red-500/20 border-red-500/40 text-red-400',
+                    event.status === 'pending' && 'bg-slate-800/40 border-slate-700/40 text-slate-400',
                   )}>
                     {statusIcon(event.status)}
                   </div>
-                  <div className="text-[11px] font-medium text-slate-700 mt-2 text-center leading-tight">{event.label}</div>
+                  <div className="text-[11px] font-medium text-slate-300 mt-2 text-center leading-tight">{event.label}</div>
                   <div className="text-[10px] text-slate-400 mt-0.5">{formatDate(event.date)}</div>
                   <div className="text-[10px] text-slate-400 mt-0.5 text-center leading-tight">{event.description}</div>
                 </div>
@@ -157,8 +157,8 @@ export default function Project360Page() {
               {demoRiskAssessment.signals.map((signal) => (
                 <div key={signal.id}>
                   <div className="flex items-center justify-between mb-1">
-                    <span className="text-[12px] font-medium text-slate-700">{signal.label}</span>
-                    <span className="text-[12px] font-semibold tabular-nums text-slate-900">{signal.score}</span>
+                    <span className="text-[12px] font-medium text-slate-300">{signal.label}</span>
+                    <span className="text-[12px] font-semibold tabular-nums text-white">{signal.score}</span>
                   </div>
                   <RiskBar score={signal.score} />
                 </div>
@@ -181,18 +181,18 @@ export default function Project360Page() {
                   <div className="flex items-start justify-between mb-2">
                     <div>
                       <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">{signal.label}</span>
-                      <p className="text-[13px] text-slate-700 mt-1">{signal.finding}</p>
+                      <p className="text-[13px] text-slate-300 mt-1">{signal.finding}</p>
                     </div>
                     <RiskBadge level={signal.score >= 70 ? 'high' : signal.score >= 50 ? 'review' : 'watch'} />
                   </div>
                   <div className="grid grid-cols-3 gap-3 mt-3 pt-3 border-t border-slate-50">
                     <div>
                       <div className="text-[10px] text-slate-400 uppercase">Current</div>
-                      <div className="text-[14px] font-semibold text-slate-900 tabular-nums">{signal.value}</div>
+                      <div className="text-[14px] font-semibold text-white tabular-nums">{signal.value}</div>
                     </div>
                     <div>
                       <div className="text-[10px] text-slate-400 uppercase">Benchmark</div>
-                      <div className="text-[14px] font-semibold text-slate-900 tabular-nums">{signal.benchmark}</div>
+                      <div className="text-[14px] font-semibold text-white tabular-nums">{signal.benchmark}</div>
                     </div>
                     <div>
                       <div className="text-[10px] text-slate-400 uppercase">Deviation</div>
@@ -201,7 +201,7 @@ export default function Project360Page() {
                   </div>
                   <div className="mt-3 flex items-center justify-between">
                     <span className="text-[11px] text-slate-400">Source: {signal.source}</span>
-                    <button className="text-[12px] text-navy-600 hover:text-navy-800 font-medium flex items-center gap-1">
+                    <button className="text-[12px] text-sky-400 hover:text-sky-300 font-medium flex items-center gap-1">
                       View Evidence <ArrowLeft className="w-3 h-3 rotate-180" />
                     </button>
                   </div>
@@ -236,10 +236,10 @@ export default function Project360Page() {
                 <Link
                   key={link.label}
                   to={link.path}
-                  className="flex flex-col items-center gap-2 p-3 rounded-md border border-slate-200 hover:border-navy-300 hover:bg-navy-50 transition-all group"
+                  className="flex flex-col items-center gap-2 p-3 rounded-md border border-slate-700/30 hover:border-navy-300 hover:bg-sky-500/10 transition-all group"
                 >
-                  <Icon className="w-5 h-5 text-slate-400 group-hover:text-navy-700" />
-                  <span className="text-[11px] font-medium text-slate-600 group-hover:text-navy-800 text-center">{link.label}</span>
+                  <Icon className="w-5 h-5 text-slate-400 group-hover:text-sky-400" />
+                  <span className="text-[11px] font-medium text-slate-600 group-hover:text-sky-300 text-center">{link.label}</span>
                 </Link>
               );
             })}

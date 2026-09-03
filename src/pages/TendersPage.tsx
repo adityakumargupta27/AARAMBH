@@ -4,8 +4,9 @@ import { Search, Filter, X, Download, ArrowLeft, FileText, Users, PenTool, Alert
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Card, CardHeader, CardBody } from '@/components/ui/Card';
 import { RiskBadge } from '@/components/ui/RiskBadge';
-import { BidDistributionChart } from '@/components/charts/Charts';
+import { BidDistributionChart, ContractorParticipationChart } from '@/components/charts/Charts';
 import { EmptyState } from '@/components/ui/State';
+
 import { useToast } from '@/components/ui/Toast';
 import { mockTenders, demoTender } from '@/data/mockData';
 import { formatCurrency, formatCurrencyShort, formatDate } from '@/utils/format';
@@ -43,7 +44,7 @@ export default function TendersPage() {
               <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
               <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search tenders..." className="input pl-8" />
             </div>
-            <button className={cn('btn-secondary', showFilters && 'border-navy-300 text-navy-700')} onClick={() => setShowFilters(!showFilters)}>
+            <button className={cn('btn-secondary', showFilters && 'border-navy-300 text-sky-400')} onClick={() => setShowFilters(!showFilters)}>
               <Filter className="w-4 h-4" /> Filters
             </button>
             {(statusFilter || riskFilter) && (
@@ -53,7 +54,7 @@ export default function TendersPage() {
             )}
           </div>
           {showFilters && (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-3 pt-3 border-t border-slate-100">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-3 pt-3 border-t border-slate-700/20">
               <div>
                 <label className="label">Tender Status</label>
                 <select className="input" value={statusFilter} onChange={(e) => setStatusFilter(e.target.value)}>
@@ -100,7 +101,7 @@ export default function TendersPage() {
               <tbody>
                 {filtered.map((t) => (
                   <tr key={t.id} onClick={() => navigate(`/tenders/${t.id}`)}>
-                    <td className="font-medium text-navy-700">{t.id}</td>
+                    <td className="font-medium text-sky-400">{t.id}</td>
                     <td className="max-w-[180px] truncate">{t.projectName}</td>
                     <td className="text-right tabular-nums">{formatCurrencyShort(t.tenderValue)}</td>
                     <td className="text-center tabular-nums">{t.bidderCount}</td>
@@ -163,7 +164,7 @@ export function TenderDetailPage() {
           <Card key={c.label}>
             <CardBody className="p-3">
               <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">{c.label}</div>
-              <div className="text-[18px] font-bold text-slate-900 tabular-nums mt-1">{c.value}</div>
+              <div className="text-[18px] font-bold text-white tabular-nums mt-1">{c.value}</div>
             </CardBody>
           </Card>
         ))}
@@ -224,38 +225,60 @@ export function TenderDetailPage() {
         <CardHeader title="Pattern Analysis" subtitle="Bid spread comparison against historical baseline" />
         <CardBody>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
-            <div className="text-center p-3 bg-slate-50 rounded-md">
+            <div className="text-center p-3 bg-slate-800/40 border border-slate-700/30 rounded-md">
               <div className="text-[10px] text-slate-400 uppercase">Current Spread</div>
-              <div className="text-[22px] font-bold text-slate-900 tabular-nums">{tender.bidSpread}%</div>
+              <div className="text-[22px] font-bold text-white tabular-nums">{tender.bidSpread}%</div>
             </div>
-            <div className="text-center p-3 bg-slate-50 rounded-md">
+            <div className="text-center p-3 bg-slate-800/40 border border-slate-700/30 rounded-md">
               <div className="text-[10px] text-slate-400 uppercase">Historical Median</div>
-              <div className="text-[22px] font-bold text-slate-900 tabular-nums">{tender.historicalMedianSpread}%</div>
+              <div className="text-[22px] font-bold text-white tabular-nums">{tender.historicalMedianSpread}%</div>
             </div>
-            <div className="text-center p-3 bg-orange-50 rounded-md">
+            <div className="text-center p-3 bg-orange-500/10 border border-orange-500/25 rounded-md">
               <div className="text-[10px] text-orange-400 uppercase">Difference</div>
-              <div className="text-[22px] font-bold text-orange-600 tabular-nums">{spreadDiff}%</div>
+              <div className="text-[22px] font-bold text-orange-400 tabular-nums">{spreadDiff}%</div>
             </div>
-            <div className="text-center p-3 bg-orange-50 rounded-md">
+            <div className="text-center p-3 bg-orange-500/10 border border-orange-500/25 rounded-md">
               <div className="text-[10px] text-orange-400 uppercase">Status</div>
-              <div className="text-[14px] font-bold text-orange-600 mt-1">Review Recommended</div>
+              <div className="text-[14px] font-bold text-orange-400 mt-1">Review Recommended</div>
             </div>
           </div>
-          <div className="p-4 bg-slate-50 rounded-md">
-            <p className="text-[13px] text-slate-700">
+          <div className="p-4 bg-slate-800/40 border border-slate-700/30 rounded-md">
+            <p className="text-[13px] text-slate-200">
               The current tender exhibits a narrower bid spread ({tender.bidSpread}%) than the historical comparison group ({tender.historicalMedianSpread}%). This may indicate competitive market conditions or warrants review of bidder relationships.
             </p>
           </div>
-          <div className="flex items-start gap-2 mt-3 p-3 bg-amber-50 border border-amber-200 rounded-md">
-            <Info className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
-            <p className="text-[12px] text-amber-800">
+          <div className="flex items-start gap-2 mt-3 p-3 bg-amber-500/10 border border-amber-500/25 rounded-md">
+            <Info className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
+            <p className="text-[12px] text-amber-300">
               Bid-pattern anomalies do not establish collusion. Review tender documentation and bidder history.
             </p>
           </div>
         </CardBody>
       </Card>
 
+      {/* Participation History Visualization (Prompt 05) */}
+      <Card>
+        <CardHeader
+          title="Contractor Participation History"
+          subtitle="Tender participation and award frequency across bidders in monitored region"
+        />
+        <CardBody>
+          <ContractorParticipationChart
+            data={bids.map((b) => ({
+              name: b.name.replace(/Pvt Ltd|Ltd|Contractors|Projects|Infra Solutions/g, '').trim(),
+              count: b.historicalParticipation,
+              won: b.status === 'winner' ? Math.ceil(b.historicalParticipation * 0.45) : Math.floor(b.historicalParticipation * 0.15),
+            }))}
+          />
+          <div className="flex items-center gap-4 mt-2 text-[12px]">
+            <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-slate-600" /> Tenders Participated</span>
+            <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-blue-500" /> Tenders Won</span>
+          </div>
+        </CardBody>
+      </Card>
+
       {/* Navigation */}
+
       <Card>
         <CardHeader title="Related Records" subtitle="Navigate to connected entities" />
         <CardBody>
@@ -263,9 +286,9 @@ export function TenderDetailPage() {
             {navLinks.map((link) => {
               const Icon = link.icon;
               return (
-                <Link key={link.label} to={link.path} className="flex items-center gap-2 p-3 rounded-md border border-slate-200 hover:border-navy-300 hover:bg-navy-50 transition-all group">
-                  <Icon className="w-4 h-4 text-slate-400 group-hover:text-navy-700" />
-                  <span className="text-[12px] font-medium text-slate-600 group-hover:text-navy-800">{link.label}</span>
+                <Link key={link.label} to={link.path} className="flex items-center gap-2 p-3 rounded-md border border-slate-700/30 hover:border-navy-300 hover:bg-sky-500/10 transition-all group">
+                  <Icon className="w-4 h-4 text-slate-400 group-hover:text-sky-400" />
+                  <span className="text-[12px] font-medium text-slate-600 group-hover:text-sky-300">{link.label}</span>
                 </Link>
               );
             })}

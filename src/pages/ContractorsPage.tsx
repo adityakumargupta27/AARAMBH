@@ -7,7 +7,9 @@ import {
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Card, CardHeader, CardBody } from '@/components/ui/Card';
 import { RiskBadge, RiskBar } from '@/components/ui/RiskBadge';
+import { AwardValueTrendChart, DelayTrendChart } from '@/components/charts/Charts';
 import { EmptyState } from '@/components/ui/State';
+
 import { mockContractors, demoContractor, mockContracts } from '@/data/mockData';
 import { formatCurrency, formatCurrencyShort, formatDate } from '@/utils/format';
 import { cn } from '@/utils/cn';
@@ -73,7 +75,7 @@ export default function ContractorsPage() {
                 {filtered.map((c) => (
                   <tr key={c.id} onClick={() => navigate(`/contractors/${c.id}`)}>
                     <td>
-                      <div className="font-medium text-slate-800">{c.name}</div>
+                      <div className="font-medium text-slate-100">{c.name}</div>
                       <div className="text-[11px] text-slate-400">{c.id}</div>
                     </td>
                     <td className="text-center tabular-nums">{c.previousContracts}</td>
@@ -165,7 +167,7 @@ export function ContractorProfilePage() {
                   {Icon && <Icon className={cn('w-3.5 h-3.5', s.color)} />}
                   {s.label}
                 </div>
-                <div className={cn('text-[18px] font-bold tabular-nums mt-1', s.color || 'text-slate-900')}>{s.value}</div>
+                <div className={cn('text-[18px] font-bold tabular-nums mt-1', s.color || 'text-white')}>{s.value}</div>
               </CardBody>
             </Card>
           );
@@ -184,20 +186,20 @@ export function ContractorProfilePage() {
                 return (
                   <div key={d.name}>
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-[13px] font-medium text-slate-700">{d.name}</span>
+                      <span className="text-[13px] font-medium text-slate-300">{d.name}</span>
                       <div className="flex items-center gap-2">
                         <span className="text-[13px] font-semibold tabular-nums">{d.value}</span>
                         <span className="text-[11px] text-slate-400">({pct}%)</span>
                       </div>
                     </div>
-                    <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+                    <div className="h-2 bg-slate-800/30 rounded-full overflow-hidden">
                       <div className="h-full rounded-full transition-all duration-500" style={{ width: `${pct}%`, backgroundColor: d.color }} />
                     </div>
                   </div>
                 );
               })}
             </div>
-            <div className="mt-4 pt-4 border-t border-slate-100 grid grid-cols-2 gap-4">
+            <div className="mt-4 pt-4 border-t border-slate-700/20 grid grid-cols-2 gap-4">
               <div>
                 <div className="text-[11px] text-slate-400">Delay Rate</div>
                 <div className="text-[18px] font-bold text-amber-600 tabular-nums">{contractor.delayRate}%</div>
@@ -215,9 +217,9 @@ export function ContractorProfilePage() {
           <CardBody>
             <div className="space-y-3">
               {riskFactors.map((rf) => (
-                <div key={rf.label} className="p-3 border border-slate-200 rounded-md">
+                <div key={rf.label} className="p-3 border border-slate-700/30 rounded-md">
                   <div className="flex items-start justify-between mb-1">
-                    <span className="text-[13px] font-medium text-slate-800">{rf.label}</span>
+                    <span className="text-[13px] font-medium text-slate-100">{rf.label}</span>
                     <span className={cn(
                       'badge',
                       rf.severity === 'high' && 'badge-risk-high',
@@ -234,7 +236,42 @@ export function ContractorProfilePage() {
         </Card>
       </div>
 
+      {/* Historical Trend Charts (Prompt 06) */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <Card>
+          <CardHeader title="Award Value Over Time" subtitle="Total annual contract procurement value" />
+          <CardBody>
+            <AwardValueTrendChart
+              data={[
+                { year: '2021', value: 8500000 },
+                { year: '2022', value: 14200000 },
+                { year: '2023', value: 19800000 },
+                { year: '2024', value: 24500000 },
+                { year: '2025', value: 32000000 },
+                { year: '2026', value: 49200000 },
+              ]}
+            />
+          </CardBody>
+        </Card>
+
+        <Card>
+          <CardHeader title="Delay Trend vs Peer Median" subtitle="Historical project delay percentage trajectory" />
+          <CardBody>
+            <DelayTrendChart
+              data={[
+                { year: '2021', contractorDelay: 12.5, peerMedian: 8.2 },
+                { year: '2022', contractorDelay: 15.0, peerMedian: 8.5 },
+                { year: '2023', contractorDelay: 18.2, peerMedian: 9.0 },
+                { year: '2024', contractorDelay: 21.0, peerMedian: 9.1 },
+                { year: '2025', contractorDelay: 23.8, peerMedian: 9.4 },
+              ]}
+            />
+          </CardBody>
+        </Card>
+      </div>
+
       {/* Contract History */}
+
       <Card>
         <CardHeader title="Contract History" subtitle="Past and current contracts" />
         <div className="overflow-x-auto scrollbar-thin">
@@ -252,7 +289,7 @@ export function ContractorProfilePage() {
             <tbody>
               {contractHistory.length > 0 ? contractHistory.map((c) => (
                 <tr key={c.id} onClick={() => navigate(`/contracts/${c.id}`)}>
-                  <td className="font-medium text-navy-700">{c.id}</td>
+                  <td className="font-medium text-sky-400">{c.id}</td>
                   <td className="max-w-[180px] truncate">{c.projectName}</td>
                   <td className="text-right tabular-nums">{formatCurrencyShort(c.awardValue)}</td>
                   <td className="text-[12px] text-slate-600">{formatDate(c.awardDate)}</td>

@@ -29,26 +29,26 @@ export default function SettingsPage() {
         <Card>
           <CardHeader title="Preferences" />
           <CardBody className="space-y-3">
-            <div className="flex items-center justify-between p-2.5 bg-slate-50 rounded-md">
+            <div className="flex items-center justify-between p-2.5 bg-slate-800/40 border border-slate-700/30 rounded-md">
               <div className="flex items-center gap-2">
-                <Bell className="w-4 h-4 text-slate-500" />
-                <span className="text-[13px] text-slate-700">High priority case alerts</span>
+                <Bell className="w-4 h-4 text-slate-400" />
+                <span className="text-[13px] text-slate-200">High priority case alerts</span>
               </div>
               <span className="badge badge-risk-normal">Enabled</span>
             </div>
-            <div className="flex items-center justify-between p-2.5 bg-slate-50 rounded-md">
+            <div className="flex items-center justify-between p-2.5 bg-slate-800/40 border border-slate-700/30 rounded-md">
               <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4 text-slate-500" />
-                <span className="text-[13px] text-slate-700">Risk threshold for alerts</span>
+                <Shield className="w-4 h-4 text-slate-400" />
+                <span className="text-[13px] text-slate-200">Risk threshold for alerts</span>
               </div>
-              <span className="text-[12px] font-medium text-slate-600">Score ≥ 70</span>
+              <span className="text-[12px] font-medium text-slate-300">Score ≥ 70</span>
             </div>
-            <div className="flex items-center justify-between p-2.5 bg-slate-50 rounded-md">
+            <div className="flex items-center justify-between p-2.5 bg-slate-800/40 border border-slate-700/30 rounded-md">
               <div className="flex items-center gap-2">
-                <Database className="w-4 h-4 text-slate-500" />
-                <span className="text-[13px] text-slate-700">Data refresh interval</span>
+                <Database className="w-4 h-4 text-slate-400" />
+                <span className="text-[13px] text-slate-200">Data refresh interval</span>
               </div>
-              <span className="text-[12px] font-medium text-slate-600">Every 6 hours</span>
+              <span className="text-[12px] font-medium text-slate-300">Every 6 hours</span>
             </div>
           </CardBody>
         </Card>

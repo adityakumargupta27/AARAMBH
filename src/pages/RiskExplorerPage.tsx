@@ -76,7 +76,7 @@ export default function RiskExplorerPage() {
           <Card key={s.label} className={cn(s.accent && 'border-l-4 border-l-red-400')}>
             <CardBody className="p-3">
               <div className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">{s.label}</div>
-              <div className={cn('text-[22px] font-bold tabular-nums mt-1', s.accent ? 'text-red-600' : 'text-slate-900')}>{s.value}</div>
+              <div className={cn('text-[22px] font-bold tabular-nums mt-1', s.accent ? 'text-red-600' : 'text-white')}>{s.value}</div>
             </CardBody>
           </Card>
         ))}
@@ -86,7 +86,7 @@ export default function RiskExplorerPage() {
         {/* Filter Sidebar */}
         <Card className={cn(!showFilters && 'hidden lg:block')}>
           <CardHeader title="Filters" action={
-            activeFilters > 0 ? <button className="text-[11px] text-navy-600 font-medium" onClick={clearAll}>Clear All</button> : undefined
+            activeFilters > 0 ? <button className="text-[11px] text-sky-400 font-medium" onClick={clearAll}>Clear All</button> : undefined
           } />
           <CardBody className="space-y-3">
             <div>
@@ -185,12 +185,12 @@ export default function RiskExplorerPage() {
                     {filtered.map((c) => (
                       <tr key={c.id} onClick={() => setPreviewCase(c)}>
                         <td><RiskBadge level={c.riskLevel} /></td>
-                        <td className="font-medium text-navy-700">{c.id}</td>
+                        <td className="font-medium text-sky-400">{c.id}</td>
                         <td className="max-w-[160px] truncate">{c.projectName}</td>
                         <td className="max-w-[120px] truncate">{c.contractorName}</td>
                         <td className="text-right tabular-nums">{formatCurrencyShort(c.caseValue)}</td>
                         <td className="capitalize text-[12px]">{c.primarySignal.replace(/-/g, ' ')}</td>
-                        <td><span className="font-bold tabular-nums text-slate-800">{c.riskScore}</span></td>
+                        <td><span className="font-bold tabular-nums text-slate-100">{c.riskScore}</span></td>
                         <td><span className="text-[12px] capitalize text-slate-600">{c.status.replace(/-/g, ' ')}</span></td>
                         <td className="text-[11px] text-slate-400">{formatDate(c.lastUpdated)}</td>
                       </tr>
@@ -231,35 +231,35 @@ export default function RiskExplorerPage() {
             </div>
 
             <div className="grid grid-cols-2 gap-3">
-              <div className="p-3 bg-slate-50 rounded-md">
+              <div className="p-3 bg-slate-800/40 border border-slate-700/30 rounded-md">
                 <div className="text-[10px] text-slate-400 uppercase">Contractor</div>
-                <div className="text-[13px] font-medium text-slate-800">{previewCase.contractorName}</div>
+                <div className="text-[13px] font-medium text-slate-100">{previewCase.contractorName}</div>
               </div>
-              <div className="p-3 bg-slate-50 rounded-md">
+              <div className="p-3 bg-slate-800/40 border border-slate-700/30 rounded-md">
                 <div className="text-[10px] text-slate-400 uppercase">State</div>
-                <div className="text-[13px] font-medium text-slate-800">{previewCase.state}</div>
+                <div className="text-[13px] font-medium text-slate-100">{previewCase.state}</div>
               </div>
-              <div className="p-3 bg-slate-50 rounded-md">
+              <div className="p-3 bg-slate-800/40 border border-slate-700/30 rounded-md">
                 <div className="text-[10px] text-slate-400 uppercase">Case Value</div>
-                <div className="text-[13px] font-medium text-slate-800">{formatCurrencyShort(previewCase.caseValue)}</div>
+                <div className="text-[13px] font-medium text-slate-100">{formatCurrencyShort(previewCase.caseValue)}</div>
               </div>
-              <div className="p-3 bg-slate-50 rounded-md">
+              <div className="p-3 bg-slate-800/40 border border-slate-700/30 rounded-md">
                 <div className="text-[10px] text-slate-400 uppercase">Evidence Count</div>
-                <div className="text-[13px] font-medium text-slate-800">{previewCase.evidenceCount} records</div>
+                <div className="text-[13px] font-medium text-slate-100">{previewCase.evidenceCount} records</div>
               </div>
             </div>
 
             <div>
-              <div className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider mb-2">Top Signals</div>
+              <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-2">Top Signals</div>
               <div className="space-y-1.5">
-                <div className="flex items-center gap-2 p-2 bg-red-50 rounded-md">
+                <div className="flex items-center gap-2 p-2 bg-red-500/10 border border-red-500/20 rounded-md">
                   <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
-                  <span className="text-[12px] font-medium text-slate-800">{signalLabel(previewCase.primarySignal)}</span>
+                  <span className="text-[12px] font-medium text-slate-100">{signalLabel(previewCase.primarySignal)}</span>
                 </div>
                 {previewCase.secondarySignals.map((s) => (
-                  <div key={s} className="flex items-center gap-2 p-2 bg-slate-50 rounded-md">
+                  <div key={s} className="flex items-center gap-2 p-2 bg-slate-800/40 border border-slate-700/30 rounded-md">
                     <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
-                    <span className="text-[12px] text-slate-600">{signalLabel(s)}</span>
+                    <span className="text-[12px] text-slate-300">{signalLabel(s)}</span>
                   </div>
                 ))}
               </div>
@@ -277,7 +277,7 @@ export default function RiskExplorerPage() {
 
 function FilterChip({ label, onClear }: { label: string; onClear: () => void }) {
   return (
-    <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-navy-50 text-navy-700 border border-navy-200 rounded-md text-[11px] font-medium">
+    <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-sky-500/10 text-sky-400 border border-navy-200 rounded-md text-[11px] font-medium">
       {label}
       <button onClick={onClear} className="hover:text-navy-900"><X className="w-3 h-3" /></button>
     </span>

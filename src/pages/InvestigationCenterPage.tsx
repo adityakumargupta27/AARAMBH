@@ -58,7 +58,7 @@ export default function InvestigationCenterPage() {
       {/* Summary */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         {[
-          { label: 'Open Cases', value: summary.open, icon: Clock, color: 'text-navy-600' },
+          { label: 'Open Cases', value: summary.open, icon: Clock, color: 'text-sky-400' },
           { label: 'Under Review', value: summary.underReview, icon: Eye, color: 'text-amber-600' },
           { label: 'Escalated', value: summary.escalated, icon: AlertTriangle, color: 'text-red-500' },
           { label: 'Resolved', value: summary.resolved, icon: CheckCircle2, color: 'text-emerald-600' },
@@ -81,7 +81,7 @@ export default function InvestigationCenterPage() {
       </div>
 
       {/* Tabs */}
-      <div className="flex items-center gap-1 border-b border-slate-200">
+      <div className="flex items-center gap-1 border-b border-slate-700/30">
         {tabs.map((tab) => (
           <button
             key={tab.key}
@@ -90,13 +90,13 @@ export default function InvestigationCenterPage() {
               'px-4 py-2.5 text-[13px] font-medium transition-colors border-b-2 -mb-px',
               activeTab === tab.key
                 ? 'text-navy-800 border-navy-700'
-                : 'text-slate-500 border-transparent hover:text-slate-700 hover:border-slate-300'
+                : 'text-slate-500 border-transparent hover:text-slate-300 hover:border-slate-300'
             )}
           >
             {tab.label}
             <span className={cn(
               'ml-2 px-1.5 py-0.5 rounded-full text-[10px] font-semibold',
-              activeTab === tab.key ? 'bg-navy-100 text-navy-700' : 'bg-slate-100 text-slate-500'
+              activeTab === tab.key ? 'bg-navy-100 text-sky-400' : 'bg-slate-800/30 text-slate-500'
             )}>
               {cases.filter((c) => c.status === tab.key).length}
             </span>
@@ -138,7 +138,7 @@ export default function InvestigationCenterPage() {
                   </div>
                 </div>
 
-                <div className="text-[14px] font-medium text-slate-900 mb-1">{c.projectName}</div>
+                <div className="text-[14px] font-medium text-white mb-1">{c.projectName}</div>
                 <div className="text-[12px] text-slate-500">{c.contractorName} · {c.state}</div>
 
                 <div className="flex items-center gap-2 mt-3 flex-wrap">
@@ -189,43 +189,43 @@ export default function InvestigationCenterPage() {
             </div>
 
             <div className="grid grid-cols-2 gap-3">
-              <div className="p-3 bg-slate-50 rounded-md">
+              <div className="p-3 bg-slate-800/40 border border-slate-700/30 rounded-md">
                 <div className="text-[10px] text-slate-400 uppercase">Contractor</div>
-                <div className="text-[13px] font-medium">{previewCase.contractorName}</div>
+                <div className="text-[13px] font-medium text-slate-100">{previewCase.contractorName}</div>
               </div>
-              <div className="p-3 bg-slate-50 rounded-md">
+              <div className="p-3 bg-slate-800/40 border border-slate-700/30 rounded-md">
                 <div className="text-[10px] text-slate-400 uppercase">State</div>
-                <div className="text-[13px] font-medium">{previewCase.state}</div>
+                <div className="text-[13px] font-medium text-slate-100">{previewCase.state}</div>
               </div>
-              <div className="p-3 bg-slate-50 rounded-md">
+              <div className="p-3 bg-slate-800/40 border border-slate-700/30 rounded-md">
                 <div className="text-[10px] text-slate-400 uppercase">Case Value</div>
-                <div className="text-[13px] font-medium">{formatCurrencyShort(previewCase.caseValue)}</div>
+                <div className="text-[13px] font-medium text-slate-100">{formatCurrencyShort(previewCase.caseValue)}</div>
               </div>
-              <div className="p-3 bg-slate-50 rounded-md">
+              <div className="p-3 bg-slate-800/40 border border-slate-700/30 rounded-md">
                 <div className="text-[10px] text-slate-400 uppercase">Evidence</div>
-                <div className="text-[13px] font-medium">{previewCase.evidenceCount} records</div>
+                <div className="text-[13px] font-medium text-slate-100">{previewCase.evidenceCount} records</div>
               </div>
-              <div className="p-3 bg-slate-50 rounded-md">
+              <div className="p-3 bg-slate-800/40 border border-slate-700/30 rounded-md">
                 <div className="text-[10px] text-slate-400 uppercase">Detected</div>
-                <div className="text-[13px] font-medium">{formatDate(previewCase.detectedDate)}</div>
+                <div className="text-[13px] font-medium text-slate-100">{formatDate(previewCase.detectedDate)}</div>
               </div>
-              <div className="p-3 bg-slate-50 rounded-md">
+              <div className="p-3 bg-slate-800/40 border border-slate-700/30 rounded-md">
                 <div className="text-[10px] text-slate-400 uppercase">Reviewer</div>
-                <div className="text-[13px] font-medium">{previewCase.assignedReviewer}</div>
+                <div className="text-[13px] font-medium text-slate-100">{previewCase.assignedReviewer}</div>
               </div>
             </div>
 
             <div>
-              <div className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider mb-2">Risk Signals</div>
+              <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-2">Risk Signals</div>
               <div className="space-y-1.5">
-                <div className="flex items-center gap-2 p-2 bg-red-50 rounded-md">
+                <div className="flex items-center gap-2 p-2 bg-red-500/10 border border-red-500/20 rounded-md">
                   <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
-                  <span className="text-[12px] font-medium">{signalLabel(previewCase.primarySignal)}</span>
+                  <span className="text-[12px] font-medium text-slate-100">{signalLabel(previewCase.primarySignal)}</span>
                 </div>
                 {previewCase.secondarySignals.map((s) => (
-                  <div key={s} className="flex items-center gap-2 p-2 bg-slate-50 rounded-md">
+                  <div key={s} className="flex items-center gap-2 p-2 bg-slate-800/40 border border-slate-700/30 rounded-md">
                     <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
-                    <span className="text-[12px]">{signalLabel(s)}</span>
+                    <span className="text-[12px] text-slate-300">{signalLabel(s)}</span>
                   </div>
                 ))}
               </div>
@@ -250,7 +250,7 @@ export default function InvestigationCenterPage() {
         }
       >
         <p className="text-[13px] text-slate-600">
-          Move case <span className="font-semibold text-slate-900">{statusModal?.id}</span> to "Under Review"?
+          Move case <span className="font-semibold text-white">{statusModal?.id}</span> to "Under Review"?
           This will update the case status and notify assigned reviewers.
         </p>
       </Modal>
