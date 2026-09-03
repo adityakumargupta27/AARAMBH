@@ -283,3 +283,14 @@ export interface ReportTemplate {
   status: 'ready' | 'generating' | 'scheduled';
   category: string;
 }
+
+export interface MPAllocation {
+  srNo: number;
+  state: string;
+  mpName: string;
+  constituency: string;
+  allocatedAmount: number;
+  isBaseline: boolean;
+  variancePercentage: number;
+}
+

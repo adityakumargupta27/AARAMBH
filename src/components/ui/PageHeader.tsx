@@ -18,11 +18,11 @@ export function PageHeader({ title, subtitle, breadcrumbs, actions }: PageHeader
             <span key={i} className="flex items-center gap-1.5">
               {i > 0 && <ChevronLeft className="w-3 h-3 text-slate-300 rotate-180" />}
               {bc.path ? (
-                <Link to={bc.path} className="text-slate-500 hover:text-navy-700 transition-colors">
+                <Link to={bc.path} className="text-slate-500 hover:text-sky-400 transition-colors">
                   {bc.label}
                 </Link>
               ) : (
-                <span className="text-slate-800 font-medium">{bc.label}</span>
+                <span className="text-white font-medium">{bc.label}</span>
               )}
             </span>
           ))}

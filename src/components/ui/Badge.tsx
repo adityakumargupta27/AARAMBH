@@ -10,11 +10,11 @@ interface BadgeProps {
 
 export function Badge({ children, variant = 'neutral', size = 'md', className }: BadgeProps) {
   const variants = {
-    neutral: 'bg-slate-100 text-slate-600 border border-slate-200',
-    info: 'bg-navy-50 text-navy-700 border border-navy-200',
-    success: 'bg-emerald-50 text-emerald-700 border border-emerald-200',
-    warning: 'bg-amber-50 text-amber-700 border border-amber-200',
-    error: 'bg-red-50 text-red-700 border border-red-200',
+    neutral: 'bg-slate-800/60 text-slate-300 border border-slate-700/40',
+    info: 'bg-sky-500/10 text-sky-400 border border-navy-200',
+    success: 'bg-emerald-500/15 text-emerald-300 border border-emerald-500/30',
+    warning: 'bg-amber-500/15 text-amber-300 border border-amber-500/30',
+    error: 'bg-red-500/20 text-red-300 border border-red-500/30',
   };
 
   return (
@@ -48,7 +48,7 @@ export function StatusDot({ status, label }: StatusDotProps) {
   return (
     <span className="inline-flex items-center gap-1.5">
       <span className={cn('w-1.5 h-1.5 rounded-full pulse-dot', config.color)} />
-      {label && <span className="text-[12px] text-slate-600">{label || config.label}</span>}
+      {label && <span className="text-[12px] text-slate-300">{label || config.label}</span>}
     </span>
   );
 }

@@ -17,25 +17,29 @@ export function KPICard({ label, value, supporting, trend, accent = 'default', t
   const content = (
     <div
       className={cn(
-        'card p-4 transition-all duration-200',
-        to && 'hover:border-slate-300 hover:shadow-card-hover cursor-pointer',
-        accent === 'risk' && 'border-l-4 border-l-red-400'
+        'card p-4 transition-all duration-300 hover-lift',
+        to && 'cursor-pointer',
+        accent === 'risk' && 'border-l-[3px]'
       )}
+      style={accent === 'risk' ? {
+        borderLeftColor: 'rgba(239, 68, 68, 0.6)',
+        background: 'linear-gradient(135deg, rgba(220, 38, 38, 0.08) 0%, rgba(15, 23, 42, 0.65) 40%)',
+      } : undefined}
     >
       <div className="flex items-start justify-between mb-2">
         <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">{label}</span>
-        {icon && <span className="text-slate-300">{icon}</span>}
+        {icon && <span className="text-slate-500">{icon}</span>}
       </div>
-      <div className="text-[26px] font-bold text-slate-900 tabular-nums leading-tight">{value}</div>
+      <div className="text-[26px] font-bold text-white tabular-nums leading-tight animate-number">{value}</div>
       <div className="flex items-center justify-between mt-1.5">
-        <span className="text-[12px] text-slate-400">{supporting}</span>
+        <span className="text-[12px] text-slate-500">{supporting}</span>
         {trend && (
           <span
             className={cn(
               'inline-flex items-center gap-0.5 text-[11px] font-medium',
-              trend.direction === 'up' && 'text-emerald-600',
-              trend.direction === 'down' && 'text-red-500',
-              trend.direction === 'flat' && 'text-slate-400'
+              trend.direction === 'up' && 'text-emerald-400',
+              trend.direction === 'down' && 'text-red-400',
+              trend.direction === 'flat' && 'text-slate-500'
             )}
           >
             {trend.direction === 'up' && <TrendingUp className="w-3 h-3" />}
@@ -46,7 +50,7 @@ export function KPICard({ label, value, supporting, trend, accent = 'default', t
         )}
       </div>
       {to && (
-        <div className="mt-2 flex items-center gap-1 text-[11px] text-navy-600 font-medium">
+        <div className="mt-2 flex items-center gap-1 text-[11px] text-sky-400 font-medium">
           View <ArrowUpRight className="w-3 h-3" />
         </div>
       )}

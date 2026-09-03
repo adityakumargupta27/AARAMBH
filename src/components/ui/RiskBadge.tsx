@@ -52,7 +52,7 @@ export function RiskBar({ score, showLabel = false }: RiskBarProps) {
 
   return (
     <div className="flex items-center gap-2">
-      <div className="flex-1 h-1.5 bg-slate-100 rounded-full overflow-hidden min-w-[60px]">
+      <div className="flex-1 meter min-w-[60px]">
         <div
           className="h-full rounded-full transition-all duration-300"
           style={{ width: `${score}%`, backgroundColor: config.hex }}
