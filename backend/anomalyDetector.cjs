@@ -398,7 +398,28 @@ function queryForensicAgent(question = '', caseId = 'AR-2026-001024', customCont
   let primarySignal = 'price-anomaly';
 
   // Intent matching logic
-  if (q.includes('flag') || q.includes('why') || q.includes('score') || q.includes('risk')) {
+  const isGreeting = /^(hi|hello|hey|namaste|greetings|good\s*(morning|afternoon|evening)|help)\b/i.test(q);
+
+  if (isGreeting) {
+    answer = `Hello Investigator! I am your **Aarambha AI Forensic Vigilance Agent**.
+
+I am actively tracking **${ctx.projectName}** (${ctx.constituency}, ${ctx.state}) assigned to **${ctx.contractorName}** (Risk Score: 82/100).
+
+You can ask me to:
+• **Audit CPWD Rates**: *"Why is the unit price flagged?"*
+• **Examine Bid Collusion**: *"Check tender spread and cover bidders"*
+• **Audit Disbursement vs Milestones**: *"Compare physical progress with financial outlays"*
+• **Verify GFR/CVC Rules**: *"What statutory violations are cited?"*
+• **Simulate Actions**: Ask to draft a show-cause notice or engage the PFMS smart lock.`;
+    thoughtSteps.length = 0;
+    thoughtSteps.push({
+      step: 1,
+      title: 'Session Ready',
+      detail: `Agent initialized for ${ctx.caseId} (${ctx.projectName}). Ready to evaluate forensic evidence, GFR rules, and CPWD rates.`
+    });
+    statutoryRules.length = 0; // Clear violation badges for simple greeting
+    recommendedActions = [allActions[0], allActions[1], allActions[2]];
+  } else if (q.includes('flag') || q.includes('why') || q.includes('score') || q.includes('risk')) {
     answer = `**Case ${ctx.caseId}** was flagged with a composite risk score of **82/100 (HIGH PRIORITY)** based on three concurrent forensic anomalies:
 
 1. **Unit Price Inflation (+${ctx.unitDeviation}%)**: Civil rate of ₹${ctx.unitPrice.toLocaleString('en-IN')}/unit vs regional CPWD Schedule of Rates benchmark of ₹${ctx.benchmarkPrice.toLocaleString('en-IN')}/unit.

@@ -442,7 +442,10 @@ Provide a concise, professional vigilance audit assessment citing these exact nu
         // Optional: If GEMINI_API_KEY is configured in process.env, augment answer
         if (process.env.GEMINI_API_KEY && !agentResult.provider) {
           try {
-            const prompt = `You are the Aarambha AI Procurement Investigator, auditing Indian public procurement and MPLADS projects.
+            const isGreeting = /^(hi|hello|hey|namaste|greetings|good\s*(morning|afternoon|evening)|help)\b/i.test(question.trim());
+            const prompt = isGreeting
+              ? `You are the Aarambha AI Procurement Investigator. The user greeted you with: "${question}". Greet them back warmly in 2-3 sentences as the Aarambha AI Investigator, state that you are actively tracking case ${caseId} (${caseContext?.projectName || 'Construction of Community Hall'}), and invite them to ask any question regarding CPWD rate benchmarks, bid spreads, GFR 2017 compliance, or payment smart locks.`
+              : `You are the Aarambha AI Procurement Investigator, auditing Indian public procurement and MPLADS projects.
 Context:
 Project: ${caseContext?.projectName || 'Construction of Community Hall (MPLADS-1024)'}
 Contractor: ${caseContext?.contractorName || 'ABC Infrastructure Pvt Ltd'}
@@ -460,7 +463,7 @@ Provide a concise, professional vigilance audit assessment citing these exact nu
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
                 contents: [{ parts: [{ text: prompt }] }],
-                generationConfig: { maxOutputTokens: 350, temperature: 0.2 }
+                generationConfig: { maxOutputTokens: 2048, temperature: 0.2 }
               })
             });
 
