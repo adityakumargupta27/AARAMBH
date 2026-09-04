@@ -101,7 +101,7 @@ function sendJson(res, statusCode, data) {
   res.end(JSON.stringify(data));
 }
 
-const server = http.createServer(async (req, res) => {
+async function handleRequest(req, res) {
   // CORS Preflight
   if (req.method === 'OPTIONS') {
     res.writeHead(204, {
@@ -682,12 +682,18 @@ Provide a concise, professional vigilance audit assessment citing these exact nu
 
   // Not found
   return sendJson(res, 404, { error: 'Endpoint not found', path: pathname });
-});
+}
 
-server.listen(PORT, () => {
-  console.log(`====================================================`);
-  console.log(`AARAMBHA Backend & ML Anomaly Service Running!`);
-  console.log(`Port: http://localhost:${PORT}`);
-  console.log(`Loaded ${constituencies.length} official MoSPI Lok Sabha records.`);
-  console.log(`====================================================`);
-});
+const server = http.createServer(handleRequest);
+
+if (require.main === module) {
+  server.listen(PORT, () => {
+    console.log(`====================================================`);
+    console.log(`AARAMBHA Backend & ML Anomaly Service Running!`);
+    console.log(`Port: http://localhost:${PORT}`);
+    console.log(`Loaded ${constituencies.length} official MoSPI Lok Sabha records.`);
+    console.log(`====================================================`);
+  });
+}
+
+module.exports = handleRequest;
