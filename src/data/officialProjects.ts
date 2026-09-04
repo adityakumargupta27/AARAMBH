@@ -11,7 +11,7 @@ export const officialParliamentProjects: (Project & { house: 'Lok Sabha' | 'Rajy
     const excessRatio = (m.allocatedAmount - 147000000) / 147000000;
     const riskScore = isAugmented ? Math.min(94, Math.round(62 + excessRatio * 32)) : 35;
     const riskLevel: RiskLevel = riskScore >= 75 ? 'high' : riskScore >= 50 ? 'review' : riskScore >= 40 ? 'watch' : 'normal';
-    const status: EntityStatus = isAugmented ? 'under-review' : 'active';
+    const status: EntityStatus = isAugmented ? 'pending' : 'active';
     const progress = Math.min(95, Math.max(35, Math.round(55 + (idx % 35))));
 
     const id = m.id || `${m.house === 'Lok Sabha' ? 'LS' : 'RS'}-${String(m.srNo).padStart(3, '0')}`;

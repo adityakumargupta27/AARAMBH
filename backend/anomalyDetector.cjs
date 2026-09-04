@@ -246,6 +246,7 @@ function evaluatePreDisbursementGate(projectDetails) {
     }
   ];
 
+  const failedCount = gates.filter((g) => g.status === 'FAIL').length;
   const isLocked = failedCount > 0;
 
   return {

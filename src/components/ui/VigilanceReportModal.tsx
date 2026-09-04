@@ -16,7 +16,7 @@ interface VigilanceReportModalProps {
     sanctionedAmount: number;
     awardValue: number;
     disbursedAmount: number;
-    physicalProgress: number;
+    physicalProgress?: number;
   };
 }
 
@@ -24,18 +24,23 @@ export function VigilanceReportModal({ open, onClose, caseData }: VigilanceRepor
   const { toast } = useToast();
   const [copied, setCopied] = useState(false);
 
-  const data = caseData || {
-    id: 'AR-2026-001024',
-    projectName: 'Construction of Community Hall & Skill Center (MPLADS-1024)',
-    contractorName: 'ABC Infrastructure Pvt Ltd',
-    state: 'Maharashtra',
-    constituency: 'Pune',
-    riskScore: 82,
-    sanctionedAmount: 5200000,
-    awardValue: 4920000,
-    disbursedAmount: 4270000,
-    physicalProgress: 68,
-  };
+  const data = caseData
+    ? {
+        ...caseData,
+        physicalProgress: caseData.physicalProgress ?? 68,
+      }
+    : {
+        id: 'AR-2026-001024',
+        projectName: 'Construction of Community Hall & Skill Center (MPLADS-1024)',
+        contractorName: 'ABC Infrastructure Pvt Ltd',
+        state: 'Maharashtra',
+        constituency: 'Pune',
+        riskScore: 82,
+        sanctionedAmount: 5200000,
+        awardValue: 4920000,
+        disbursedAmount: 4270000,
+        physicalProgress: 68,
+      };
 
   const handlePrint = () => {
     window.print();
